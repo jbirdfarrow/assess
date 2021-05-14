@@ -1,0 +1,107 @@
+body { 
+  padding:0; 
+  margin:0; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:  radial-gradient(#444CF7 0.9px, transparent 0.9px), radial-gradient(#444CF7 0.9px, #04045c 0.9px);
+background-size: 36px 36px;
+background-position: 0 0,18px 18px;
+
+}
+div {	
+  font-size: 1em;
+}
+h1 {
+  background-image: linear-gradient( 109.6deg,  rgba(39,142,255,1) 11.2%, rgba(98,113,255,0.78) 100.2% );
+  color:#fff;
+  text-align:center;
+  margin:0 0 5% 0;
+  padding:0.5em;
+  margin: 0 0 5% 0;
+  box-shadow:0 0 15px 2px #222;
+}
+h3 {
+  background-image: linear-gradient( 109.6deg,  rgba(39,142,255,1) 11.2%, rgba(98,113,255,0.78) 100.2% );
+  color:#ccc;
+  cursor:pointer;
+  float:left;
+  width:4%;
+  margin:1% 0 1% 1%;
+  position:relative;
+  text-align:center;
+  font-family:Arial, Helvetica, San-serif;
+  font-size:1.3em;
+}
+h3:before {
+  content: "";
+	display: block;
+	padding-top: 100%; 
+}
+h3 span {
+  position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  padding:0.5em 0;
+}
+h3.activa{
+  background-image: linear-gradient( 112.7deg,  rgba(253,185,83,1) 11.4%, rgba(255,138,0,1) 70.2% );
+  color:#fff;
+}
+
+/*flechas*/
+h3:after {
+  background:url(https://www.pikpng.com/pngl/m/94-942459_arrow-circle-creative-from-start-grid-player-imagenes.png) no-repeat center bottom / cover;
+  content:" ";
+  float:left;
+  width:100%;
+  font-size:16px;
+  height:1.8em;
+  margin-top:-2em;
+  position:absolute;
+  margin-left:-50%;
+  opacity:0;
+}
+
+h3.inactiva:after {color:#e6e6e6;}
+h3.activa:after {
+  background:url(//josetxu.com/beta/img/acordeon_arrow.png) no-repeat center bottom / cover;
+  color:#f60;
+  margin-top:-0.3em;
+  transition:all 0.5s ease 0s;
+  opacity:1;
+}
+
+
+#acordeon div.inactiva, #acordeon div.activa {
+  background:#f60;
+  color:#fff;
+  overflow:hidden;
+  padding:0;
+  width:98%;
+  float:left;
+  margin:0 1%;
+}
+#acordeon div.inactiva { 
+  transition:max-height 0.2s ease 0s;
+  max-height:0;
+}
+#acordeon div.activa {
+  transition:max-height 0.5s ease 0s;
+  max-height:1000px;
+}
+#acordeon p {margin:20px;}
+p:last-child {margin:0;}
+
+
+@media only screen and (max-width:580px){
+  h3 {font-size:1.5em;}
+  h3.activa:after {margin-top:-0.5em;}
+}
+@media only screen and (max-width:480px){
+  h3 {font-size:1.3em;}
+  h3.activa:after {
+    margin-top:-0.2em;
+    height:1.2em;
+  }
+}
