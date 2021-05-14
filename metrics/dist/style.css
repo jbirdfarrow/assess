@@ -51,7 +51,7 @@ h3.activa{
 
 /*flechas*/
 h3:after {
-  background:url(https://www.pikpng.com/pngl/m/94-942459_arrow-circle-creative-from-start-grid-player-imagenes.png) no-repeat center bottom / cover;
+  background:url() no-repeat center bottom / cover;
   content:" ";
   float:left;
   width:100%;
