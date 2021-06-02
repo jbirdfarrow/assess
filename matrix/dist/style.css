@@ -4,7 +4,6 @@
 
 body, html {
 	max-width:100%;font-size: 14px; font-family: 'Roboto', sans-serif;
-background-color:	#E5E6D8;
 }
 ::-webkit-scrollbar {
     display:none;
