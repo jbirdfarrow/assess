@@ -167,6 +167,53 @@ section:nth-of-type(n),
 section:nth-of-type(4) section:nth-of-type(n){
 	background-attachment: fixed;
 }
+	
+	/***
+ 🟣 SmolCSS Snippet Styles
+ */
+
+.smol-sidebar {
+  display: grid;
+  grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+}
+
+
+
+/* Additional demo styles from SmolCSS.dev
+   Not all styles may be needed for this pen */
+body > ul {
+  list-style: none;
+  margin: 0;
+
+  &:not([data-padding-unset]) {
+    padding: 0;
+  }
+}
+
+[class*="smol"]:not([data-component]) > *:not([data-unstyled]) {
+  display: grid;
+  padding: 1rem;
+  background-color: #E0D4F6;
+  color: #675883;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.15em;
+  border: 1px dashed;
+
+  &:not([data-text]) {
+    place-content: center;
+  }
+
+  &[data-text] {
+    font-size: 1.15rem;
+    text-align: left;
+  }
+}
+
+[data-container-style] {
+  outline: 2px dotted #29344B;
+}
 	</style>
 </head>
 <body>
@@ -1401,15 +1448,39 @@ One advantage of having several groups in the community developing their own pla
     			<h2>Endpoints</h2>
     			<section id="endpoints--COMMINFO">
     				<h3>📇 Destination Contact Information</h3>
-    				<p>…</p>
+    				<div class="smol-sidebar">
+  <span data-text>
+    Metric Name
+    <ul>
+        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_450,c_limit/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSQImb85Jate94RdMxhto.png'/></a></li>
+</ul>
+  </span>
+  <span>Main content</span>
+</div>
     			</section>
     			<section id="endpoints--SUSTMAN">
     				<h3>⚙️Sustainability Management</h3>
-    				<p>…</p>
+    				<div class="smol-sidebar">
+  <span data-text>
+    Metric Name
+    <ul>
+        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_450,c_limit/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSQImb85Jate94RdMxhto.png'/></a></li>
+</ul>
+  </span>
+  <span>Main content</span>
+</div>
     			</section>
     			<section id="endpoints--TOURSAT">
     				<h3>😎Tourism Satisfaction</h3>
-    				<p>…</p>
+    				<div class="smol-sidebar">
+  <span data-text>
+    Metric Name
+    <ul>
+        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_450,c_limit/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSQImb85Jate94RdMxhto.png'/></a></li>
+</ul>
+  </span>
+  <span>Main content</span>
+</div>
     			</section>
     			<section id="endpoints--TOURPRO">
     				<h3>🧲Tourism Promotion</h3>
