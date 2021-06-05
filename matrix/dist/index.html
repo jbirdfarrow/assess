@@ -390,6 +390,179 @@ body > ul:not([data-padding-unset]) {
 [data-container-style] {
   outline: 2px dotted #29344B;
 }
+	.how-to-guide {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #34495e;
+  color: #ecf0f1;
+  margin: 0;
+  padding: 0 0 40px;
+  position: relative;
+  text-align: left;
+  width: 296px;
+}
+.how-to-guide:before {
+  border: 10px solid transparent;
+  border-right-color: #34495e;
+  content: '';
+  height: 0;
+  left: -20px;
+  position: absolute;
+  top: 20px;
+  width: 0;
+}
+.how-to-guide .button-close {
+  -webkit-transition: color 0.25s ease-out 0.1s;
+  -moz-transition: color 0.25s ease-out 0.1s;
+  -o-transition: color 0.25s ease-out 0.1s;
+  transition: color 0.25s ease-out 0.1s;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-size: 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+.how-to-guide .button-close:hover,
+.how-to-guide .button-close:focus {
+  color: #3498db;
+  cursor: pointer;
+}
+.how-to-guide .navigation {
+  background: #2c3e50;
+  border-top: 1px solid #414141;
+  bottom: 0;
+  font-size: 0.8em;
+  height: 40px;
+  left: 0;
+  line-height: 1em;
+  padding: 13px;
+  position: absolute;
+  width: 100%;
+}
+.how-to-guide .navigation .nav-state {
+  font-weight: bold;
+  text-align: center;
+}
+.how-to-guide .navigation .button-nav {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: background 0.25s ease-out 0.1s;
+  -moz-transition: background 0.25s ease-out 0.1s;
+  -o-transition: background 0.25s ease-out 0.1s;
+  transition: background 0.25s ease-out 0.1s;
+  background: #34495e;
+  border: none;
+  color: #ecf0f1;
+  font-size: 0.9em;
+  padding: 5px 20px;
+  position: absolute;
+  top: 5px;
+}
+.how-to-guide .navigation .button-nav:hover,
+.how-to-guide .navigation .button-nav:focus {
+  background: #3498db;
+  cursor: pointer;
+}
+.how-to-guide .navigation .button-nav.disabled {
+  color: #bdc3c7;
+}
+.how-to-guide .navigation .button-nav.disabled:hover,
+.how-to-guide .navigation .button-nav.disabled:focus {
+  background: #34495e;
+  cursor: default;
+}
+.how-to-guide .navigation .button-nav[data-nav="prev"] {
+  left: 5px;
+}
+.how-to-guide .navigation .button-nav[data-nav="next"] {
+  right: 5px;
+}
+.how-to-guide .slide-view {
+  overflow: hidden;
+}
+.how-to-guide .slides {
+  -webkit-transition: -webkit-transform 0.25s ease-out 0.1s;
+  -moz-transition: -moz-transform 0.25s ease-out 0.1s;
+  -o-transition: -o-transform 0.25s ease-out 0.1s;
+  transition: transform 0.25s ease-out 0.1s;
+  width: 9999px;
+}
+.how-to-guide .slides[data-active-slide="1"] {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.how-to-guide .slides[data-active-slide="1"] .step[data-slide="1"] {
+  opacity: 1;
+}
+.how-to-guide .slides[data-active-slide="2"] {
+  -webkit-transform: translate(-296px, 0);
+  -moz-transform: translate(-296px, 0);
+  -ms-transform: translate(-296px, 0);
+  -o-transform: translate(-296px, 0);
+  transform: translate(-296px, 0);
+}
+.how-to-guide .slides[data-active-slide="2"] .step[data-slide="2"] {
+  opacity: 1;
+}
+.how-to-guide .slides[data-active-slide="3"] {
+  -webkit-transform: translate(-592px, 0);
+  -moz-transform: translate(-592px, 0);
+  -ms-transform: translate(-592px, 0);
+  -o-transform: translate(-592px, 0);
+  transform: translate(-592px, 0);
+}
+.how-to-guide .slides[data-active-slide="3"] .step[data-slide="3"] {
+  opacity: 1;
+}
+.how-to-guide .slides[data-active-slide="4"] {
+  -webkit-transform: translate(-888px, 0);
+  -moz-transform: translate(-888px, 0);
+  -ms-transform: translate(-888px, 0);
+  -o-transform: translate(-888px, 0);
+  transform: translate(-888px, 0);
+}
+.how-to-guide .slides[data-active-slide="4"] .step[data-slide="4"] {
+  opacity: 1;
+}
+.how-to-guide .slides[data-active-slide="5"] {
+  -webkit-transform: translate(-1184px, 0);
+  -moz-transform: translate(-1184px, 0);
+  -ms-transform: translate(-1184px, 0);
+  -o-transform: translate(-1184px, 0);
+  transform: translate(-1184px, 0);
+}
+.how-to-guide .slides[data-active-slide="5"] .step[data-slide="5"] {
+  opacity: 1;
+}
+.how-to-guide .step {
+  -webkit-transition: opacity 0.25s ease-out 0.1s;
+  -moz-transition: opacity 0.25s ease-out 0.1s;
+  -o-transition: opacity 0.25s ease-out 0.1s;
+  transition: opacity 0.25s ease-out 0.1s;
+  display: inline-block;
+  opacity: 0;
+  padding: 10px;
+  width: 296px;
+  vertical-align: top;
+}
+.how-to-guide .step header {
+  cursor: default;
+  font-size: 1.25em;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.how-to-guide .step .content {
+  cursor: default;
+  font-size: 0.85em;
+}
 	</style>
 </head>
 <body>
@@ -2576,5 +2749,75 @@ Generated from: https://SmolCSS.dev/#smol-avatar-list -->
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js'></script><script  src="./steps/script.js"></script>
+		    <script>
+			    $(function () {
+  var data = [
+    {
+      idx: 1,
+      title: '👋Welcome ',
+      content: 'What you see is a dashboard of the most current sustainability metrics for Destinations and Blue Communities.  The data you see here is a real time reflection of data entered into through the Blue Community App.'
+    },
+    {
+      idx: 2,
+      title: '🌊Blue Community Matrix',
+      content: 'Every destination known for tourism faces a complex matrix of issues related to sustainability.  By assessing strengths and weaknesses through data collection, we can set strategic goals for progress over time.'
+    },
+    {
+      idx: 3,
+      title: '🚉🚿Sustainability Metrics👨‍👦‍👦',
+      content: 'Destination managers and local assessors collect data across 20 categorical metric groups, each containing a set of questions geared to analyze efforts and areas for improving local policy and practice.'
+    },
+    {
+      idx: 4,
+      title: 'Accountability & Transparency',
+      content: 'Our assessment enables assessors to provide proof and documentation. Together, we can erradicate greenwashing through championing verifiable proof of improvement of destinations for tourism. '
+    },
+    {
+      idx: 5,
+      title: 'Do You Live in a Blue Community?',
+      content: 'Is your destination community acting to mitigate the effects of climate change? Your water bills, energy management and waste practices tell the story.Self Audit as a Team.'
+    }
+  ];
+  
+  var template =
+    '<div class="slides" data-active-slide="1">' +
+      '{{#slides}}' +
+        '<article class="step" data-slide="{{idx}}">' +
+          '<header>{{title}}</header>' +
+          '<div class="content">{{content}}</div>' +
+        '</article>' +
+      '{{/slides}}' +
+    '</div>';
+  
+  $('.how-to-guide').append(Mustache.render(template, { slides: data }));
+  
+  var slidesCount = data.length;
+  var currentIdx = 1;
+  
+  $('body')
+    .off('click', '.js-nav:not(.disabled)')
+    .on('click', '.js-nav:not(.disabled)', function (event) {
+      var button = $(event.currentTarget).blur();
+      var container = button.parents('.js-container');
+      
+      var newIdx = currentIdx + (button.attr('data-nav') === 'prev' ? -1 : 1);
+      container
+        .find('.slides').attr('data-active-slide', newIdx).end()
+        .find('.js-slide-no').html(newIdx);
+      
+      /* enable/disable nav buttons */  
+      container.find('.js-nav').removeClass('disabled');
+      if (newIdx <= 1) {
+        container.find('.js-nav[data-nav="prev"]').addClass('disabled');
+      } else if (newIdx >= slidesCount) {
+        container.find('.js-nav[data-nav="next"]').addClass('disabled');
+      }
+      
+      currentIdx = newIdx;
+      
+      return true;
+    });
+});
+		    </script>
 </body>
 </html>
