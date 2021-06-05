@@ -564,6 +564,72 @@ body > ul:not([data-padding-unset]) {
   font-size: 0.85em;
 }
 	</style>
+	<style>
+		/***
+ 🟣 SmolCSS Snippet Styles
+ */
+
+.smol-scroll-snap {
+  /* Set up container positioning */
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.5rem;
+  /* Enable overflow along our scroll axis */
+  overflow-x: auto;
+  /* Define axis and scroll type, where
+  `mandatory` means any scroll attempt will
+  cause a scroll to the next item */
+  scroll-snap-type: x mandatory;
+  padding: 0 0 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.smol-scroll-snap > * {
+  width: min(45ch, 60vw);
+  /* Choose how to align children on scroll */
+  scroll-snap-align: center;
+  /* Prevents scrolling past more than one child */
+  scroll-snap-stop: always;
+}
+
+
+
+/* Additional demo styles from SmolCSS.dev
+   Not all styles may be needed for this pen */
+body > ul {
+  list-style: none;
+  margin: 0;
+
+  &:not([data-padding-unset]) {
+    padding: 0;
+  }
+}
+
+[class*="smol"]:not([data-component]) > *:not([data-unstyled]) {
+  display: grid;
+  padding: 1rem;
+  background-color: #E0D4F6;
+  color: #675883;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.15em;
+  border: 1px dashed;
+
+  &:not([data-text]) {
+    place-content: center;
+  }
+
+  &[data-text] {
+    font-size: 1.15rem;
+    text-align: left;
+  }
+}
+
+[data-container-style] {
+  outline: 2px dotted #29344B;
+}
+	</style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -2534,11 +2600,28 @@ One advantage of having several groups in the community developing their own pla
   <span data-text>
     COMMINFO
     <ul>
-        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png'/></a></li>
+        <li><a href="#smol-avatar-list"><img alt="COMMINFO" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png'/></a></li>
 </ul>
   </span>
   <span>Destination Contact Information</span>
 </div>
+				<ul data-padding-unset class="smol-scroll-snap">
+  <li data-text>
+    <p>Topping candy canes ice cream gummi bears gingerbread marshmallow. Chocolate cake powder sugar plum topping.</p>
+  </li>
+  <li data-text>
+    <p>Cake marshmallow carrot cake. Pie liquorice liquorice sweet tootsie roll caramels donut dragée bear claw. Chocolate powder candy canes.</p>
+  </li>
+  <li data-text>
+    <p>Pie chocolate cake dessert pastry candy canes donut pie soufflé pie. Fruitcake caramels tart pudding macaroon chocolate jelly beans brownie.</p>
+  </li>
+  <li data-text>
+    <p>Icing dessert chocolate cupcake dragée sesame snaps. Icing pastry donut cupcake marshmallow sweet macaroon gummies.</p>
+  </li>
+  <li data-text>
+    <p>Jelly wafer biscuit. Dessert halvah cheesecake. Liquorice jelly sweet roll marzipan biscuit</p>
+  </li>
+</ul>
 				<ul data-component class="smol-aspect-ratio-gallery smol-flexbox-grid">
   <li>
     <img
