@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://codepen.io/bluecommunitysustainability/pen/qBrmywg.css'><link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href="./aspect.scss">
+	
 	
 <style>
 :root {
@@ -313,6 +313,77 @@ body > ul {
     font-size: 1.15rem;
     text-align: left;
   }
+}
+
+[data-container-style] {
+  outline: 2px dotted #29344B;
+}
+	
+	/***
+ 🟣 SmolCSS Snippet Styles
+ */
+.smol-flexbox-grid {
+  --min: 15ch;
+  --gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.smol-flexbox-grid > * {
+  flex: 1 1 var(--min);
+}
+
+.smol-aspect-ratio-gallery {
+  --min: 15rem;
+  --aspect-ratio: 4/3;
+  --gap: 0;
+}
+
+.smol-aspect-ratio-gallery li {
+  aspect-ratio: var(--aspect-ratio);
+}
+
+@supports not (aspect-ratio: 1/1) {
+  .smol-aspect-ratio-gallery li {
+    height: max(25vh, 15rem);
+  }
+}
+.smol-aspect-ratio-gallery img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Additional demo styles from SmolCSS.dev
+   Not all styles may be needed for this pen */
+body > ul {
+  list-style: none;
+  margin: 0;
+}
+body > ul:not([data-padding-unset]) {
+  padding: 0;
+}
+
+[class*=smol]:not([data-component]) > *:not([data-unstyled]) {
+  display: grid;
+  padding: 1rem;
+  background-color: #E0D4F6;
+  color: #675883;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.15em;
+  border: 1px dashed;
+}
+[class*=smol]:not([data-component]) > *:not([data-unstyled]):not([data-text]) {
+  place-content: center;
+}
+[class*=smol]:not([data-component]) > *:not([data-unstyled])[data-text] {
+  font-size: 1.15rem;
+  text-align: left;
 }
 
 [data-container-style] {
@@ -2280,21 +2351,7 @@ One advantage of having several groups in the community developing their own pla
   </span>
   <span>Destination Contact Information</span>
 </div>
-    			</section>
-    			<section id="endpoints--SUSTMAN">
-    				<h3>⚙️Sustainability Management</h3>
-    				<div class="smol-sidebar">
-  <span data-text>
-    SUSTMAN
-    <ul>
-        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png'/></a></li>
-</ul>
-  </span>
-  <span>⚙️Sustainability Management</span>
-</div>
-				<!-- SmolCSS - Smol Aspect Ratio Gallery
-Generated from: https://SmolCSS.dev/#smol-aspect-ratio-gallery -->
-<ul data-component class="smol-aspect-ratio-gallery smol-flexbox-grid">
+				<ul data-component class="smol-aspect-ratio-gallery smol-flexbox-grid">
   <li>
     <img
       src="https://images.unsplash.com/photo-1606744666360-2f22c8b4a45b?ixlib=rb-1.2.1&q=45&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&w=350"
@@ -2326,6 +2383,20 @@ Generated from: https://SmolCSS.dev/#smol-aspect-ratio-gallery -->
     />
   </li>
 </ul>
+
+    			</section>
+    			<section id="endpoints--SUSTMAN">
+    				<h3>⚙️Sustainability Management</h3>
+    				<div class="smol-sidebar">
+  <span data-text>
+    SUSTMAN
+    <ul>
+        <li><a href="#smol-avatar-list"><img alt="Avatar 3" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png'/></a></li>
+</ul>
+  </span>
+  <span>⚙️Sustainability Management</span>
+</div>
+			
 
     			</section>
     			<section id="endpoints--TOURSAT">
