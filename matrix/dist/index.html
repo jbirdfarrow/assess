@@ -255,7 +255,7 @@ body > ul:not([data-padding-unset]) {
   display: grid;
   padding: 1rem;
   background-color: #E0D4F6;
-  color: #675883;
+  color: #fff;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
   text-align: center;
@@ -583,7 +583,25 @@ body > ul:not([data-padding-unset]) {
   padding: 0 0 1.5rem;
   -webkit-overflow-scrolling: touch;
 }
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .smol-scroll-snap > * {
   width: min(45ch, 60vw);
   /* Choose how to align children on scroll */
