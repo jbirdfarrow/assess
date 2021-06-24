@@ -1,0 +1,285 @@
+/*scroll chrone*/
+::-webkit-scrollbar {
+    height:8px;
+    width:8px;
+    background:#FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background:#808080;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+::-webkit-scrollbar-button
+{
+	background:#808080;
+}
+::-webkit-scrollbar-corner {
+    background:#FFFFFF;
+}
+body
+{
+	margin:0px;
+	padding:0px;
+}
+.container
+{
+	margin:100px auto;
+	background-color:#000066;
+	width:480px;
+	height:320px;
+}
+.headerlogo
+{
+	float:left;
+	margin:0px;
+	padding:5px;
+	width:40px;
+	height:40px;
+}
+.header
+{
+	float:left;
+	margin:0px;
+	padding:5px;
+	border-bottom:2px solid #3C003C;
+	width:75px;
+	height:20px;
+	line-height:20px;
+}
+.logo
+{
+	width:40px;
+	height:40px;
+	margin:0px;
+}
+.menu
+{
+	float:right;
+	margin:0px;
+	padding:5px;
+	border-bottom:2px solid #3C003C;
+	width:335px;
+	height:20px;
+	line-height:20px;
+}
+.webtitle
+{
+	font-size:20px;
+	font-family:sans-serif;
+	text-decoration:none;
+	font-weight:bold;
+	font-style:normal;
+	color:white;
+	text-align:left;
+	margin:0px;
+}
+ul.nav
+{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+ul.nav li
+{
+	display:inline-block;
+	width:80px;
+	font-size:16px;
+	font-family:sans-serif;
+	text-decoration:none;
+	font-weight:bold;
+	font-style:normal;
+	color:white;
+	text-align:right;
+}
+ul.nav li a
+{
+	font-size:0.8em;
+	font-family:sans-serif;
+	text-decoration:none;
+	font-weight:bold;
+	font-style:normal;
+	color:white;
+	display:inline-block;
+	width:75px;
+	padding:0px;
+	text-align:center;
+}
+ul.nav li a:hover
+{
+	text-decoration:underline;
+}
+/*content*/
+.content
+{
+	margin:0px;
+	padding:0px;
+	border-bottom:2px solid #3C003C;
+	width:478px;
+	height:228px;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+#home
+{
+	margin:0px;
+	padding:0px;
+	width:475px;
+	height:250px;
+	background-image:url("https://images.unsplash.com/photo-1489516408517-0c0a15662682?ixlib=rb-1.2.1&q=65&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&w=350");
+	background-size:475px 250px;
+	background-color:red;
+	border:1px solid #8B008B;
+}
+.highlight
+{
+	background-color:rgba(139,0,139,0.5);
+}
+.webhead
+{
+	text-align:center;
+	font-size:2em;
+	font-family:sans-serif;
+	font-weight:bold;
+	color:#FFFFFF;
+	margin:50px 0px 0px 0px;
+}
+.websubhead
+{
+	text-align:center;
+	font-size:25px;
+	font-family:sans-serif;
+	font-weight:bold;
+	color:#FFFFFF;
+	margin:10px 0px 0px 0px;
+}
+.websubtitle
+{
+	text-align:left;
+	font-size:20px;
+	font-family:sans-serif;
+	font-weight:bold;
+	color:#FFFFFF;
+	margin:0px 0px 10px 0px;
+	position:relative;
+}
+.webtext
+{
+	text-align:justify;
+	font-size:16px;
+	font-family:sans-serif;
+	font-weight:bold;
+	color:#A9A9A9;
+}
+#about,#product,#contract
+{
+	margin:0px;
+	padding:10px;
+	border:1px solid #8B008B;
+}
+.copyright
+{
+	font-size:0.8em;
+	font-family:sans-serif;
+	font-weight:bold;
+	font-style:italic;
+	margin:0px;
+	color:#FFFFFF;
+}
+.footer
+{
+	margin:0px;
+	padding:10px;
+	width:460px;
+	height:20px;
+	background-color:#000066;
+	position:relative;
+}
+.homepage a
+{
+	background-color:none;
+	font-size:30px;
+	font-family:sans-serif;
+	font-weight:bold;
+	font-style:normal;
+	display:block;
+	float:right;
+	text-decoration:none;
+	margin:0px 0px 0px 0px;
+	padding:5px;
+	position:absolute;
+	bottom:42px;
+	right:12px;
+	color:rgba(255,0,255,0.4);
+	
+}
+.homepage a:hover
+{
+color:#3C003C;
+}
+.share a
+{
+	font-size:16px;
+	font-family:sans-serif;
+	font-weight:bold;
+	font-style:normal;
+	display:inline-block;
+	text-decoration:none;
+	margin:-5px 5px 0px 0px;
+	padding:5px;
+	width:16px;
+	height:16px;
+	color:#FFFFFF;
+	text-align:center;
+	border:1px solid #8B008B;
+	border-radius:16px;
+	-webkit-border-radius:16px;
+	-moz-border-radius:16px;
+	-o-border-radius:16px;
+	line-height:16px;
+}
+.sharefloat
+{
+	float:right;
+}
+.share a:hover
+{
+	color:#8B008B;
+}
+.sharethis
+{
+	background-color:#000000;
+	display:none;
+	width:60px;
+	height:20px;
+	padding:5px;
+	margin:0px 0px 0px 5px;
+	box-shadow:inset 0px 5px 5px 0px gray, 0px 0px 5px 0px #000000;
+	position:absolute;
+	top:0px;
+}
+.sharethis a
+{
+	font-size:16px;
+	font-family:sans-serif;
+	font-weight:bold;
+	font-style:normal;
+	display:inline-block;
+	text-decoration:none;
+	margin:-3px 0px 0px 0px;
+	padding:5px;
+	text-align:center;
+	
+}
+.websubtitle:hover .sharethis
+{
+	display:inline-block;
+}
+.sharethis a:hover
+{
+	text-decoration:underline;
+}
+.websubtitle:hover
+{
+	text-decoration:underline;
+}
