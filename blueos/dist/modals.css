@@ -1,0 +1,78 @@
+:root {
+  --gutter-horizontal: 10vw;
+  --gutter-vertical: 10vh;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+details + details {
+  margin-top: 1em;
+}
+
+details.modal summary {
+  background: #cacaca;
+  border: 2px solid black;
+  cursor: pointer;
+  display: inline-block;
+  padding: .25em .5em;
+}
+
+details.modal summary::-webkit-details-marker {
+  display: none;
+}
+
+details.modal summary::before {
+  content: "Open";
+  display: inline-block;
+  padding-right: .25em;
+}
+
+details[open].modal summary::before {
+  content: "Close";
+}
+
+details[open].modal {
+  overflow: auto;
+  padding: 1em;
+  position: fixed;
+  z-index: 10;
+}
+
+details[open].modal,
+details[open].modal::after {
+  bottom: 10vh;
+  bottom: var(--gutter-vertical);
+  left: 10vw;
+  left: var(--gutter-horizontal);
+  right: 10vw;
+  right: var(--gutter-horizontal);
+  top: 10vh;
+  top: var(--gutter-vertical);
+}
+
+details[open].modal::before,
+details[open].modal::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+}
+  
+details[open].modal::before {
+  background: rgba(0, 0, 0, .75);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+details[open].modal::after {
+  background: #fff;
+}
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
