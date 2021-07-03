@@ -1,0 +1,56 @@
+<h1>Google Spreadsheet to JSON Converter</h1>
+<p>It's pretty useful to be able to get data from a Google Spreasheet as JSON, however it takes a bit of messing around with the URL to do so. This little converter should help.</p>
+<p>The best part is that this tool handles mutiple sheets, returning the right sheet ID for whichever is specified in the URL</p>
+<div ng-app="app">
+  <div ng-controller="controller">
+    <h2>Enter Your Google Spreadsheet URL here</h2>
+    <small><a href="https://support.google.com/docs/answer/37579?hl=en" target="_blank">Make sure it's published to the web <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+</a></small>
+    <form ng-submit="getGoogleJSON(inputURL)">
+      <input type="text" ng-model="inputURL" />
+      <input class="btn btn-lg btn-success" type="submit" />
+    </form>
+    <span class="error">{{error}}</span>
+    <div class="result" ng-show="newURL">
+      <h3>Your new URL is:</h3>
+      <code>{{newURL}}</code><br>
+      <small><a ng-href="{{newURL}}" target="_blank">Open URL <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+</a></small>
+
+
+      <h3>Usage</h3>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#jquery" class="active" aria-controls="jquery" role="tab" data-toggle="tab">JQuery</a></li>
+        <li role="presentation"><a href="#angular" aria-controls="angular" role="tab" data-toggle="tab">AngularJS</a></li>
+        <li role="presentation"><a href="#json" aria-controls="json" role="tab" data-toggle="tab">JSON Response</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="jquery">
+          <pre><code>
+        $.get('{{newURL}}', function(data){
+          var entries = data.feed.entry;
+          
+          $(entries).each(function(){
+            // Do something with each entry
+          });
+        });
+      </code></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="angular">
+          <pre><code>
+        $http.get('{{newURL}}').then(function(response){
+          // Assign data to scope
+          $scope.data = response.data;
+        });
+      </code></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="json">
+          <pre>{{JSONData | json}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
