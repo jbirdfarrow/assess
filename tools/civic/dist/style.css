@@ -1,0 +1,10 @@
+form > div { margin: 0 0 10px; }
+label { display: inline-block; width: 100px; }
+#execute { }
+#response,
+#response * { box-sizing: border-box; font-family: Arial, sans-serif; }
+#response { padding: 20px 0; }
+#response .official { float: left; padding: 0 20px 20px 0; width: 10%; }
+#response .official:nth-child(10n + 1) { clear: left; }
+#response .official img { display: block; width: 100%; margin: 0 0 10px; }
+#response .official h3 { }
