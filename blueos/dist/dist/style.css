@@ -1,0 +1,107 @@
+body
+{
+	background-image:url("https://firebasestorage.googleapis.com/v0/b/glide-prod.appspot.com/o/icon-images%2Fanonymous-bd10a394-3503-4356-b9d4-06c311f24f91.jpg?alt=media&token=25abc3e7-e407-42b8-a4b0-a65cb6ae3167");
+	background-repeat:no-repeat;
+	background-size:100% 843px;
+	margin:0px;
+	padding:0px;
+}
+.header
+{
+	text-align:center;
+  margin-bottom:10px;
+}
+.orange
+{
+	color:orange;
+}
+.white
+{
+	color:white;
+}
+.green
+{
+	color:green;
+}
+.webpage
+{
+	width:80vw;
+	height:600px;
+	border:1px solid rgba(0,0,0,0.0);
+	background-color:white;
+	background-image:url("https://firebasestorage.googleapis.com/v0/b/glide-prod.appspot.com/o/icon-images%2Fanonymous-bd10a394-3503-4356-b9d4-06c311f24f91.jpg?alt=media&token=25abc3e7-e407-42b8-a4b0-a65cb6ae3167");
+	background-repeat:no-repeat;
+	background-size:1000px 600px;
+}
+.webframe
+{
+	width:80vw;
+	height:500px;
+	border:1px solid rgba(0,0,0,0.0);
+	background-color:white;
+	margin-left:auto;
+  margin-right:auto;
+  margin-top:0px;
+  margin-bottom:0px;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,100);
+  -webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,100);
+  -moz-box-shadow:0px 0px 5px 0px rgba(0,0,0,100);
+  -o-box-shadow:0px 0px 5px 0px rgba(0,0,0,100);
+}
+.menu
+{
+	width:100%;
+	height:40px;
+	position:fixed;
+	bottom:0px;
+	background-color:#F2F2F2;
+	box-shadow:0px 0px 5px 0px rgba(0,0,0,100);
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+ul
+{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+	
+}
+ul li
+{
+	float:left;
+	width:auto;
+	height:40px;
+	position:relative;
+}
+ul li a
+{
+	display:block;
+	width:auto;
+	height:40px;
+	font-size:16px;
+	font-family:sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	line-height:40px;
+	color:#000000;
+	padding-left:18px;
+	padding-right:18px;
+	text-align:center;
+}
+span.line
+{
+	color:#000000;
+	font-size:30px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:auto;
+	height:40px;
+}
+ul li a:hover
+{
+	text-decoration:underline;
+	color:#400040;
+}
