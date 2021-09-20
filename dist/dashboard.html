@@ -7,7 +7,7 @@
 <style>
   body {background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );}
   iframe.switcher-target {background-image: radial-gradient( circle 489px at 49.3% 46.6%,  rgba(255,214,126,1) 0%, rgba(253,200,0,1) 100.2% ); }
-  select { display: block;color:yellow;font-size:2.5em;background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% ); border:4px solid #ccc;  margin-bottom:20px; margin-top:20px; } /* unimportant */
+  select { display: block;color:yellow;font-size:1.5em;background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% ); border:4px solid #ccc;  margin-bottom:20px; margin-top:20px; } /* unimportant */
 .iframe-container { overflow: hidden; position: relative;} .iframe-container iframe { top: 0; border:4px solid #ccc; width: 80%; height: 900px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-bottom:20px; margin-top:20px; }
   </style>
 </head>
@@ -29,6 +29,23 @@
 
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
-
+<script>
+    (function (w,d,s,o,f,js,fjs) {
+        w['Feedback-Lane-JS-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+    }(window, document, 'script', 'feedbacklane', 'https://feedbacklane.com/static/widget.js?id=a422b3cd-f4f2-42b0-8cf7-5c63135852cc'));
+    feedbacklane('init', { id: 'a422b3cd-f4f2-42b0-8cf7-5c63135852cc',
+                           target: '.feedback-lane-trigger',
+                           /*
+                           //Optionally track logged in users here:
+                           data: {
+                               email: "tim.sandberg@applebook.com",
+                               name: "Tim Sandberg",
+                               company: "Applebook Ltd"
+                           }
+                           */
+                         });
+</script>
 </body>
 </html>
