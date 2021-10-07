@@ -36,7 +36,7 @@ addStyle('html{transition:.5s ease-in;-webkit-transition:.5s ease-in;-moz-transi
 #donate-element-donate-js img:hover {opacity:.85;}');
 
 donateButton.textContent = 'Donate';
-donateText.innerHTML = 'Help the community stay live!.donate ' + donateButton.outerHTML + ' through PayPal.';
+donateText.innerHTML = 'Help the community stay live donate ' + donateButton.outerHTML + ' through PayPal.';
 
 donateElement.addEventListener('click', function(event) {
     if(!(event.x >= donateElement.offsetWidth - 62)) {
