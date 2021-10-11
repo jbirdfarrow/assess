@@ -1,18 +1,101 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-</head>
+<style>
+  body {background: transparent;}
+.swing {
+    -moz-animation: swing linear 4s infinite;
+    -moz-transform-origin: center -20px 0;
+    -webkit-animation: swing linear 4s infinite;
+    -webkit-transform-origin: center -20px 0;
+    -ms-animation: swing linear 10s infinite;
+    -ms-transform-origin: center -20px 0;
+    -o-animation: swing linear 10s infinite;
+    -o-transform-origin:center -20px 0;
+    animation: swing linear 10s infinite;
+    transform-origin: center -20px 0;
+    display: block;
+    float:left;
+    
+}
+.swing img {
+    border: 0px solid #f8f8f8;
+    z-index: 2;
+    display: block;
+}
+.swing:after{
+    content: '';
+    border: 0px solid #999;
+    top: -10px;
+    z-index: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-bottom: none;
+    border-right: none;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+}
+.swing:before{
+    content: '';
+    top: -14px;
+    z-index: 5;
+    left: 54%;
+    width: 5px;
+    border-radius: 50% 50%;
+    background: #000;
+    height: 5px;
+    position: absolute;
+}
+
+@-moz-keyframes swing { 
+    0% { -moz-transform: rotate(0deg) }
+    25% { -moz-transform: rotate(3deg); }
+    50% { -moz-transform: rotate(0deg); }
+    75% { -moz-transform: rotate(-3deg); }
+    100% { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes swing { 
+    0% { -webkit-transform: rotate(0deg); }
+    25% { -webkit-transform: rotate(3deg); }
+    50% { -webkit-transform: rotate(0deg); }
+    75% { -webkit-transform: rotate(-3deg); }
+    100% { -webkit-transform: rotate(0deg); }
+}    
+@-o-keyframes swing { 
+    0% { -o-transform: rotate(0deg); }
+    25% { -o-transform: rotate(3deg); }
+    50% { -o-transform: rotate(0deg); }
+    75% { -o-transform: rotate(-3deg); }
+    100% { -o-transform: rotate(0deg); }
+}
+@-ms-keyframes swing { 
+    0% { -ms-transform: rotate(0deg); }
+    25% { -ms-transform: rotate(3deg); }
+    50% { -ms-transform: rotate(0deg); }
+    75% { -ms-transform: rotate(-3deg); }
+    100% { -ms-transform: rotate(0deg); }
+}
+@keyframes swing { 
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+  
+</style>
 <body>
-  <audio autoplay>
-    <source src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original">
-  </audio>
-<script type="text/javascript"><!--
-var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
-var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
-document.write(fc2footertag);
-//--></script>
-<!-- FC2, inc.-->
-<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
-<!-- FC2, inc.-->
-</body>
-</html>
+
+    <script>
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+   </script>
+
+<figure class="swing"><img src="https://storage.ning.com/topology/rest/1.0/file/get/9652432252?profile=RESIZE_584x" value="PLAY"  onclick="play()">
+<audio id="audio" src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" ></audio></figure>
+ </body>
