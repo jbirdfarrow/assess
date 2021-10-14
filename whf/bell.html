@@ -1,9 +1,63 @@
 <head>
   <Title>Ring the World Harmony Bell</Title>
 <style>
-  body {background-image: url("https://images.unsplash.com/photo-1594492691731-3d7974140624?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80"); 
+  body {background: transparent;}
+  #countButton{
+  padding: 5px 5px;
+}
+#resetButton{
+  padding: 5px 5px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  min-height: 100vh;
+}
+html {background-image: url("https://images.unsplash.com/photo-1594492691731-3d7974140624?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80"); 
 background-size: cover;
 background-position: center center;}
+.btn {
+  background-color: #fa8072;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25em;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 1em 2em;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #f97263;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 50, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  outline:0;
+}
+
+.btn:focus-visible {
+  outline:2px solid #f97263;
+  outline-offset: 5px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 12px -2px inset rgba(50, 50, 50, 0.25);
+}
 .swing {
     -moz-animation: swing linear 4s infinite;
     -moz-transform-origin: center -20px 0;
@@ -91,16 +145,13 @@ background-position: center center;}
 
   
 </style>
-</head>
-<body>
-
-    <script>
-  function play(){
-       var audio = document.getElementById("audio");
-       audio.play();
-                 }
-   </script>
-
 <figure class="swing"><img src="https://storage.ning.com/topology/rest/1.0/file/get/9652432252?profile=RESIZE_584x" value="PLAY"  onclick="play()">
-<audio id="audio" src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" ></audio></figure>
- </body>
+<div>
+<input type="button" class="btn js-confetti" value="CLICK HERE" id="countButton" />
+Harmony Bell was rung - <span id="displayCount">0</span> - times. 
+<input type="button" value="♻️" id="resetButton" />
+  <audio src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" id="sound" preload="auto" hidden></audio>
+</div>
+  
+  <script src="https://gist.githubusercontent.com/bluecommunitysustainability/c8a73d2d77a539c9869937364a7455bf/raw/ac35fd96a8d8a434571d26e94805a000660b529f/script.js"></script>
+  <script src="https://bluecommunitysustainability.github.io/assessment/whf/confetti.js"></script>
