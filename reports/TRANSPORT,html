@@ -1,0 +1,228 @@
+<p><strong>Data for {{Geography}} submitted via Blue Community Assessment App</strong></p>
+<p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+<p><span style="font-weight: 400;">Blue Community Assessment</span></p>
+<p><strong>{{About Section}}</strong></p>
+<p><span style="font-weight: 400;">{{Geography}}</span></p>
+<h1><span style="font-weight: 400;">{{Icon}}</span></h1>
+<h2><strong>TRANSPORTATION</strong></h2>
+<p>&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Cover</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{Cover}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>About this Section</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{About this Section}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>89. What is the total number of people who use mass transit each year?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{89. What is the total number of people who use mass transit each year?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>89a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{89a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>89b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{89b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>90. How many kilometers of dedicated bike TRAILS are in the destination?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{90. How many kilometers of dedicated bike TRAILS are in the destination?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>90a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{90a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>90b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{90b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>91. How many kilometers of designated bike lanes are in the community?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{91. How many kilometers of designated bike lanes are in the community?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>91a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{91a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>91b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{91b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>92. How many kilometers of of pedestrian trails are in the community?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{92. How many kilometers of of pedestrian trails are in the community?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>92a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{92a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>92b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{92b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>93. What is the number of vehicles owned and operated within the Community?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{93. What is the number of vehicles owned and operated within the Community?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>93a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{93a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>93b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{93b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>94. What is the number of hybrid, electric, or energy efficient vehicles owned and operated in the community?</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{94. What is the number of hybrid, electric, or energy efficient vehicles owned and operated in the community?}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>94a. 🔢</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{94a. 🔢}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>94b. 🔗Source</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{94b. 🔗Source}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>95. Reference Images for this Section</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{95. Reference Images for this Section</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>95a. 📸</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{95a. 📸}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>95b. 📸</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{95b. 📸}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>95c. 📸</strong></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{95c. 📸}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Last Edited</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{Last Edited}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Last Edited By</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{Last Edited By}}</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Notes for Stakeholders</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">{{Notes for Stakeholders}}</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
