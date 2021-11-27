@@ -1,0 +1,245 @@
+<br style="display:none">
+<!-- 
+====================================
+  Begin TabTop IndexCardFlexTabs	
+====================================
+-->
+
+<style>
+/* TabTop IndexCards styles */
+/* all styles are > limited to avoid styling inner content */
+
+/* sizes */
+.tabholder_612 { width:100%; height:86.14em; font-size:16px; } /* base font size for em-scaling */
+.tabholder_612 div.tabtops { width:100%; max-width:800px; }
+.tabholder_612 ul.tabtops > li { height:1.76em; } /* ( 1.76em = 1.1em x 1.6em @ h2 sizes ) */
+.tabholder_612 ul.tabtops > li > div { height:84.38em; top:1.76em; }
+.tabholder_612 ul.tabtops > li > label > h2 { font-size:1.1em; line-height:1.6em; } 
+.tabholder_612 ul.tabtops > li > div > div { font-size:.9em; }
+
+/* colors, fonts, and decoration */
+.tabholder_612 { font-family:arial; }
+.tabholder_612 ul.tabtops > li { }
+.tabholder_612 ul.tabtops > li > label > h2 { /* inactive tab tops */
+	background-color:#524FB4; 
+	color:#FFFFFF; 
+	border: 1px solid #3A3981;   
+	border-bottom:0;
+	border-radius:32px 32px 0 0;
+	text-align:center;  
+	font-weight:bold;
+	} 
+.tabholder_612 ul.tabtops > li > label:hover > h2 { /* hover tab top */
+	background-color:#5A57C5; 
+	color:#aaa; 
+	}
+.tabholder_612 ul.tabtops > li > input:checked + label > h2 { /* select active tab */
+	background-color:#625FD7; 
+	color:#FFFFFF; 
+	z-index:3;
+	}
+.tabholder_612 ul.tabtops > li > input:checked:hover + label > h2 { /* hover active tab */
+	background-color:#625FD7; 
+	color:#aaa; 
+	z-index:3;
+	}
+.tabholder_612 ul.tabtops > li > div  {  /* set content background */
+	background-color:#625FD7; 
+	border: 1px solid #3A3981;
+	}
+.tabholder_612 ul.tabtops > li > div > div  { /* set content text attributes */
+	color:#FFFFFF;
+ 	line-height:125%;
+	font-weight:normal;
+	text-align:left;
+	}
+
+
+/* structure */
+.tabholder_612 .tab1 ul.tabtops > li { width:100%; }
+.tabholder_612 .tab2 ul.tabtops > li { width:49.75%; }
+.tabholder_612 .tab3 ul.tabtops > li { width:33%; }
+.tabholder_612 .tab4 ul.tabtops > li { width:24.62%; }
+.tabholder_612 .tab5 ul.tabtops > li { width:19.6%; }
+.tabholder_612 .tab6 ul.tabtops > li { width:16.25%; }
+.tabholder_612 .tab7 ul.tabtops > li { width:13.85%; }
+.tabholder_612 .tab8 ul.tabtops > li { width:12.06%; }
+.tabholder_612 ul.tabtops > li { margin-right:0.5%; }
+.tabholder_612 ul.tabtops > li:last-child { margin-right:0%; } 
+
+.tabholder_612 {
+	position:relative; 
+	padding:0;
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+	}
+.tabholder_612 div.tabtops { 
+	position:relative;
+	height:100%; 
+	margin:auto; 
+	}
+.tabholder_612 ul.tabtops{
+	position:absolute;
+	width:100%; 
+	height:auto; 
+	top:0px;
+	left:0px;
+	margin:0px; 
+	padding:0px;
+	}
+.tabholder_612 ul.tabtops > li { 
+	list-style:none;
+	float:left; 
+	margin-left:0;
+	text-align:center;
+	}
+
+.tabholder_612 ul.tabtops > li > input { /* hide radio elements */ 
+	visibility:hidden; 
+	position:absolute; 
+	top:1em; 
+	left:2em; 
+	}
+.tabholder_612 ul.tabtops > li > label {
+	margin:0; padding:0; border:0;
+	}
+.tabholder_612 ul.tabtops > li > label > h2 {
+	position:relative; 
+	display:block;
+	height:100%; 
+	margin:0px; 
+	padding:0px;
+	overflow:hidden;
+	cursor:pointer;
+	z-index:1; 
+	}
+.tabholder_612 ul.tabtops > li > div {  /* for border and scroller */
+	position:absolute; 
+	left:0px;
+	right:0px;
+	bottom:0px;
+	margin:0px; 
+	padding:0px;
+	overflow:auto;
+	display:none;
+	z-index:2; 
+	}
+.tabholder_612 ul.tabtops > li > div > div { /* the content */
+	position:relative; 
+	top:0; left:0; 
+	width:auto;
+	height:auto;
+	max-height:none;
+	overflow:visible;
+	margin:.8em;
+	}
+
+.tabholder_612 ul.tabtops > li > input:checked ~ div  {
+	        display: block;
+	}
+
+@media(max-width:480px){
+.tabholder_612 .tab1 ul.tabtops > li, 
+.tabholder_612 .tab2 ul.tabtops > li, 
+.tabholder_612 .tab3 ul.tabtops > li, 
+.tabholder_612 .tab4 ul.tabtops > li, 
+.tabholder_612 .tab5 ul.tabtops > li, 
+.tabholder_612 .tab6 ul.tabtops > li, 
+.tabholder_612 .tab7 ul.tabtops > li, 
+.tabholder_612 .tab8 ul.tabtops > li { width:100%; margin-right:0; position:relative; clear:both; float:none; }
+
+/* remove all hover states and create drop open sections */
+.tabholder_612 { height:auto;  }
+.tabholder_612 div.tabtops { width:100%; max-width:none; height:auto; }
+.tabholder_612 ul.tabtops { position:relative; }
+.tabholder_612 ul.tabtops > li { height:auto; margin-top:1px; }
+.tabholder_612 ul.tabtops > li > div { height:auto; top:0em; }
+
+.tabholder_612 div.tabtops ul.tabtops > li > label > h2 { position:relative; height:1.76em; }  /* height if no doctype */
+.tabholder_612 div.tabtops ul.tabtops > li > div { position:relative; display:none; }
+.tabholder_612 div.tabtops ul.tabtops > li > div > div { overflow:visible; }
+
+.tabholder_612 ul.tabtops > li > input:checked + label > h2 { /* select active tab */
+	background-color:#524FB4; 
+	color:#FFFFFF; 
+	z-index:3;
+	}
+.tabholder_612 ul.tabtops > li > input:checked:hover + label > h2 { /* hover active tab */
+	background-color:#524FB4; 
+	color:#aaa; 
+	}
+.tabholder_612 ul.tabtops > li > input:checked ~ div  { /* open content */
+	display: block;
+	overflow:hidden;
+	animation-name: rollopen_612;
+	animation-duration: 1s;
+	}
+}
+/* animation code */
+@keyframes rollopen_612{
+	from { height:0px; }
+	to { height:300px; }
+}
+</style>
+<!--[if lt ie 8]>
+<style>
+/* lower browser versions can not display tabs */
+.tabholder_612 { height:auto; }
+.tabholder_612 ul.tabtops { position:relative }
+.tabholder_612 ul.tabtops h2 { margin:auto; }
+.tabholder ul.tabtops input { display:none; }
+</style>
+<![endif]-->
+
+
+<!-- begin TabTop terms -->
+<div class="tabholder_612" >
+<div class="tabtops tab6" ><!-- number of tabs -->
+<ul class="tabtops" >
+
+<li><input id="tabtop1_612" type="radio" name="tabset_612" checked >
+<label for="tabtop1_612"><h2>📇</h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=968jf5vt127v7s0" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+<li><input id="tabtop2_612" type="radio" name="tabset_612" >
+<label for="tabtop2_612"><h2>⚙️ </h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=1556vkqaip68ow0" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+<li><input id="tabtop3_612" type="radio" name="tabset_612" >
+<label for="tabtop3_612"><h2>😎</h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=471axfr3n2pz800" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+<li><input id="tabtop4_612" type="radio" name="tabset_612" >
+<label for="tabtop4_612"><h2>🧲</h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=127wlia16g4hio0" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+<li><input id="tabtop5_612" type="radio" name="tabset_612" >
+<label for="tabtop5_612"><h2>💹</h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=12989z4i5bkap40" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+<li><input id="tabtop6_612" type="radio" name="tabset_612" >
+<label for="tabtop6_612"><h2>🏖️</h2></label>
+<div><div>
+<div id="chartmat-container" style="overflow:hidden; display:static; height:100vh; width:100vw;"> <iframe src="https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&block_id=274hyot9k21d480" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+</div></div></li>
+
+</ul>
+</div>
+</div>
+
+<!-- 
+====================================
+  End TabTop IndexCardFlexTabs	
+  https://www.isdntek.com/csstools/	
+====================================
+-->
