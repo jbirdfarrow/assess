@@ -7,44 +7,134 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <div class="sidenav" id="animate">
+ 
   <a href="https://bluecommunitysustainability.github.io/assessment/dist/questions.html" target="load">Assessment Questions</a>
   <a href="https://bluecommunitysustainability.github.io/assessment/dist/dashboard.html" target="load">Assessor Dashboard</a>
   <a href="https://bluecommunity.chartmat.app/stakeholders" target="load">Stakeholder Dashboard</a>
  
-  <table style="width: 100%;" >
+  <table style="width: 60%;" >
 <tbody>
 <tr>
-<td> <a href="#contact" target="load">📇</a>
-  <a href="#contact" target="load">⚙️</a>
-  <a href="#contact" target="load">😎</a>
-  <a href="#contact" target="load">🧲</a>
-  <a href="#contact" target="load">💹</a>
-  <a href="#contact" target="load">🏖️</a>
-  <a href="#contact" target="load">🍛</a>
-  <a href="#contact" target="load">☀️</a>
-  <a href="#contact" target="load">💧</a>
-  <a href="#contact" target="load">♻️</a></td>
-<td> <a href="#contact" target="load">🌄</a>
-  <a href="#contact" target="load">🏗️</a>
-  <a href="#contact" target="load">🚇</a>
-  <a href="#contact" target="load">🍼</a>
-  <a href="#contact" target="load">🌿</a>
-  <a href="#contact" target="load">🦐</a>
-  <a href="#contact" target="load">🏞️</a>
-  <a href="#contact" target="load">⛵</a>
-  <a href="#contact" target="load">🏫</a>
-  <a href="#contact" target="load">🌎</a></td>
-</tr>
+<td> <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=📇" target="load">📇</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⚙️" target="load">⚙️</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=😎" target="load">😎</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🧲" target="load">🧲</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💹" target="load">💹</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏖️" target="load">🏖️</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍛" target="load">🍛</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=☀️" target="load">☀️</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💧" target="load">💧</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=♻️" target="load">♻️</a></td>
+<td> <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌄" target="load">🌄</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=️🏗️" target="load">🏗️</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🚇" target="load">🚇</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍼" target="load">🍼</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌿" target="load">🌿</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🦐" target="load">🦐</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏞️" target="load">🏞️</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⛵" target="load">⛵</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏫" target="load">🏫</a>
+  <a style="font-size:2em;" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌎" target="load">🌎</a>
 </tbody>
-</table>
+</table></td>
+</tr>
     <!-- DivTable.com -->
 </div>
 
 <div class="frameContainer">
     <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
 </div>
+
+<script>
+  var sidebarState = sessionStorage.getItem('sidebarState');
+
+windowWidth = $(window).width();
+
+$(window).resize(function() {
+  windowWidth = $(window).width();
+
+  if( windowWidth < 992 ){ //992 is the value of $screen-md-min in boostrap variables.scss
+        $('#main-section').removeClass('sidebar-expanded').addClass('sidebar-collapsed');
+        $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+    }
+    else{
+        if(sidebarState){
+            $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+        }
+    }
+});
+function setSidebarState(value){
+    sessionStorage.setItem('sidebarState', value);
+}
+
+function clearSidebarState(){
+    sessionStorage.removeItem('sidebarState');
+}
+
+function collapseSidebar(){
+    $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded');
+    $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+}
+
+function expandSidebar(){
+    $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed');
+    $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+}
+
+$(function(){
+
+    console.log(windowWidth);
+
+    /** check sessionStorage to expand/collapse sidebar onload **/
+
+
+    if (sidebarState == "collapsed"){
+        collapseSidebar();
+    }
+    else{
+
+
+
+        if( windowWidth < 992 ){ //992 is the value of $screen-md-min in boostrap variables.scss
+            $('#main-section').removeClass('sidebar-expanded').addClass('sidebar-collapsed');
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            if(sidebarState){
+            $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+        }
+        }
+        
+    }
+
+    
+
+
+    /** collapse the sidebar navigation **/    
+    $('#collapse-nav').click(function(){
+        if ( !($('#main-section').hasClass('sidebar-collapsed')) ) { // if sidebar is not yet collapsed
+            collapseSidebar();
+            setSidebarState('collapsed');
+        }
+        else{
+            expandSidebar();
+            clearSidebarState();
+        }
+        return false;
+    })
+})
+</script>
 <!-- partial -->
   <script  src="./script.js"></script>
 
