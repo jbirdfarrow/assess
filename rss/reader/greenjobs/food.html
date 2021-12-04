@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Green Jobs and Food Sustainability Jobs - Blue Community</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel='stylesheet' href='https://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--[if lte IE 9]>
+<html lang="en" class="oldie">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>  
+  
+    <title>RSS News Surveyors</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900,400italic,700italic' rel='stylesheet'>
+
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bluecommfla">
+  <meta name="twitter:title" content="Green Jobs Feed - Blue Community">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://s3hellobox.s3.ap-southeast-2.amazonaws.com/production/10824/1980/1980-greenjobs-1-min-1638586210.png">
+  <meta property="og:image" content="https://codepen.io/deadflowers/pen/BwzKjm/image/large.png" itemprop="thumbnailUrl">
+  <meta property="og:title" content="Green Jobs Feed - Blue Community">
+  <meta property="og:url" content="https://jobs.bluecommunity.info">
+  <meta property="og:site_name" content="Green Jobs Feed - Blue Community">
+  <meta property="og:description" content="">
+  <link rel="alternate" type="application/json+oembed"
+  href="https://codepen.io/api/oembed?url=https://jobs.bluecommunity.info"
+  title="RSS News Reader Jquery Mobile" />
+ <script async src="//www.google-analytics.com/analytics.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel='stylesheet prefetch' href='https://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css'>
+
+      <style>
+      .ui-footer .ui-btn-right {
+}
+.articleContent > table > tbody > tr > td > font > br {
+  display: none;
+}
+.articleContent > table > tbody > tr > td > font > br + div {
+  display: none;
+}
+.articleContent * {
+  font-size: medium !important;
+}
+.ui-footer .ui-btn-right {background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% )!important;
+}
+.articleContent > table > tbody > tr > td > font > br {
+  display: none;
+}
+.articleContent > table > tbody > tr > td > font > br + div {
+  display: none;
+}
+.articleContent * {
+  font-size: medium !important;
+}
+.ui-header {background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% )!important;}
+    </style>
+
+  <script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+ 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.js'></script>
+
+</head>
+
+<body translate="no" >
+
+    <script >
+/* configuration */
+var maxLength = 30;
+/* writing HTML */
+document.write(
+  '<div data-role="page" id="list">' +
+  '  <div data-role="header" data-position="fixed">' +
+  '    <h1><span id="widgetTitle">...</span> ' +
+  '      <span style="font-size: x-small">(Feed)</span></h1>' +
+  '  </div>' +
+  '  <div data-role="content">' +
+  '    <ul data-role="listview" data-filter="true" id="articleList">'
+);
+for(var i=1; i<=maxLength; i++){
+  document.write(
+    '<li id="list' + i + '"><a href="#article' + i + '" id="link' + i + '">&nbsp;</a></li>'
+  );
+}
+document.write(
+  '    </ul>' +
+  '  </div>' +
+  '</div>'
+);
+for(i=1; i<=maxLength; i++){
+  document.write(
+    '<div data-role="page" id="article' + i + '">' +
+    '  <div data-role="header" data-position="inline">' +
+    '    <a href="#list" data-role="button" data-icon="home" data-back="true">Home</a>' +
+    '    <h1 id="articleHeader' + i + '">&nbsp;</h1>' +
+    '    <a href="#" id="openButton' + i + '" data-role="button" data-icon="plus"' +
+    '      class="ui-btn-right" rel="external">Open</a>' +
+    '  </div>' +
+    '  <div data-role="content">' +
+    '    <div id="articleContent' + i + '" class="articleContent"></div>' +
+    '    <div data-role="controlgroup" data-type="horizontal">' +
+    '      <a href="#article' + String(i-1) + '" data-role="button" data-icon="arrow-l"' +
+    '        data-inline="true" class="prevButton">Prev</a>' +
+    '      <a href="#article' + String(i+1) + '" data-role="button" data-icon="arrow-r"' +
+    '        data-inline="true" class="nextButton" data-iconpos="right">Next</a>' +
+    '    </div>' +
+    '  </div>' +
+    '</div>'
+  );
+}
+/* JSONP */
+$(function(){
+ getOnlineFeed('https://jobs.bluecommunity.info/feed/6587');
+ 
+});
+/* functions */
+var listEntries = function(json) {
+  if (!json.responseData.feed.entries) return false;
+  $('#widgetTitle').text(json.responseData.feed.title);
+  var articleLength =json.responseData.feed.entries.length;
+  articleLength = (articleLength > maxLength) ? maxLength : articleLength;
+  for (var i = 1; i <= articleLength ; i++) {
+    var entry = json.responseData.feed.entries[i-1];
+    $('#link' + i).text(entry.title);
+    $('#articleHeader' + i).text(entry.title);
+    $('#openButton' + i).attr('href', entry.link);
+    $('#articleContent' + i).append(entry.content);
+  }
+  $('#article1 .prevButton').remove();
+  $('#article' + articleLength + ' .nextButton').remove();
+  if (articleLength < maxLength) {
+    for (i = articleLength + 1; i <= maxLength; i++) {
+      $('#list' + i).remove();
+      $('#article' + i).remove();
+    }
+  }
+};
+var getOnlineFeed = function(url) {
+  var script = document.createElement('script');
+  script.setAttribute('src', 'https://feedsme.herokuapp.com/?v=2.0&callback=listEntries&q='+ encodeURIComponent(url) + '&num=' + maxLength);
+  script.setAttribute('type', 'text/javascript');
+  document.documentElement.firstChild.appendChild(script);
+};
+var getOfflineFeed = function(url) {
+  var script = document.createElement('script');
+  script.setAttribute('src', url);
+  script.setAttribute('type', 'text/javascript');
+  document.documentElement.firstChild.appendChild(script);
+};
+
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js'></script>
+</body>
+</html>
