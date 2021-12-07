@@ -1,3 +1,5 @@
+<head>
+<title>Destination Contact Information</title>
 <style>
 :root {
   --gutter-horizontal: 10vw;
@@ -80,6 +82,7 @@ details[open].modal::after {
 }
 .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 </style>
+</head>
 <!--- Replace the data-stein-url value with your API URL --->
 <div
   data-stein-url="https://api.steinhq.com/v1/storages/61abf90c8d29ba23790a897f/📇?limit=1&offset=2"
@@ -121,3 +124,17 @@ details[open].modal::after {
  <tr><td>{{📇Notes for Stakeholders}}</td></tr>
 </tbody></table></details>
 </div>
+
+<script src="https://unpkg.com/stein-js-client"></script>
+<script>
+  const store = new SteinStore(
+    "https://api.steinhq.com/v1/storages/61abf90c8d29ba23790a897f/📇?limit=1&offset=2"
+  );
+
+  store.read("Sheet1", { limit: 1, offset: 2 }).then(data => {
+    console.log(data);
+  });
+
+  // Logs ↓ (trimmed for brevity)
+  // [{"title":"Why the Best Things in Life Can’t Be Planned","content":"Thales of Miletus, considered ...","link":"https://medium.com/...","author":"Zat Rana"}, {...}, ...]
+</script>
