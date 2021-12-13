@@ -1,0 +1,61 @@
+body {
+  background-color: #333;
+  background: -moz-linear-gradient(left, #222222 0%, #777777 50%, #222222 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#222222), color-stop(50%,#777777), color-stop(100%,#222222));
+background: -webkit-linear-gradient(left, #222222 0%,#777777 50%,#222222 100%);
+background: -o-linear-gradient(left, #222222 0%,#777777 50%,#222222 100%);
+background: -ms-linear-gradient(left, #222222 0%,#777777 50%,#222222 100%);
+background: linear-gradient(to right, #222222 0%,#777777 50%,#222222 100%);
+  font: normal 14px sans-serif;
+  color: #222;
+  }
+.wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+  }
+.item {
+  position: relative;
+  padding: 10px 10px 0 70px;
+  margin: 20px;
+  color: #FFF;
+  text-shadow: 0 1px 1px rgba(0,0,0,.9);
+  border-radius: 3px;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  -webkit-box-shadow: 0 9px 9px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 9px 9px rgba(0,0,0,.5);
+  -ms-box-shadow: 0 9px 9px rgba(0,0,0,.5);
+  -o-box-shadow: 0 9px 9px rgba(0,0,0,.5);
+  box-shadow: 0 9px 9px rgba(0,0,0,.5);
+  }
+.item.top {
+  -webkit-transform: rotateX(-15deg) scale(.98, .93);
+  -moz-transform: rotateX(-15deg) scale(.98, .93);
+  -ms-transform: rotateX(-15deg) scale(.98, .93);
+  -o-transform: rotateX(-15deg) scale(.98, .93);
+  transform: rotateX(-15deg) scale(.98, .93);
+  }
+.item.bottom {
+  -webkit-transform: rotateX(15deg) scale(.98, .93);
+  -moz-transform: rotateX(15deg) scale(.98, .93);
+  -ms-transform: rotateX(15deg) scale(.98, .93);
+  -o-transform: rotateX(15deg) scale(.98, .93);
+  transform: rotateX(15deg) scale(.98, .93);
+  }
+.item img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: 1px solid rgba(255,255,255,.7);
+  }
+.item p {
+  padding-bottom: 10px;
+  margin: 0;
+  }
