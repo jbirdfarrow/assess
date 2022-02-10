@@ -152,6 +152,19 @@ Harmony Bell was rung - <span id="displayCount">0</span> - times.
 <input type="button" value="♻️" id="resetButton" />
   <audio src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" id="sound" preload="auto" hidden></audio>
 </div>
+  <script>
+    var count = 0;
+var countButton = document.getElementById("countButton");
+var displayCount = document.getElementById("displayCount");
+countButton.onclick = function(){
+  count++;
+  displayCount.innerHTML = count;
+}
+resetButton.onclick = function(){
+  count = 0;
+  displayCount.innerHTML = count;
+}
+  </script>
   
   <script src="https://gist.githubusercontent.com/bluecommunitysustainability/c8a73d2d77a539c9869937364a7455bf/raw/ac35fd96a8d8a434571d26e94805a000660b529f/script.js"></script>
   <script src="https://bluecommunitysustainability.github.io/assessment/whf/confetti.js"></script>
