@@ -1,5 +1,7 @@
 <head>
   <Title>Ring the World Harmony Bell</Title>
+   <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
 <style>
   body {background: transparent;}
   #countButton{
@@ -145,6 +147,10 @@ background-position: center center;}
 div.text {background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );border-radius:10px;}
   
 </style>
+  <body>
+   <center> <script language="Javascript"> 
+	document.write("Welcome to our visitors from "+geoplugin_city()+", "+geoplugin_countryName()); 
+     </script></center>
 <figure class="swing"><img src="https://storage.ning.com/topology/rest/1.0/file/get/9652432252?profile=RESIZE_584x" value="PLAY"  onclick="play()">
 <div class="text">
 <input type="button" class="btn js-confetti" value="CLICK HERE" id="countButton" />
@@ -165,6 +171,6 @@ resetButton.onclick = function(){
   displayCount.innerHTML = count;
 }
   </script>
-  
+  </body>
   <script src="https://gist.githubusercontent.com/bluecommunitysustainability/c8a73d2d77a539c9869937364a7455bf/raw/ac35fd96a8d8a434571d26e94805a000660b529f/script.js"></script>
   <script src="https://bluecommunitysustainability.github.io/assessment/whf/confetti.js"></script>
