@@ -171,14 +171,16 @@ src="bellwhf_o3aoin_c_scale,w_433.png"
  value="PLAY"  onclick="play()" alt="World Harmony Bell">
 <div class="text">
 <input type="button" class="btn js-confetti" value="👉️ RING" id="countButton" />
-Harmony Bell rang - <span id="displayCount">0</span> - times. 
+Harmony Bell rang - <span id="displayCount">0</span> - times. 	<details><summary>How to help spread harmony</summary>
+		<div><p><script language="Javascript"> 
+	document.write("Welcome to our visitors from "+geoplugin_city()+", "+geoplugin_countryName()); 
+	   </script></p><p>After symbolically and literally ringing the harmony bell today<br> you are joining others all around the world who may <br>very well be ringin the bell with you<br> at the same time.</p>
+		</div>
+	</details>
 <input type="button" value="♻️" id="resetButton" />
   <audio src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" id="sound" preload="auto" hidden></audio>
 </div>
-	<details><summary>How to help spread harmony</summary>
-		<div><p>After symbolically and literally ringing the harmony bell today you are joining others all around the world who may very well be ringin the bell with you.</p>
-		</div>
-	</details>
+
   <script>
     var count = 0;
 var countButton = document.getElementById("countButton");
@@ -192,9 +194,7 @@ resetButton.onclick = function(){
   displayCount.innerHTML = count;
 }
   </script>
-<p><script language="Javascript"> 
-	document.write("Welcome to our visitors from "+geoplugin_city()+", "+geoplugin_countryName()); 
-	   </script></p>
+
   </body>
   <script src="https://gist.githubusercontent.com/bluecommunitysustainability/c8a73d2d77a539c9869937364a7455bf/raw/ac35fd96a8d8a434571d26e94805a000660b529f/script.js"></script>
   <script src="https://bluecommunitysustainability.github.io/assessment/whf/confetti.js"></script>
