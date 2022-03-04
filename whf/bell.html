@@ -139,13 +139,9 @@ details[open].modal::before {
 details[open].modal::after {
   background: #fff;
 }
-	.card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(153, 187, 215, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-}
+
+
+
 .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .frameContainer{
     position: fixed; 
@@ -263,7 +259,7 @@ div.text {background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%
 	   </script></p></center></div>
 <figure class="swing"><img src="Ukraine-bell.png"
  value="PLAY"  onclick="play()" alt="World Harmony Bell">
-<div class="card"><div class="text">
+<div class="text">
 <input type="button" class="btn js-confetti" value="👉️ RING" id="countButton" />
 	Harmony Bell rang <b style="color:#000066"><span id="displayCount">0</span> </b> times. 	<details class="modal"><summary>👁️‍🗨️</summary>
 		<div><p><script language="Javascript"> 
@@ -274,7 +270,7 @@ div.text {background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%
 <input type="button" value="♻️" id="resetButton" />
   <audio src="https://storage.ning.com/topology/rest/1.0/file/get/9642705665?profile=original" id="sound" preload="auto" hidden></audio>
 </div>
-</div>
+
   <script>
     var count = 0;
 var countButton = document.getElementById("countButton");
