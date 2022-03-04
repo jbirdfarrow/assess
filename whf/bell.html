@@ -157,6 +157,31 @@ details[open].modal::after {
     bottom:0px;
     z-index:1;
 }
+#left {
+	border-color: red;
+}
+#left .handle {
+	background-color: red;
+}
+
+#right {
+	border-color: orange;
+	border-width: 5px;
+}
+#right .handle {
+	background-color: orange;
+}
+
+#bottom {
+	border-color: blue;
+}
+#bottom .handle {
+	background-color: blue;
+}
+
+pre {
+	margin-left: 3em;
+}
 
 .main_iframe{
     height: 100%;
@@ -285,7 +310,54 @@ resetButton.onclick = function(){
   displayCount.innerHTML = count;
 }
   </script>
-
+<script>	
+	$(document).ready(function() {
+    
+    var left = $('#left').tabSlideOut({
+      tabLocation: 'left',
+      clickScreenToClose: false,
+      offset: '40px',
+      offsetReverse: true, // offset from bottom, not top
+      // handlers: enable and disable buttons when sliding open or closed
+      onOpen: function(){
+          $('#open').prop('disabled',true);
+          $('#close').prop('disabled',false);
+      },
+      onClose: function(){
+          $('#open').prop('disabled',false);
+          $('#close').prop('disabled',true);
+      }      
+    });
+    
+    $('#right').tabSlideOut({
+      tabLocation: 'right',
+      offsetReverse: true,
+      handleOffsetReverse: true
+    });
+    
+    $('#top').tabSlideOut({
+      tabLocation: 'top',
+      action: 'hover',
+      handleOffsetReverse: true,
+      offsetReverse: true,
+      onLoadSlideOut: true
+    });
+    
+    $('#bottom').tabSlideOut({
+      tabLocation: 'bottom',  
+      action: 'hover',
+      handleOffsetReverse: true,
+			offsetReverse: true,
+      onLoadSlideOut: false
+    });  
+});
+	</script>
+	  
+<div id="bottom"><a class="handle ui-slideouttab-handle-rounded">Live Traffic<i class="fa fa-icon fa-user"></i></a>
+	<p><a href="http://livetrafficfeed.com" data-num="10" data-width="0" data-responsive="1" data-time="America%2FNew_York" data-root="0" data-cheader="2853a8" data-theader="ffffff" data-border="2853a8" data-background="ffffff" data-normal="000000" data-link="135d9e" target="_blank" id="LTF_live_website_visitor">Website Counter</a><script type="text/javascript" src="//cdn.livetrafficfeed.com/static/v4/live.js"></script><noscript><a href="http://livetrafficfeed.com">Website Counter</a></noscript></p>
+</div>
   </body>
   <script src="https://gist.githubusercontent.com/bluecommunitysustainability/c8a73d2d77a539c9869937364a7455bf/raw/ac35fd96a8d8a434571d26e94805a000660b529f/script.js"></script>
   <script src="https://bluecommunitysustainability.github.io/assessment/whf/confetti.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://rawgit.com/hawk-ip/jquery.tabSlideOut.js/master/jquery.tabSlideOut.js"></script>
