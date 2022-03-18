@@ -1,0 +1,736 @@
+<head>
+<!-- Allow - Encoding (Character Sets) -->
+<meta charset="UTF-8">
+
+<!-- ADD viewport - for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no" />
+  
+<!-- GoogleFonts -->
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap" rel="stylesheet">
+  
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+  
+</head>
+  
+
+<body id="YoutubeGetCustomPlaylist">
+
+<!-- container - position all  -->
+<div class="container"> 
+
+<!-- id="video" - is the big video --> 
+<section id="video"></section> 
+
+<!-- Strip Background --> 
+<strip 
+style=
+"
+position: relative; 
+display: block;
+background-image: radial-gradient(circle, #323232 0%, #0a0a0a 58%);
+width: 980px;
+height: 40px; 
+top: -40px;
+z-index: 5;
+margin: 0 auto;
+"
+>.
+  
+<input id="MySearchInput" type="text" placeholder="▶️ Search Videos.." >
+  
+</strip>  
+
+
+  
+<!-- Next/Prev ◄ ► TEXT --> 
+<p id="LoadMoreVideosText"
+style=
+"
+ color: #fff;
+ top: -83px;
+ z-index: 5;
+ text-align: center;
+"
+>
+Load More Videos
+</p> 
+<!-- Next/Prev ◄ ► Pages -->   
+<button id="Prev_Page" >Prev</button>
+<button id="Next_Page" >Next</button>     
+  
+<!-- Next/Prev ◄ ► Video/Article --> 
+<!-- 
+<button id="Prev_Video_Article" >◄ Prev Video</button>
+<button id="Next_Video_Article" >► Next Video</button>   
+ --> 
+  
+<!-- main tagname is the all playlist -->  
+<main></main> 
+
+</div> <!-- end body -->  
+
+
+<style>
+
+/*Mobile Responsive - view windows sizes resolution*/
+@media screen and (max-width: 980px)  /*under < 980px*/
+{
+  /*container all*/
+  #YoutubeGetCustomPlaylist .container 
+  {
+      display: block;
+      width: 100vw !important;
+  }
+  
+  /*iframe*/  
+  #YoutubeGetCustomPlaylist .container_iframe 
+  {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 66.66%;  /* 66.66% 3:2 Aspect Ratio  | 56.25% 16:9 Aspect Ratio */
+  }
+  #YoutubeGetCustomPlaylist iframe 
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+}
+  
+/*Mobile Responsive - view windows sizes resolution*/
+@media screen and (max-width: 680px)  /*under < 680px*/
+{
+  .description,.DateVideoUpload,.ChannelTitle,.VideoURL
+  {
+  display:none;
+  }
+  
+}
+
+  
+#YoutubeGetCustomPlaylist 
+{
+  background: #eee;
+  overflow-x: hidden; /**/
+  overflow-y: hidden; /*auto*/
+  margin: 0;
+  padding: 0;
+}
+  
+#YoutubeGetCustomPlaylist h4 
+{
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+}
+
+#YoutubeGetCustomPlaylist p 
+{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 600;
+  color: gray;
+  font-family: 'Heebo', sans-serif;
+  font-size: 12px;
+}
+
+#YoutubeGetCustomPlaylist .container 
+{
+  background: #FFF;
+  width: 980px;
+  margin: 0 auto; /**/ /*center*/
+}
+
+#YoutubeGetCustomPlaylist header, section 
+{
+  /*position: fixed;*/
+  text-align: center;
+  background-color: #FFF;
+  /*width: 980px; */
+  z-index:3;
+}
+
+#YoutubeGetCustomPlaylist section 
+{
+  top: 0px;
+}
+
+#YoutubeGetCustomPlaylist .logo 
+{
+  width: 140px;
+  padding: 0px;
+}
+
+#YoutubeGetCustomPlaylist main 
+{
+  padding: 0px 0px 0px; /*390px 18px 10px*/
+  overflow-x: hidden; /**/
+  overflow-y: auto; /**/
+  height: 360px; /*660 px*/
+  margin-top: -81px;
+  
+  /* shadow & border */
+  border-bottom: 2px solid #fff !important;
+  box-shadow: 0 5px 5px 0 #a8a8a899 !important;
+  border-radius: 3px !important;
+}
+
+#YoutubeGetCustomPlaylist article 
+{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 8px 12px;
+  border: 2px solid #FFF;
+  margin: 0 auto;
+  transition: all 0.3s ease-out;
+}
+#YoutubeGetCustomPlaylist article:hover 
+{
+  border-bottom: 1px solid #FF9999;
+  /*border-top: 1px solid #FF9999;*/
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #0000000a;
+  transform: translateX(-2%);
+  transform: translateY(-2%);
+}
+
+#YoutubeGetCustomPlaylist article:first-child
+{
+/*opacity: 0;*/
+}
+  
+#YoutubeGetCustomPlaylist .Thumbnail_Image 
+{
+  height: 70px;
+  border-radius: 4px;
+  transition: all 0.3s ease-out;
+}
+
+#YoutubeGetCustomPlaylist .Thumbnail_Image:hover
+{
+  height: 73px;
+}
+
+#YoutubeGetCustomPlaylist .details 
+{
+  padding: 10px 28px;
+}
+  
+#YoutubeGetCustomPlaylist #Next_Page, #Prev_Page, #Prev_Video_Article, #Next_Video_Article
+{
+  position: relative;
+  display: inline-block;
+  top: -83px; /*480px*/  
+  font-family: 'Rubik', sans-serif;
+  color: black;  
+  background: #fff;
+  border: solid 1px #cdcdcd;
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px #323232; /*#b9b9b9*/
+  cursor: pointer;
+  z-index: 5; 
+  transition: all 0.3s ease-out;
+  transition-property: transform;
+}
+#YoutubeGetCustomPlaylist #Next_Page, #Prev_Page
+{
+  left: 45%;
+}
+#YoutubeGetCustomPlaylist #Prev_Video_Article, #Next_Video_Article
+{
+  left: -90px;
+}
+#YoutubeGetCustomPlaylist #Next_Page:hover, #Prev_Page:hover, #Prev_Video_Article:hover, #Next_Video_Article:hover
+{
+  color: #e2a76a; 
+  transform: scale(0.95);
+}
+
+#MySearchInput
+{
+position: relative;
+display: inline-block;
+z-index: 5;
+width: 104px;
+top: 10px;
+border: none;
+background: none;
+outline: none;
+border-bottom: solid 1px #583109;
+font-size: 12px;
+font-family: 'Rubik', sans-serif;
+color: #fff;
+transition: all 0.7s ease-out;
+}
+#MySearchInput::placeholder
+{
+color: #bdbdbd;
+}
+#MySearchInput:hover
+{
+border-bottom: solid 1px #fff;
+}
+  
+/* ========= */
+/* scrollbar FX */
+/* ========= */
+/* width */
+#YoutubeGetCustomPlaylist::-webkit-scrollbar ,
+#YoutubeGetCustomPlaylist main::-webkit-scrollbar
+{
+  width: 15px;
+}
+
+/* Track */
+#YoutubeGetCustomPlaylist::-webkit-scrollbar-track
+{
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+#YoutubeGetCustomPlaylist::-webkit-scrollbar-thumb ,
+#YoutubeGetCustomPlaylist main::-webkit-scrollbar-thumb
+{
+  background: #191919; 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+#YoutubeGetCustomPlaylist::-webkit-scrollbar-thumb:hover ,
+#YoutubeGetCustomPlaylist main::-webkit-scrollbar-thumb:hover
+{
+  background: #2d2d2d;
+}
+/* ========= */
+
+</style> 
+
+
+<!-- jquery  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" > </script>
+
+
+<!-- Youtube  -->
+<script>
+
+$(document).ready(function() 
+{
+  
+  //=========================================//
+  //build the all URL - Starting_Method - playlistItems - example jason all:
+  // https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyA08bG5gHpKMW4vt0Z--AVYeepXp5VmTzw&maxResults=10&playlistId=PL3639B38566CC3358
+  //=========================================//
+  
+  //====================//
+  //break the URL to pieces - Starting_Method - playlistItems
+  //====================//
+  //my key AIzaSyCp4Xf6BiY7YATn6ZDwUnaYCPAk85Pe9w8 
+  var key = "AIzaSyCp4Xf6BiY7YATn6ZDwUnaYCPAk85Pe9w8"; //backup key unknown || AIzaSyA08bG5gHpKMW4vt0Z--AVYeepXp5VmTzw
+  var playlistId = "PLpzo_W3I0RZ2ut5L7ljewTkqtzFT324vU"; //fetch playlistId
+  var Starting_Method = "playlistItems"; //playlistItems
+  var URL = "https://www.googleapis.com/youtube/v3/" + Starting_Method;
+
+  var options = 
+  {
+    part: "snippet",
+    key: key,
+    maxResults: 50, 
+    playlistId: playlistId
+  };
+  //=============//
+  
+  //set iframe - big video
+  function mainVid(id) 
+  {
+    $("#video").html
+    (`
+      <div class="container_iframe">
+      
+        <iframe loading="lazy" 
+        width="980" height="478"
+        src="https://www.youtube.com/embed/${id}?rel=0"
+        frameborder="0" 
+        allow="autoplay"
+        encrypted-media 
+        allowfullscreen 
+        >
+        </iframe>
+        
+      </div>
+    `);
+  }
+
+  /*youtube api - snippet*/
+  /*
+  youtube api - Thumbnails 
+  https://developers.google.com/youtube/v3/docs/thumbnails
+  youtube api - properties - snippet
+  https://developers.google.com/youtube/v3/docs/videos?hl=en#properties
+  */
+  /*==========*/
+
+//set item - thumb,title,description,vid
+function resultsLoop(data) 
+{
+  
+      $.each(data.items, async function(i, item) 
+      {
+        var position = item.snippet.position+1;        
+        var thumb = item.snippet.thumbnails.medium.url; //tumb get - default, medium, high
+        // https://i.ytimg.com/vi_webp/${vid}/mqdefault.webp - in src to get "webp"
+        var title = item.snippet.title;
+        var description = item.snippet.description.substring(0,150);
+        var vid = item.snippet.resourceId.videoId;
+        var DateVideoUpload = item.snippet.publishedAt;
+        var ChannelTitle = item.snippet.videoOwnerChannelTitle; 
+        var ChannelID = item.snippet.videoOwnerChannelId;
+        
+        var nextPageToken = data.nextPageToken;
+        var prevPageToken = data.prevPageToken;
+        $("#Next_Page").attr("data-key", nextPageToken);
+        $("#Prev_Page").attr("data-key", prevPageToken);
+        
+        //show / hide - next / prev (load more videos)
+        if( $('#YoutubeGetCustomPlaylist article').length > 3 )
+        {
+          //$('strip').show();
+          $('.ScrollArrow').show();
+          $('#LoadMoreVideosText').show();
+          $('#Prev_Page').show();
+          $('#Next_Page').show();
+        }
+        
+        if( $('#YoutubeGetCustomPlaylist article').length < 3 )
+        {
+          //$('strip').hide();
+          $('.ScrollArrow').hide();
+          $('#LoadMoreVideosText').hide();
+          $('#Prev_Page').hide();
+          $('#Next_Page').hide();
+        }
+        
+        /*
+        if (prevPageToken == null) 
+        {
+          $("#prev").css("display", "none");
+        } 
+        else 
+        {
+          $("#prev").css("display", "block");
+        }
+        if (nextPageToken == null) 
+        {
+          $("#next").css("display", "none");
+        } 
+        else 
+        {
+          $("#next").css("display", "block");
+        }
+        */
+
+  $("main").append
+  (`
+    <article class="item" data-key="${vid}" position="${position}" > 
+
+    <strong style="font-family: 'Cabin', sans-serif;"> ${position} &nbsp; </strong>
+  
+    <img loading="lazy" src="${thumb}" class="Thumbnail_Image"> 
+    <div class="details">
+    
+      <h4 class="Title">${title}</h4>
+      <p class="description">${description}...</p>
+
+      <p class="DateVideoUpload"
+      style=
+      "
+      color:#30261cd1; 
+      font-size:12px; 
+      position: inherit; 
+      float: right;
+      "
+      > 
+      - Date: ${DateVideoUpload} 
+      </p>
+
+      <p class="ChannelTitle"
+      style=
+      "
+      color:#30261cd1; 
+      font-size:12px; 
+      position: inherit; 
+      float: right;
+      "
+      >                 
+      - Channel: 
+      <a href="https://www.youtube.com/channel/${ChannelID}" target="_blank"
+      style="text-decoration: none; border-bottom: 1px solid #9eb7e5;"> ${ChannelTitle} </a> -
+      </p>
+ 
+      <p class="VideoURL"
+      style=
+      "
+      color:#30261cd1; 
+      font-size:12px; 
+      text-decoration: none;
+      position: inherit; 
+      float: right;
+      "
+      >                 
+      VideoURL: 
+      <a href="https://www.youtube.com/watch?v=${vid}" target="_blank"
+      style="text-decoration: none; border-bottom: 1px solid #9eb7e5;">Link
+      </a> -
+      </p>
+ 
+    </div>
+    </article>
+  `);      
+        
+ }); //end .each
+  
+} //end resultsLoop 
+
+  
+ //set videos
+ function loadVids() 
+ {
+   $.getJSON(URL, options,async function(data) 
+   {     
+     //console.log(data);
+     var id = data.items[0].snippet.resourceId.videoId;
+     //set the 'async' function 
+     //and after set a wait 1 Millisecond before load - to not get error: 'url' not found
+     await $(window).delay(100).promise(); 
+     //then
+     mainVid(id);
+     resultsLoop(data);
+     
+     /* 
+     
+     //total PlaylistCount
+     var totalResults = data.pageInfo.totalResults;
+
+     $("strip").append
+     (`
+       <p class="totalResults"
+       style=
+       "
+        position: relative; 
+        // float: right !important; 
+        color:#fff; 
+        font-size:12px; 
+       "
+       > 
+        &nbsp; Videos: ${totalResults} &nbsp; 
+       </p>
+     `);
+     
+     */
+
+   }); //end getJSON
+ } //end loadVids
+
+//get the "id" from "data-key"  
+$("main").on("click", "article", async function DataKeyFunction()
+{
+     //get the "id" from "data-key" attribute and set into "mainVid"
+     var DataKeyID = $(this).attr("data-key"); 
+     //alert (DataKeyID);
+     mainVid(DataKeyID); //call for each
+
+     await $(window).delay(100).promise();  //wait 1 Millisecond before load
+
+     //article change the color "onclick" + add Arrow     
+     $('article').css('background', ""); //in others do "none" color
+     $('tagarrow').replaceWith(); // in others do clear/remove the text Arrow
+     //$(this).find('tagarrow').not(ArrowPointer).remove('');   
+     
+     $(this).css('background', "#ebebeb"); //after onclick change the color
+     
+     //add Attribute for fun
+     var $AttrVAR = $(this).attr("AttrCustom", "Video Selected"); 
+     $(this).closest('main').find('article').not($AttrVAR).removeAttr('AttrCustom'); 
+     
+     //set arrow text
+     $(this).append
+     (`        
+     <tagarrow ArrowPointer="ArrowPointer"
+     style=
+     "
+     font-size: 15px;
+     position: relative;
+     "
+     >
+     ◄
+     </tagarrow>
+     `);
+
+      //=========//
+      //call - Next/Prev - Videos
+      //=========//
+      var $test =  $('article');
+      var $currDiv = $test.attr('attrcustom'); //article
+      //$currDiv.css( 'background', '' );
+        
+      $('#Prev_Video_Article').click(function prev_f()
+      {
+        $test = $test.prev(); 
+        $('article').css( 'background', '' );
+        $test .css( 'background', 'red' );
+      });
+      
+      $('#Next_Video_Article').click(function next_f()
+      {
+        $test = $test.next();
+        $('article').css( 'background', '' );        
+        $test .css( 'background', 'red' );
+      });
+      //============//
+    
+      //===============//
+      //youtube api parameters
+      // https://developers.google.com/youtube/player_parameters#Parameters
+      //===============//
+      /*
+      mute=1 //mute - volume level - 0 with volume 1 mute - def is 0 
+      autoplay=1 //Auto-play the video on load - 0 no 1 yes - def is 0 
+      autohide=1 //video controls when playing - 0 no 1 yes - def is 0 
+      disablekb=0 //keyboard controls - 0 enabled 1 disabled - def is 0
+      controls=0 //pause/play buttons in the bottom player - 0 hide 1 show - def is 1
+      showinfo=0 //video info/title top -  0 hide 1 show - def is 1
+      modestbranding=1 //Youtube Logo in the bottom player - 0 show 1 hide - def is 0
+      loop=0 //video loop - 0 no 1 yes - def is 0
+      fs=1 //fullscreen in the bottom of player - 0 NOT Allow | 1 Allow - def is 1
+      enablejsapi=1 //IFrame Youtube Player API calls - 0 disabled 1 enabled - def is 0
+      rel=0 //related videos after pause - 0 hide 1 show - def is 1
+      
+      //video start | end 
+      //example:
+      0:30 - 30 sec - meaning - 30
+      1:00 - 1 min - meaning - 60
+      2:00 - 2 min - meaning - 120 
+      and etc..
+
+      start=30 
+      end=120
+      */   
+      //===============//
+
+     //Normal play
+     //but there's a mute policy if mute=0 (meaning with volume - it will not play )
+     //works - only if mute=1
+     /*
+     var Player = $('iframe')[0]; //document.querySelectorAll('iframe')[0]
+     $('iframe')[0].src="https://youtube.com/embed/"+DataKeyID+"?autoplay=1&mute=1&rel=0"; 
+     */
+     
+     //Replace the img attribute with iframe
+     /*         
+     $('img').replaceWith
+     (`
+      <iframe loading="lazy" 
+      height="70" width="124" frameborder="0"
+      src="https://youtube.com/embed/${DataKeyID}?autohide=1&controls=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0"
+      class="Thumbnail_Image"       
+      > 
+      </iframe>
+     `);  
+     */
+
+     //Hover play    
+     /*
+      $('article iframe').hover(function() 
+      {  
+        //$('p').css("color", "yellow");
+
+        var Player = $('article iframe')[0]; //document.querySelectorAll('iframe')[0] 
+        Player.src=
+        (`
+         https://youtube.com/embed/${DataKeyID}?mute=1&autoplay=1&autohide=1&controls=0&showinfo=0&modestbranding=1&enablejsapi=1&rel=0;
+        `)  
+       });      
+     */
+
+}); //end DataKeyFunction
+
+
+loadVids(); //call to load all videos
+
+//scroll button - hover
+$("main").append
+(`
+<center>
+<p class="ScrollArrow"
+style=
+"
+    color: black;
+    top: 512px;
+    z-index: 56 !important;
+    text-align: center;
+    display: ;
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 959px;
+"
+>
+▼
+</p>
+</center>
+`);
+  
+
+$('.ScrollArrow').hover(function() 
+{
+/**/
+$('main').scrollTop(+ 1300); // scroll down
+}); 
+  
+//call - Next/Prev - Pages
+$("#Next_Page").click(function() {
+    next = $("#Next_Page").attr("data-key"); //set
+    options.pageToken = next; //get
+    $("main").html(""); //place
+    loadVids(); //load videos
+});
+  
+$("#Prev_Page").click(function() {
+    prev = $("#Prev_Page").attr("data-key"); //set 
+    options.pageToken = prev; //get
+    $("main").html(""); //place
+    loadVids(); //load videos
+});
+//============//
+  
+  
+<!-- MySearchInput  -->  
+  //Search code jquery - .on keyup
+  $("#MySearchInput").on("keyup", function () 
+  {  
+      var value = $(this).val().toLowerCase();
+      $("main .item").filter(function() 
+      {
+        $(this).toggle($(this).text().toLowerCase().indexOf( value ) > -1)
+      });
+  }); 
+  
+}); // end of whole document.ready
+
+</script>
+
+</body>
