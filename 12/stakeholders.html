@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://stakeholders.biew.site/ -->
+<html lang="en" class="js-focus-visible" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    (function() {
+      var container = document.querySelector('#_tcx-0b3pc348rgvd');
+      if (!container) {
+        return;
+      }
+
+      function addToContainer(url, text) {
+        const wrapper = document.createElement('div');
+        wrapper.setAttribute('data-tcx-url', url);
+        wrapper.innerText = text;
+        container.appendChild(wrapper);
+      }
+
+      const fetch = window.fetch
+      window.fetch = function() {
+        return Promise.resolve(fetch.apply(window, arguments))
+            .then(async response => {
+              if (response.ok) {
+                try {
+                  const clone = response.clone();
+                  const json = await clone.json();
+                  addToContainer(clone.url, JSON.stringify(json));
+                } catch (err) {}
+              }
+              return response;
+            });
+      };
+
+      var XHR = XMLHttpRequest.prototype;
+      var send = XHR.send;
+      var open = XHR.open;
+      XHR.open = function(method, url) {
+        this.url = url;
+        return open.apply(this, arguments);
+      };
+      XHR.send = function() {
+        this.addEventListener('load', function() {
+          try {
+            const response = this.response;
+            if (response && response.length) {
+              const firstChar = response[0];
+              if (firstChar === '[' || firstChar === '{') {
+                addToContainer(this.url, response);
+              }
+            }
+          } catch (err) {
+            // No-op.
+          }
+        });
+        return send.apply(this, arguments);
+      };
+    })();
+  </script><script type="text/javascript">(function a(){const e=XMLHttpRequest.prototype,t=e.send;e.send=function(){this.addEventListener("load",(function e(){const t=new CustomEvent("interceptRequest",{detail:{type:"dec"},bubbles:!0,cancelable:!0});document.dispatchEvent(t),this.removeEventListener("load",e)}));const e=new CustomEvent("interceptRequest",{detail:{type:"inc"},bubbles:!0,cancelable:!0});return document.dispatchEvent(e),t.apply(this,arguments)}})();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://stakeholders.biew.site/css/markdown-content.91348944.css" rel="prefetch"><link href="https://stakeholders.biew.site/css/not-found.3b9d42e0.css" rel="prefetch"><link href="https://stakeholders.biew.site/js/detail.e0aeb384.js" rel="prefetch"><link href="https://stakeholders.biew.site/js/markdown-content.2ca5549b.js" rel="prefetch"><link href="https://stakeholders.biew.site/js/not-found.ccf0f650.js" rel="prefetch"><link href="https://stakeholders.biew.site/js/vendors~markdown-content.9912eeb5.js" rel="prefetch"><link href="./stakeholders_files/app.b143b36c.css" rel="preload" as="style"><link href="./stakeholders_files/app.004ca0d8.js" rel="preload" as="script"><link href="./stakeholders_files/app.b143b36c.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="https://stakeholders.biew.site/img/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://stakeholders.biew.site/img/icons/favicon-16x16.png"><link rel="manifest" href="https://stakeholders.biew.site/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="basic-directory"><link rel="apple-touch-icon" href="https://stakeholders.biew.site/img/icons/apple-touch-icon-152x152.png"><link rel="mask-icon" href="https://stakeholders.biew.site/img/icons/safari-pinned-tab.svg" color="#4DBA87"><meta name="msapplication-TileImage" content="img/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><link data-vue-meta="1" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXNJREFUeNrsV9GNwjAMDdYN0A/4Z4QyAWUDNiidhHYS6AZs0GOCdgT+4YMRsJFdWT4qXe+SFqE+yYqUWnkvjlPHM/cCi/kiwSFF26JF7n+4o53Qyuvt+m0/zgzxEocDWuLCgARkKOTyQwCSxzhUL3bc8C4sYuV7YbOI2M9GZIMimlYA77w25AXaUas10apUpAr0yzv8aO0d2t6IWNHawBMHRS4f8y7yPqA1WNxKRTJiTgeccPrM2/D4BK+5UVMJcQNnu1OhbAIloIgo1FQKfNUERxcemmML6uwbH2f+m5zgm/XMBTCZORRaLnAjYxIwuoAvT+us8aeS9/Bf+haQ/LWCfswRUJ0/9/BP5Rh8CTh3leOOEr0WAdM1nASAeUAOhUgLkNIY8wMyKJhDXsp34KZBsBtg95rjRAJKNbHn/iDU7mPzPC+B2yXdMlUhRKjGp/17ErckYWbe7DVVNx85QWtwpaxN75G9T2v2Fs3pWO35Q4ABAOmHkX85SQ58AAAAAElFTkSuQmCC"><style data-styled="" data-styled-version="4.4.0"></style> <style>@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");</style> <style>@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");</style><style type="text/css">.keyword-info-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 12px;
+  border-bottom: 1px solid #dee1e5;
+}
+
+.keyword-info-container.youtube {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.keyword-info-container .title {
+  color: #26282d;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.keyword-info-container .tabs {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #dee1e5;
+  margin-top: -10px;
+  padding: 0px 16px;
+  align-items: center;
+}
+.keyword-info-container .tabs li {
+  padding: 8px;
+  padding-left: 0;
+  color: #000;
+  cursor: pointer;
+  font-size: 12px;
+}
+.keyword-info-container .tabs li.small {
+  font-size: 10px;
+}
+.keyword-info-container .tabs li:last-child {
+  overflow: hidden;
+}
+
+.keyword-info-container .tabs li.active {
+  color: #4285f4;
+}
+
+table.keyword-info-table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #000;
+  font-size: 12px;
+  position: relative;
+}
+
+.keyword-info-table thead {
+  height: 50px;
+}
+
+.keyword-info-table th {
+  padding: 10px;
+  padding-left: 0;
+  font-weight: bold;
+  color: #000000;
+  font-size: 12px;
+}
+
+.keyword-info-table th:first-child {
+  padding-left: 16px;
+}
+
+.keyword-info-table th:last-child {
+  padding-right: 16px;
+}
+
+.keyword-info-table td {
+  border-bottom: 1px solid #dee1e5;
+  padding: 10px;
+  padding-left: 0;
+}
+
+.keyword-info-table td:first-child {
+  padding-left: 16px;
+}
+
+.keyword-info-table td:last-child {
+  padding-right: 16px;
+}
+
+.keyword-info-table tfoot tr {
+  background-color: #dee1e544;
+}
+
+.keyword-info-table tfoot tr:last-child td {
+  border-bottom: none;
+}
+
+.ubersuggest-button {
+  color: #0086f7;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 29px;
+  padding: 8px 30px;
+  border: 1px solid #0086f7;
+  background-color: #ffffff;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.ubersuggest-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px 10px 0 0;
+  font-weight: bold;
+  color: #26282d;
+}
+
+.ubersuggest-logo {
+  width: 182px;
+  height: 33px;
+  cursor: pointer;
+}
+
+.keyword-info-container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 20px 16px;
+  border-top: 1px solid #dee1e5;
+}
+
+.header h2 {
+  color: #000000;
+  font-family: Geomanist;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/*
+Youtube Dark theme styling
+*/
+html[dark] .keyword-info-container .title {
+  color: #fff;
+}
+
+html[dark] .keyword-info-container .tabs {
+  border-color: #ffffff0d;
+}
+
+html[dark] .keyword-info-container .tabs li {
+  color: #fff;
+}
+
+html[dark] .keyword-info-container .tabs li.active {
+  color: #4285f4;
+}
+
+html[dark] table.keyword-info-table {
+  color: #fff;
+}
+
+html[dark] .keyword-info-table th {
+  color: #fff;
+}
+
+html[dark] .keyword-info-table tfoot tr {
+  background-color: #3d3d3d;
+}
+
+html[dark] .keyword-info-table tfoot tr:last-child td .button-arrow {
+  border-color: #fff;
+}
+
+.keyword-info-table tfoot tr:last-child td .button-arrow.disabled {
+  border-color: #9b9b9b !important;
+}
+
+/*
+Google Dark theme styling
+*/
+
+body[data-dt='1'] .keyword-info-container .title {
+  color: #fff;
+}
+
+body[data-dt='1'] .keyword-info-container .tabs {
+  border-color: #ffffff0d;
+}
+
+body[data-dt='1'] .keyword-info-container .tabs li {
+  color: #fff;
+}
+
+body[data-dt='1'] .keyword-info-container .tabs li.active {
+  color: #4285f4;
+}
+
+body[data-dt='1'] table.keyword-info-table {
+  color: #fff;
+}
+
+body[data-dt='1'] .keyword-info-table th {
+  color: #fff;
+}
+
+body[data-dt='1'] .keyword-info-table tfoot tr {
+  background-color: #3d3d3d;
+}
+
+body[data-dt='1'] .keyword-info-table tfoot tr:last-child td .button-arrow {
+  border-color: #fff;
+}
+</style><style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{max-width:400px;-webkit-perspective:800px;perspective:800px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none}.tippy-popper.html-template{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] [x-arrow]{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 9px}.tippy-popper[x-placement^=top] [x-arrow].arrow-small{border-top:5px solid #333;border-right:5px solid transparent;border-left:5px solid transparent;bottom:-5px}.tippy-popper[x-placement^=top] [x-arrow].arrow-big{border-top:10px solid #333;border-right:10px solid transparent;border-left:10px solid transparent;bottom:-10px}.tippy-popper[x-placement^=top] [x-circle]{-webkit-transform-origin:0 33%;transform-origin:0 33%}.tippy-popper[x-placement^=top] [x-circle].enter{-webkit-transform:scale(1) translate(-50%,-55%);transform:scale(1) translate(-50%,-55%);opacity:1}.tippy-popper[x-placement^=top] [x-circle].leave{-webkit-transform:scale(.15) translate(-50%,-50%);transform:scale(.15) translate(-50%,-50%);opacity:0}.tippy-popper[x-placement^=top] .tippy-tooltip.light-theme [x-circle]{background-color:#fff}.tippy-popper[x-placement^=top] .tippy-tooltip.light-theme [x-arrow]{border-top:7px solid #fff;border-right:7px solid transparent;border-left:7px solid transparent}.tippy-popper[x-placement^=top] .tippy-tooltip.light-theme [x-arrow].arrow-small{border-top:5px solid #fff;border-right:5px solid transparent;border-left:5px solid transparent}.tippy-popper[x-placement^=top] .tippy-tooltip.light-theme [x-arrow].arrow-big{border-top:10px solid #fff;border-right:10px solid transparent;border-left:10px solid transparent}.tippy-popper[x-placement^=top] .tippy-tooltip.transparent-theme [x-circle]{background-color:rgba(0,0,0,.7)}.tippy-popper[x-placement^=top] .tippy-tooltip.transparent-theme [x-arrow]{border-top:7px solid rgba(0,0,0,.7);border-right:7px solid transparent;border-left:7px solid transparent}.tippy-popper[x-placement^=top] .tippy-tooltip.transparent-theme [x-arrow].arrow-small{border-top:5px solid rgba(0,0,0,.7);border-right:5px solid transparent;border-left:5px solid transparent}.tippy-popper[x-placement^=top] .tippy-tooltip.transparent-theme [x-arrow].arrow-big{border-top:10px solid rgba(0,0,0,.7);border-right:10px solid transparent;border-left:10px solid transparent}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective].enter{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective].leave{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade].enter{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade].leave{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift].enter{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift].leave{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale].enter{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale].leave{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] [x-arrow]{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 9px}.tippy-popper[x-placement^=bottom] [x-arrow].arrow-small{border-bottom:5px solid #333;border-right:5px solid transparent;border-left:5px solid transparent;top:-5px}.tippy-popper[x-placement^=bottom] [x-arrow].arrow-big{border-bottom:10px solid #333;border-right:10px solid transparent;border-left:10px solid transparent;top:-10px}.tippy-popper[x-placement^=bottom] [x-circle]{-webkit-transform-origin:0 -50%;transform-origin:0 -50%}.tippy-popper[x-placement^=bottom] [x-circle].enter{-webkit-transform:scale(1) translate(-50%,-45%);transform:scale(1) translate(-50%,-45%);opacity:1}.tippy-popper[x-placement^=bottom] [x-circle].leave{-webkit-transform:scale(.15) translate(-50%,-5%);transform:scale(.15) translate(-50%,-5%);opacity:0}.tippy-popper[x-placement^=bottom] .tippy-tooltip.light-theme [x-circle]{background-color:#fff}.tippy-popper[x-placement^=bottom] .tippy-tooltip.light-theme [x-arrow]{border-bottom:7px solid #fff;border-right:7px solid transparent;border-left:7px solid transparent}.tippy-popper[x-placement^=bottom] .tippy-tooltip.light-theme [x-arrow].arrow-small{border-bottom:5px solid #fff;border-right:5px solid transparent;border-left:5px solid transparent}.tippy-popper[x-placement^=bottom] .tippy-tooltip.light-theme [x-arrow].arrow-big{border-bottom:10px solid #fff;border-right:10px solid transparent;border-left:10px solid transparent}.tippy-popper[x-placement^=bottom] .tippy-tooltip.transparent-theme [x-circle]{background-color:rgba(0,0,0,.7)}.tippy-popper[x-placement^=bottom] .tippy-tooltip.transparent-theme [x-arrow]{border-bottom:7px solid rgba(0,0,0,.7);border-right:7px solid transparent;border-left:7px solid transparent}.tippy-popper[x-placement^=bottom] .tippy-tooltip.transparent-theme [x-arrow].arrow-small{border-bottom:5px solid rgba(0,0,0,.7);border-right:5px solid transparent;border-left:5px solid transparent}.tippy-popper[x-placement^=bottom] .tippy-tooltip.transparent-theme [x-arrow].arrow-big{border-bottom:10px solid rgba(0,0,0,.7);border-right:10px solid transparent;border-left:10px solid transparent}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective].enter{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective].leave{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade].enter{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade].leave{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift].enter{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift].leave{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale].enter{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale].leave{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] [x-arrow]{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:6px 0}.tippy-popper[x-placement^=left] [x-arrow].arrow-small{border-left:5px solid #333;border-top:5px solid transparent;border-bottom:5px solid transparent;right:-5px}.tippy-popper[x-placement^=left] [x-arrow].arrow-big{border-left:10px solid #333;border-top:10px solid transparent;border-bottom:10px solid transparent;right:-10px}.tippy-popper[x-placement^=left] [x-circle]{-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=left] [x-circle].enter{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%);opacity:1}.tippy-popper[x-placement^=left] [x-circle].leave{-webkit-transform:scale(.15) translate(-50%,-50%);transform:scale(.15) translate(-50%,-50%);opacity:0}.tippy-popper[x-placement^=left] .tippy-tooltip.light-theme [x-circle]{background-color:#fff}.tippy-popper[x-placement^=left] .tippy-tooltip.light-theme [x-arrow]{border-left:7px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}.tippy-popper[x-placement^=left] .tippy-tooltip.light-theme [x-arrow].arrow-small{border-left:5px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent}.tippy-popper[x-placement^=left] .tippy-tooltip.light-theme [x-arrow].arrow-big{border-left:10px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.tippy-popper[x-placement^=left] .tippy-tooltip.transparent-theme [x-circle]{background-color:rgba(0,0,0,.7)}.tippy-popper[x-placement^=left] .tippy-tooltip.transparent-theme [x-arrow]{border-left:7px solid rgba(0,0,0,.7);border-top:7px solid transparent;border-bottom:7px solid transparent}.tippy-popper[x-placement^=left] .tippy-tooltip.transparent-theme [x-arrow].arrow-small{border-left:5px solid rgba(0,0,0,.7);border-top:5px solid transparent;border-bottom:5px solid transparent}.tippy-popper[x-placement^=left] .tippy-tooltip.transparent-theme [x-arrow].arrow-big{border-left:10px solid rgba(0,0,0,.7);border-top:10px solid transparent;border-bottom:10px solid transparent}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective].enter{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective].leave{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade].enter{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade].leave{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift].enter{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift].leave{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale].enter{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale].leave{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] [x-arrow]{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:6px 0}.tippy-popper[x-placement^=right] [x-arrow].arrow-small{border-right:5px solid #333;border-top:5px solid transparent;border-bottom:5px solid transparent;left:-5px}.tippy-popper[x-placement^=right] [x-arrow].arrow-big{border-right:10px solid #333;border-top:10px solid transparent;border-bottom:10px solid transparent;left:-10px}.tippy-popper[x-placement^=right] [x-circle]{-webkit-transform-origin:-50% 0;transform-origin:-50% 0}.tippy-popper[x-placement^=right] [x-circle].enter{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%);opacity:1}.tippy-popper[x-placement^=right] [x-circle].leave{-webkit-transform:scale(.15) translate(-50%,-50%);transform:scale(.15) translate(-50%,-50%);opacity:0}.tippy-popper[x-placement^=right] .tippy-tooltip.light-theme [x-circle]{background-color:#fff}.tippy-popper[x-placement^=right] .tippy-tooltip.light-theme [x-arrow]{border-right:7px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}.tippy-popper[x-placement^=right] .tippy-tooltip.light-theme [x-arrow].arrow-small{border-right:5px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent}.tippy-popper[x-placement^=right] .tippy-tooltip.light-theme [x-arrow].arrow-big{border-right:10px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}.tippy-popper[x-placement^=right] .tippy-tooltip.transparent-theme [x-circle]{background-color:rgba(0,0,0,.7)}.tippy-popper[x-placement^=right] .tippy-tooltip.transparent-theme [x-arrow]{border-right:7px solid rgba(0,0,0,.7);border-top:7px solid transparent;border-bottom:7px solid transparent}.tippy-popper[x-placement^=right] .tippy-tooltip.transparent-theme [x-arrow].arrow-small{border-right:5px solid rgba(0,0,0,.7);border-top:5px solid transparent;border-bottom:5px solid transparent}.tippy-popper[x-placement^=right] .tippy-tooltip.transparent-theme [x-arrow].arrow-big{border-right:10px solid rgba(0,0,0,.7);border-top:10px solid transparent;border-bottom:10px solid transparent}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective].enter{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective].leave{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade].enter{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade].leave{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift].enter{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift].leave{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale].enter{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale].leave{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper .tippy-tooltip.transparent-theme{background-color:rgba(0,0,0,.7)}.tippy-popper .tippy-tooltip.transparent-theme[data-animatefill]{background-color:transparent}.tippy-popper .tippy-tooltip.light-theme{color:#26323d;box-shadow:0 4px 20px 4px rgba(0,20,60,.1),0 4px 80px -8px rgba(0,20,60,.2);background-color:#fff}.tippy-popper .tippy-tooltip.light-theme[data-animatefill]{background-color:transparent}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.95rem;padding:.4rem .8rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip--small{padding:.25rem .5rem;font-size:.8rem}.tippy-tooltip--big{padding:.6rem 1.2rem;font-size:1.2rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-interactive]{pointer-events:auto}.tippy-tooltip[data-inertia]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip [x-arrow]{position:absolute;width:0;height:0}.tippy-tooltip [x-circle]{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:130%;width:calc(110% + 2rem);left:50%;top:50%;z-index:-1;overflow:hidden;transition:all ease}.tippy-tooltip [x-circle]:before{content:"";padding-top:90%;float:left}@media (max-width:450px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}
+</style><style type="text/css">.ubersuggest-header-container {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
+
+.ubersuggest-header-container .row {
+  margin: 0;
+  padding: 15px 16px 15px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 30px;
+}
+
+.ue-enable {
+  display: block;
+}
+
+.ue-disable {
+  display: none !important;
+}
+
+.ubersuggest-header-container .settings {
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+}
+.ubersuggest-header-container .settings-label {
+  margin-right: 21px;
+}
+
+.ubersuggest-header-container .settings-icon {
+  width: 21px;
+  height: 21px;
+  margin-right: 7px;
+}
+</style><style type="text/css">.keyword-info-section {
+  color: #26282d;
+  font-family: Arial;
+  font-size: 12px;
+  padding: 8px 0 10px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.keyword-info-section.hidden {
+  display: none;
+}
+
+.keyword-info-section.google {
+  background-color: #fff;
+}
+
+body[data-dt='1'] .keyword-info-section.google {
+  background-color: #303134;
+}
+
+.keyword-info-section.youtube {
+  margin-right: 15px;
+  padding: 0 0 0 10px;
+  height: 100%;
+  background-color: #fff;
+}
+
+html[dark='true'] .keyword-info-section.youtube {
+  background-color: #121212;
+}
+
+.keyword-info-section.amazon {
+  padding: 13px 0;
+  background-color: #fff;
+}
+</style><style type="text/css">.kw-overview-container {
+  box-sizing: border-box;
+  width: 673px;
+  padding: 0;
+  margin: 0;
+  margin-top: 14px;
+  font-size: 12px;
+  font-family: Arial;
+}
+.kw-overview-container.youtube {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+</style><style type="text/css">.bl-info-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+.bl-info-header {
+  display: flex;
+  height: 24px;
+  width: 100%;
+  padding: 0;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.bl-info-header .row {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.bl-info-header .row.youtube {
+  justify-content: flex-start;
+}
+
+.bl-info-content,
+.kw-info-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dee1e5;
+  border-radius: 8px;
+  padding-top: 0;
+}
+
+body[data-dt='1'] .kw-info-content,
+body[data-dt='1'] .bl-info-content {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+}
+
+.bl-info-content img.loading {
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.kw-info-content img.loading {
+  width: 50px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table.bl-info-table,
+table.kw-info-table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #808185;
+  font-size: 12px;
+}
+
+body[data-dt='1'] table.bl-info-table,
+body[data-dt='1'] table.kw-info-table {
+  color: #fff;
+}
+
+.bl-info-table thead,
+.kw-info-table thead {
+  height: 50px;
+}
+
+.bl-info-table tr,
+.kw-info-table tr {
+  width: 100%;
+  max-width: 600px;
+}
+
+.bl-info-table th,
+.kw-info-table th {
+  padding: 10px;
+  padding-left: 0;
+  font-weight: bold;
+  color: #000000;
+  font-size: 11px;
+  border-bottom: 1px solid #dee1e5;
+}
+
+body[data-dt='1'] .bl-info-table th,
+body[data-dt='1'] .kw-info-table th {
+  color: #fff;
+}
+
+.bl-info-table th:first-child,
+.kw-info-table th:first-child {
+  padding-left: 16px;
+}
+
+.bl-info-table th:last-child,
+.kw-info-table th:last-child {
+  border-right: none;
+  padding-right: 16px;
+}
+
+.bl-info-table td,
+.kw-info-table td {
+  border-bottom: 1px solid #dee1e5;
+  padding: 10px;
+  padding-left: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+}
+
+body[data-dt='1'] .bl-info-table td,
+body[data-dt='1'] .kw-info-table td {
+  color: #fff;
+}
+
+.bl-info-table td:first-child,
+.kw-info-table td:first-child {
+  border-left: none;
+  padding-left: 16px;
+}
+
+.bl-info-table td:last-child,
+.kw-info-table td:last-child {
+  border-right: none;
+  padding-right: 16px;
+}
+
+.bl-info-table tfoot tr:last-child td,
+.kw-info-table tfoot tr:last-child td {
+  border-bottom: none;
+}
+
+.bl-info-container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+</style><style type="text/css">.statistics-graph-container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 12px;
+  padding: 0px 16px;
+}
+
+.statistics-graph-container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+.statistics-graph-container .row .title {
+  color: #26282d;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.statistics-graph-container .tabs {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #dee1e5;
+  margin: 0 -16px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  padding: 0px 16px;
+}
+
+.statistics-graph-container .tabs li {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #000;
+  cursor: pointer;
+  font-size: 13px;
+  border-bottom: 3px solid transparent;
+}
+
+.statistics-graph-container .tabs li:first-child {
+  margin-left: -16px;
+}
+
+.statistics-graph-container .tabs li.active {
+  color: #4285f4;
+  border-bottom: 3px solid #4285f4;
+}
+
+/* Google Dark Theme */
+body[data-dt='1'] .statistics-graph-container .row .title {
+  color: #fff;
+}
+
+body[data-dt='1'] .statistics-graph-container .tabs {
+  border-bottom: 1px solid #dee1e5;
+}
+
+body[data-dt='1'] .statistics-graph-container .tabs li {
+  color: #fff;
+}
+
+body[data-dt='1'] .statistics-graph-container .tabs li.active {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+</style><title>Stake</title><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head><body style=""><noscript><strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div data-v-672a841c="" id="app" style="font-family: Roboto, sans-serif;"><div data-v-2edc1df5="" data-v-672a841c="" class="layout-main bg-gray-100" style="background-color: rgb(51, 102, 255);"><nav data-v-bbe722c2="" data-v-2edc1df5="" class="
+    px-6
+    flex
+    items-center
+    justify-between
+    flex-wrap
+    bg-white
+    border-b-2 border-gray-200
+    h-20
+    shadow-sm
+   fixedNav" style="background-color: rgb(0, 0, 102); border-color: rgb(0, 0, 102);"><div data-v-bbe722c2="" class="container mx-auto flex items-center"><a data-v-bbe722c2="" href="https://stakeholders.biew.site/" aria-current="page" class="block router-link-exact-active router-link-active"><img data-v-bbe722c2="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAC/VBMVEVHcExAkLUhrM2jWEpOfHrl17/k2tiohG7p6enNoTTj1bzY0s7Wq7Po3NfkVEQoP2nlRzrVMzTs5+i5MEEnVmfFKjagVWmZtYjv7+/kwbZMobnPm0h0tmEZV4EhNWIlRG3q5undJjXgr4ro0LWtbn0ZV4GzIjZQmrfInDZcpr3lvXIqocLOaZ0tikh7t2esio/vvkftv1Ivi0vLnTTfHi8rkkmls7WMnoTlppbXal/v7+8YNWb7thNGdjzv7u7pGy0km0fvQCrhE4KPFzcDrdpeukbu7e0FfLnxbCYDVIvNjCnUni0EesDRoCfv9fXCHjH6nCPRiybq6+vZGYEqmEro3d30+vru6ulbvEHu5OLv29f2ayHj5uaKGjhSxuTe4eH8/PsHVIe9IDEQerHvGSzl4Nb3v1z1uSLHHDAErtRMdUIInNnKjjX3nCnpQy7Ex8ju0ZsliLfa2trx268CVY/1PS1kt069wcNXnbtWvNfp3s6VrsDR1Nbdw5MRq9TWt3ykvsvuwnRyqr7pcjHvxcDtuLFZscrctsKzuLj1nyPMomCPx9jywkDrtWH7mylri5zM3eO4zNXSLoR+nKxvulveJTU4mFXfN0TNqUvNzs2rr63aRpbpzdTrm243c5Wxz6fx0Yek0uHxnzNpmqtMomXiaWLUsWHmfkW21+KLjHh7x9zpiYQneqT58NS6JzmBkZaOoYZlxd/e6dv6++zx2MOCvWv258EOU4GatZiPmJ6Tx3vmnZ3ojFfMl0vjzq13h47gaappudGfoaBpfYbq+OvY8vY5ttJWdIv68PLm9/fspoLS3czgjrrvpUOU0pOUo65bjqjwwIl7vYp0jmrbeXzFXmvuqFK9Q1KLJECEuMpAhaZLXn6WPlZZfE6hxKKS1uaz47LbiZHA2Lb30mYXmc2rkmp8vErtrqBSgZ3JnKc7TnBkhFuueIiPL0kzoc4rZIjOT17GuqmmfVW6kJm+5/GlZnhirngYXIz1webjQ1PwotbO7M68pHl3n1VHcExpCrjWAAAA/3RSTlMA/vwsGRQqCf3//kL+Zv3+/pKI+Vdb/l/Ww3RT9/zOk6++3qXEz8G0rUF90/2MwpXPscHh6OSX2a22/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCRmUngAAAi9ElEQVR42uyXX0hbeRbHp2hrrm2RdltaunWHWZhpZ5fpw3ZmWW4h6UuuSMwIIbcmQYjXekvftDbEkCiJRZnSMqQhuUlmGZJZGsOI7QyoaTSCZTtKKUJ0gvMwBiQKpZKXdGFIEF/2nN/vJv6LrTptdx96NInG6P3ke76/7zl+8MH7el/va89VVVlJH6uq/j9wKk6c+PDDP0H9/TjUR1DHjp08WfG/wwMi4Km5RKumnf2SNQVUbSqszz//6BiwvXOVEKlIRKudZQkW5SJs7xitcisSVhfLKgFrQ7VRtIp3A3X4eNd2qHW1VKq2jWwq6R+H3r5OJ46eVrLN6TJYslpbsdpWjcrTRw9WVr1NqI9rHSAKO747tfCLtiEOflB98fwfq94alGCxLCjgKt/UlMXiyqgl9cHrm5xaLfNWwBCq3mIRCt1wGUX6VWrJQhGtVANN8Lw9qNVo3gbYiY/jQj2UIHixKbMlmnS6Zh3r28CGY0jJJpTwvFMDpdVqL56veLOJUCtY6oV6JAuZ4TqdWTlEHV634+lGrM3HUBX4Fp42RjWMRotkzMU3J1gVSAX9I2LV18ddcCHuMcXyAlLa402Xmohp2tbWVvS7NI89nGQ0pdK+KcFAKto+hII7tw6uRKIr67jn+CntmHV73SUsSRaM8klHiOERh8gFndS8GcHw/BEqAmWpt+TQ9BhdNY6sI+v1ZEEsRxaxMLdeTgRUgYAktanwtsoTwyMVg0iU7HzlG5GKAJESHkAXZ8HFSjD9U/elp96066kre8mdltWS+k0vpaH5wJBKGgiopCU8Hz2ESEtMr0W2330kK+EACvIRFASLsGArCEKoGbC6awCrxu3x6G7/6HhM1QKsQH/f0Lyxf2J0daBvQJK+glc2RbUaigMPDOX6fY08eC6OHbTIUlnit2wPBKHgAQLdU7CW113z421XGkxf9Nbqi6X+JeNEn2lpwjQkvTRiwjNaolTxRu6Yv+yf69DpzhAEO8Gy4GN8bq4AT9wH0ytvQxfvzTo8AOd1lywfGBqYeNn/8kV/30TfKgktJSQ8iPR1VG4lVU3750P7p2JZTw5bSOWyWEK/zVng+1wnIJiz6Hnw+2wWXVb0VpskBVal+YGJpRcSDa0gYkU7gtGgtuh6DRM1nt4n12G0EOeoFfD8CUIc6v6zEAlVB6oA0eVIX8q6XDVwIMkGQbAwGpAtsKqaB8NzkwzDaJleJ4AFg3IbmagIE+zwfqhOnQ3r2Caj+RaZOkLOdmvu1vSISxAeFCxoera9Bt3ldTkcSEWw+IA8qMnooVM6yvR+F2R6oz0AFpV9H5zEE2o+s/egOGVV+8Iiz5v4+3FMUtt0y5UrLS3Tufvf3xcKLjm61keirNbGDYIY3s4wN0ceOnuCABYl7tJqgz0mI2xtqct/q9yzVmq12rc4YxJF81zcIsSFhd8A68r3Ocez6VDcreOaFLNb18AtWEvQaq5Hw9xsaRl55PwuCFgQqhqgsou8sTnl1+v3yHXKp7YaDAZf0i6K/L0VMnlyc+aRZyu1gHW3NtetMJraN21dXcomY5+0jtUmG16j7WhpabkychPMRbOhx87z/ExKfxk+PttLTlScNRjUarhBH012sXsF9BIsC9Nm18q/V9x3Q4LgMPP2zk1b121eNPVLGzaIATqltdroQ5CrZeThJGJpGOcovNWZlP8yYu2Bq6ryghrLgH0Mi6B4dygOrl9YyP36ayEex+gKdfMiv6mLsyUsSiZNkCnNwDTsGRkBwQAMl1TnqIkXRaQCqL3ohVRWNb2pzy6D73lPDmZhPHQXbGYh0Rp3AFZ3dgPW+BYs0kOY0mDy4KMiFsM47fA2xTG/nmDB3Rcndol1wWqlUhGuGHCJwCUUbNC94syuXwFa80+bsHiKRRspYQ+VPXQYBp2PHj581BFlmOgo/J64iFQECrkqdml3GQs8D/dW4BJ5sytXsNXGS6uEpdZj5nlXTRm1ME5h05owNnHiHbo5aBiI0iCkanQUoMSwX0ai97s6jhVnrbKxDGorlEEdm4E/1enKxQWLPLQh9uNewFo3fXq8m+M4Y//QqkT/3w/0wZvBlaY4nDFI79wEdqCitqJgu7NX1QXSPwPxeyKZiakN1sSMCPHVlduIJYTu8aKZ/MNYk378DaY2Ka4PyCRJNQ+JN0pTnaJhjHaYQKzlCEKl/HIPkeu19qo6hXlloFolp66MrPmgj4kZ3tik7MrVlwpM5gIztWfT4+3NOnZDcWwT39c/0Sfypg5GU0IiIwfOIL8cQYX8mSR51JNGflH52hauixVbgxhELLU6IWJiuwpkj6ArocVtFju7zbjjKNnNpWQ5juWaTM7iwkDaGKwGYnEGaeAzGQEuqhh8+5o2VtHEoljJKQjnxZjPCpEfhi4pdY7Culwhh2470KZqgizVlHaZYDW+2JxHU8FnKuL3pzIR2WWvSYlTPhILtIu+ZRiCYWsykfCpfTN4Id0sjkf853rFA1Dsa0pZHSyCaSlVMxk52Lp8Pr82NUUnEHy+8jRCkBKdoJG+mNWXDA+vxWCT8PnUhhjl8sJCX28pOHTsboqzRxm6jFIq3RjJKxQokspPXZnK6+WY0H/2CqyjCauBclmTmcVYEoB8CSvRTx0bxgs1z0Hc5zzsbsvYA6sfLIJkweIW/ShOJOWHDiahhxl/8TS+Sq6DiuEwqGMAyQBrORNDnkTSRw9mArk480p8zszuoezOIMP04Nhmw3Q85zP51CJg6fX+Ytb7I2M7Yx2HywIYNtJqTWTCmQQyYgvVJS5lt0vH7qkUPUEnUimX/bRjkWRyMZlKRopCgX5jM7rjO4uFh103HIacB71iwJW0WtWlsiKXUsnutXTVdmxhe4SOZ30+lc9EUov5YtBHFjvh54qDO4mlkI06HPYhl480Uj4EMhfH7qM4I6g1I1NFkim/P+/3Z1Ly92Od9J3uIFflnM1D+8NhK8H8pJE+OckwNUh87aeUXKfcs0gqoieZEEkRqEWzLL/iSPlN4kxdw9UiGKtsXgbDQyMTPnnBUeNwHN7hqjpSr2DmxoqBLtuJeqoE1fTVLz98Us71VX9taKirqyuCKblmML/aur5OqOWM2IYkVnf83IvVMWlXlLce9+VaRC8vMnp5b9gIdeSXH1obW0+Wwfr0al0dctXZ/lVUDFopG4uczdhames1V/987dq1r+9AReGL3g6x/EHl1iKXNwhGjL4JqrG18ZMyk/FcHWIB29X1VrJwKgkS7hN0/mxWSjHZC0jPBwfHnzx5Mj44+BzQJstycdMZvxzpJOTHZKWU2L7GxuvXr7e2/mG7uyoPkB7WUThbMZy4zqSPymUNs1u9o7MD1PPBca/txo2Ghhs3bLf+OT545z875Np0Uk5PPYRnp/y3FASqFcSCKtPFM1fXqeoa0PzN8rtZRtdDmG67mqL62rXng94DKPBV+B0sm6urc4dkezZMJ6Den5pp1pEXGYtQrXhrLNPFc3Uy1g1yCbjQARcB43g7gFnPbjOWYhKk+i+n5heayHqGcaTn7Mo2SA65OIf2pheFw6EXvWtBWMEbvQkTGIiiDDODsiIKkRGCekx6jKiRlaCSKyVNkOCi0ar7J0UT2GBWWbO5SIoGUUiCizG7CCHZk16UJtD3mxn/TMyedvttEjezwfn5vM/7fO9ntiBKr6bTDMOkV1fTLJqb+gwWhv0b9huAQmcDlGQa8JQREel0RiMSyzhSxa9EnEpK5jRwKtKzf9WLnHALNZzHpt9vrY1kN1All5vNtrm32qtpxCWy3rMBETLAgjKyUFqYnTXTH+vI6ACku7wEPHg0jlTxN0oe5aIpssdiiAxU0zPOEIGwKGLEwo8Q1Yd2+2IjcX19HStesGB6pNdIuWWWLbZfXuQjoBRAaT0tgAKVpoy6er3eyhg5d92t4vesqwDLcRoLNEWi01jMjrpSybgTT37UjnS9wrqwlDs4ZIrXe+UypkLvMiQcAJYGwUQjE4bC0tmkpJi09AJJ9eSJp8ZBodIdAaF3Yopbd6r4UMRRse71nQYCoqbo9JRhuzLtTkxrhHcJhYh5w9mB3bccDL6BFVxOYAAWg4Ku6vXBEWml1lwH7VuYVAMnMk9tQgcqZS4nMrrMkabysb59xGPdqeIPDN+FvkBaDz15AWqJkPn1CIxxl4U3ef78yvB0t+Fb3vFbrJTVaonuvHHt0fS12XxYKERGNyF1vrMJsApczUNBTMW9Gm/tSEPTi0e1Fgc1pfvmjrX4aLCXfUpGhIhEp0VklEnE1RRgKVzk+k+GXWcxuGuFRpexO5WlEAzTqsO3UTEuu7M5icW4wn/bmdtf29ra+nmCjQOo4eWYSlUZq9D0Sq3uzfBqCc31PZ9ZSp/qOlbe2ysHkFS9zFAGBPchNsic4Znf/sEvHlyUiW07TmdhTnzH7NTa1ubm1vu5zU6+0+ncVv+ZQc0HahknWhWVamWaptVgrvoUu/0IzfXwD7xa6YRKhd6LVJUTTA8KrgrNMkf6bgw3zmZUfKcLotGRKKW2OreA09nMAdNt0j+3MqFDRkctWFuhac0irVKNXbY4c4GMw+b6imGTUKkslgMNMC+daJYD+l7q6+2YQACo4dJS1F4YDQ3F6KZp293NVZPV29tOddcCLSo7QqnAMhwt0nTlqkJrty/rl8Z7PP+DfpJNUyUDtdsA7+4l9sq95pzUB4Q52iCzUMP1yP8yPsMQjhMUFfEnq53NNQJe37YOtSEiqG+DsRa1iyjCpngs4zcjjuejS7lRBi+WA2muCZST6WuhtYqOnOHGdqeEv4gmk1rPdpO3nS3gWpnoYWVSH8fGWq1aJqPj0/ROoP5JjzbbnjpKxlf0MSgnuCgTYcJ4KDpuDFdW6ovOGpFPtjmw1wkuVR9N8fOCrn4Jq46YOCy0YQ+PqL9ruN12iAWoIdSM5+EQYRXvYDnA8VdfdirDrz5ZsAjotY9JW8beHMM+oAgzosjSZSbqR0e/H1LrO5R0yAShcNjVaAAiMhnSD2HGhFhzLNaXnTXwnwFLCnqdSPfGYF+eMhp5skwGaACn1tpenFarZd8NeUv40oGQ4Anddruoeb0ncMr/g0WcARZwJfM4tlLPDFha216vZwVGCo2Ge0bxQK2v77uHjGt5QMQqQrWKxf+KhYuF/06xWMBlk+6pF8fGFhcRi1aDBhyNRq1Q9E/FsgHWA/EvHaYUGCZMzaLj7LPekhEhIhSy2hmX4Amtn1gseCb4UEBvKhQIBS2prPeOFPpOoRj8Pu9BsprM5aO2iJUiCBx+XngrlQobvkK5Ye+Z/0w8UK5Qw9w+hMmeEjYijwWrMlQNBKJWa7TaVx6P93x7O5VK/Xbwm8Pu48cmtI673Wo1B4R+S2SOImCLReJiFYFchBPi9Kf737VRuMr0htnchKk7MnzdMoS1p0BasTAriCWVisfjkvHxGbTkM4M8/fb48WABHfpyfHzcBQ1zeb8V1BL4xkm6nxnuz3jCSdPPYegCtYaxZLYBlhTTsjA1YJGwNHLAmZXL5TPwOSsfYP16GGsIkGU8jmICLEXI5ih+zlyRBK26MDMwEQ2/CSZT2IaL2JKwysjlHMrMjORdKs5/O4z1rRCL1Wuw8phq+IWHzW43mV1auK+KYidGJ1ixlAc/PhrYT2FLJiO9GkpTcHP2Dyx5HGoo8Va8HBasPtbDIbVMpm4uf3KSq/bRTHlBJyps7YsC6b4xvB7tXVk4QWMgFszzTdvCUiTUV3Q6EsExDPoJuEqAxYoEazz16nzb49Vqz3ms+4toqr4v7Sera6XSfo4XzZQTFtEqMi/7kFxPRid2F40MD2LpC/OGmwYZpvD+LxGAytUIEFDElHy2J03cU4tL4p7teFx+j1rdnlT5kmr/pGs6zr+kS2vHnL1yJTQa9guJH5gvsqT7bDQjKBdGx+DwA84KXhmWCqTvwBwQIzBZKAbDGWE7OKBArhprcLaO796lXnu2U+fjvFgCb/WxTjAaz3ePTabqC5hQ13i1OCwkGY7uEQG57GT2meE1LsOHx2M4ZAAVKuEH/4IhWSSzF/CT6NSosDk2wIuwp4FolfhMT62Zd6mUdywFWPJ7sB5UkSwIgKb3q2Cu/BpglXIcbA5XYSr2IxQIgELig3Y763ieXDI8opxh/kAhE4ddGLbBHRTfRhcMZ27Svm4WBScP0RBrLfgQF+t59RBW3BuP12rev87O9rEG4+nXVa5cay9p2to15V++yBH0yxPe9FWCE4s4JR1kGIw+d2i2B8kicL2OHtpdELsEFXaFsMQFe97Xs1TLpC/bbu8w+gMcMiURzoJe6MAPR0VJH0s+fu6t1c7P+1egGYawklwNj9dKtOpFbr+07y+V8r1e7LJYeOw56dtZR69Z4WfM6+ukG7jm/dnDQ3cjEEskNgAqvaqcXN25YqkcUMIPh5MfrDhONRwOB0nyer0aH2DN/qv1N29KwmcpujA+NMz/udeIuX1Mhb/P75feVzljwdcqhbQKkPY3DkuUDEPRiELbHFwHvZ4ZFq52d9abTYZpM+k0nKhX3+zOG1iqHbu5GZxM+8WxjcByoZDNvnGEUT9KPeMz/ZCSS1J/r8H3s/0r478axUIJkTs5yee6PalM3aRNjPrQ6TjwuzcaJPt+nDXb/gviyp4tGf5xtZsNvl1dXQWstztRgHqadLNUzI5SXyCIAx/ZsIopyubwo/M+pvFCgHIYs7MST8Ujgcd7sf5oEmR8D+m4mreg5EFFjPgCVrfDt24Lsf+pLNhurwdJcjn51GBYmL+K7qJ1Nb9gMDw7yxZJO0vFKIPW0Kll2e54Ht4IR5bRPgreggFLC1ElYQM1fo62InnP83LJ8BHDNLIfQtr/h3KrC2krTcNMYLpi12WvhpnuzWznYiid6122SGBVsiJSYoKGaHpyMWgIPSHHHJZ4NDkxKaT5M/HnZpL+kB+2taEhe1YJyDa6ScaIXYPKgtTSxQtbxrKd3kx7v+/7fefEJP60/ZRgteiT53m+5/u+9/1OwEWmmVpDYmtbkJhMORAmrtcArpsTa35GWiD1UmXMhB4BKCEGvgJU/UdxnXNheqqcn2D8zjbSEoVUHTTiFsswDKz99q+4UmPkK3Pz9w2wWhdFoClu0ijbM6MB+XLlJzIJV1aI2fHbGld+/ObbtZjASL78o0evXoVCoVevHq1lSgxQlXkJvhrv33DqrpnsPibsSuTL8hp6vV6/x60Wkvbn4xkAsjaeEy/8r5kmR0N5Q21sb9dcG7qucQScc5I/76SHaY25/PwmEBbzMwxT8vl8GZ+vJDGMsLOWgTm5ATtBRKU2mQMxQZo1yQV7zebi3GzDcVxNSYPAl93WeKrG4CKDuEnT2K1pd4eKIaALMz7FTKxMS3NKkdi5Ng7AYpWdCZj9OISJnQqCuvm88rz/+4pdhzUnJuvM+0v1/cZ6VaUSwrO6ppYQdRqB1VR3+yPZmz5K/LuhC6E2jK56iizbN8BOqq+TPV4sAXwFFCp1jvIGAHs7kVmrkLEWmwBMLx9Xjvr7H+ddAN8c3okJWVciUScoJfb09FhFf3bR1LgFMdyF+ALn/6YJ1h/++5+/2826VpoAExke8ht0rrhL8pfNi6k2eR8z/lmscn8cy7lvYWBx9+X4/crROCY9nrrbwsyUHfLddGwKfw8ZVquqKqQaSVNrjHf/+bc/NdW3OhxtdYcjTe2eEMsODAxQVH3FUbVScFtxpBilxh2AUB/fWats3McSOBbBNxBT//f383GcdbOL235p1pVfON4ymlQ9VoqLkCaEm0hTGzqaO5zqY5om3VS6voFjXG56GtIE/PthJpNYpO/TFFjD0vJfxj87OtrY2Dh6TupRjzfydhOWCNv2GecK4DI7jklJUUgIShStMMRqo9M0Lb3OL+l3B4l0BBBAkiUkdMlbqnIMUMFC5Md+FdYmy5X7j5UWRj8sPhD0LmLQ2UVTwC/FV/yNTWQNQzHhJyNVic+soliVndZ01KdtapkmCgNpKro5d0jB5VGmX2AhMMf4F/ISXrjWmWfN5nhiBSwPbFUq+XLARa62aHRt00zKvMKEHQl7g0qzPYqC1mq1+k4QKXdIWgkVaO3AXhx1h1C5AQoJXn8otLtXlwEXi3Kyk4o5HG3TQsVXEiBVTWGGkVJtah3sbBwOBx4sqdZtKSkbyDBzTkFwNZ3XDyhVqCEjSpvrkqjMAGuPqKqGT1xFvczWaUINWZZ3swOsm0NQ8J0+0pynQgSE6XJswXFNF2ZiazFmTtdSWZ7NZv0VIZzwS1JmpanToqsSBIBKZKpi6scf17MqkaK0ktl5pRXWNyz56+iooofz/BAqFFHI5SL1PRsarM8K2GoK+5BKDsgwk9O/b4L1hFTBsRTVZs6WdoRSwCfFy5lMwtR0yjVlVfjXkR9GlV3fhONZSmVVJoG15+qJtvBFtBFBVuR592rBHQLK+tjJEMIa6AtNao5JMSfKuK7YGZ/pmml72xWWsrO62cWDbBgzveRP+Jj4NjNttsdbatGD5kU/kU1kVAeb7/xVaXPoQKwHRs+lk63qy2QCQqRzXBHI4bkQoPJMFhFU0T0ICmgaKmD4tZOZalObXA6QbEeK7zOxCWYtwzh9DOwWp+2+qRPVk+FhwzVTCQgTwe/rS+tVUfXuuiTWI0N1Sg+9o0g81cfyD1gUzZ1b9bgnPeitYjuiMIy2VLzjPmkRfGSXFlyAwyckFpjAFONMCGG7b99sd7Wcbw38MhpBl4JErTLZzaGhA5V/fShbVQLWevWUXvUFDzE3wPKwyFYo5CaMgdtJaKmXvasttbUyrNH+baewb5pmpqYYO2AKMNMuX8nhdOparpdocmMWb4EWMaow7YSD9aGhTcA29I64C7CJV067B/ENS0X08MCQO+cFhICvj3WT9piG30vvDbfUZwL5fNnhWGDCks9JMTmF6bZAwnSycVCIWDotXvoLzCWRZOg7cFZ4HWERYFdPvfJ2MTQgWx7UK7iLJC/6irTWYFjdi2q1M4bWJgUcmnXOfCyWMAV8zviC05GIq3W6k0Wm5UgnjghPfqQLq3DlAcpUqqpKpN4SL51+m+Urli45xV2eeyDHfWiS9rp3azatVhv1Gk4rlJpdsOqZnWadGaL11LoXb+mkI8KR36BZRCHlrLDSOFWdflXqV5ARREYMU7oush7a3xyesUWj2qgtqp0xnl1jPbuNwSmoOkFIY11IEqxKmJ5FlkwXCS/Y1YCtZAE1y3tppCpqC2qjteVPvv1jSIKtjnGN0XXMFFb1iAiHzsOzyFLoItORTMkHVEADBwIGbTaiojaa9k5+KqrO5hHhNYqQVjn0wWeXzr4biHTJu5q6gMbdtM0WDAImLQIDfOcIeRqq0aSlARN+baEGuzYriFaZK+vVc65SXvTIu78BVhZQPTkDymllUDb4iEb5T5DRYBweXR5rpAoEtVjG6P4NZySFdR5ZkF1Fuolg5RmoWa2Bo2zptIwJZLTtIqrB24Mf7pCpHW/e34VDNB+hfAGezsOI5TDSJCTx+7fnXtP9HFdGiFEqoBoFBDelk7tg+qiWcLWHPzJs6effxDXnY/r1+5+7n702UM9Tqg4tkQi8ADxFSHMJtzaqK+ffae7ATFUEXJ6xpYNpbXq3PcfVUEawfZrHH92e1+v189/dPrvVafrl2Y0b3d3dL3DDNTxGbWUZG0sWeG8keYhJMakIaRW//dAV8K9YJUINfM1W83praW+h0M6ltUGEZSOBarij79IjsPmt0+3veP0CMCGsG28MSpxGDiNjhVxuKZckolrGeEKYerF69YMX+S9c9gzSGcilbTN8IbfnLfCTXC0KeQrzcQ/fonpL34VDD+DmtwhOI7ljhF8Z4D0NIih5/Hxbjq5OEJDPcVwylxuLUGBJOVqvfPjpgg76FowzNu0eX/gH7y0s57i9YBoiIhi0cbgNHZzvogPRfYf//6eHDx8+uff06b17T/AJrcEX3cfjC/JwVAQdH8kVOPhcSh7SSQBCojAdH/Msxtck2GeAnZrXk+P4QoGfqe3N1NBbJLIM/+qqD33XFn7n3khv763e3t6Rkd6f8N9fKJiAtWev8VI7yBg5PCzkuBzPL4HpG6L16497VvJLDHYAEQWz83xhmed2uSSs1TZYeYjf9YQm+tKFGhmfAB74GLnVO/IUQbypcwW+J643eIEsS3KJT3JLucPDSD1euS8//8jnEiEXcGEGj6dh4hS4JLfrrQWDwSiJLOMd4ir6otfj4zzDD3uVMfIERX1940Yd1rNu4nqQ0TJ2yC8tASpw2XG+/u5jH4vqmKErILzWkjlAlUzupW3RINkGqre6FMMja3cG8bGQWzIm+HyIOt9+Vqfr/S//L+eKQRRHo7BN3AO1scitXDPMTrUIs3aLhYUDIeVA0ENnBauxWhDsFq5YMhKE84p0SwyIzV9ZKVvljpReyBQ2Qwq7LRZBKwkEq33v/X8c565yx5lbuNeY8tv3vvd935+d/I0AP2MutlsoW8Ph8Fowi3frgK9NM/3eH4QLBL4P3QJgt5e9EfK9ODBFs3hZxHj9vls6Drqy3o3QSAcNGZe7dk0ij9i+3JtR4YBv2168usO0AHYDg/wIS93uDG97xPca8t2E0ohcmotvUm11D1YX3wnIYoiNtQFi0dgoXLxaQPYv+zGnICUSh+C67dEcwadH/U4Hx8j57sPs3G0URa65x3g+P9pE1cOPXFYxrNVmuQBwyEDlIy4gGk8Mq/XmIFSwjrlbQS8YZ/8zNGvELdrSzG3kWpYbRRaO8p+MV69sXMWNgBUYYQ2fY9Y/rENRIa67HkgX5Kve+8v+8I5LlgLN8rcm0h3QwSBNZI1gvK5juwTnYXIXAbAqvawO1kLrITw/iF6HoyJc6DfoOJcjKLRoBfhuRmbZcsGqzcjVOOO7CEd32h4D3VJ19CeA0mgsjVU6TDdnITzL+L8MwPpH9Urw/r0IgEh8sr48cNw3tXy0tUzTgiki40seMn0+rk6mti44/w4ItTDkTTpczZoGhIlgiWs83YNV+C5UiKvPYeHJ4oPge9l3AVnej3zKEH6JW8+V89esOqnPsV3I+V9DZHsoh8Zm0CwtYq0H1scTLHz/1/GZ/mhEsLhkVawywbK2NT/vkkII61FVx7HHXYbdUpHzRRBRI6ysatXBptlc4gJw1l9zdWg94pt9OAvRsbUn+E5IrC1KRAS8LwP1+SIiLNuG/IDjVMl+0heLzbK6MaozgFZf01LSOwNKNI9Chf6YA2HtcckakFKZW/RE09I0oJZVo0UEvt90HOdPew7tUhlu5yAAsapWgFnpZWW5xlDItR7G2HrzS+KRJb3qjy6FRZM1m9bWQjfUcKLI+OJXVffGk0mt4zk6sx2dVhEiVyNdba4GM2OxbpBzB6T1H35vFY5x3UjmNzqf80jKx+iDnLoYnDFsKZ7K2uPmZDyd2ox5nq52ReSSYQlDOUBrpPy8/kSf4b0+zuUsSQyGPJJSv6BRBAqeKRA7KnOc7tTxZpO2w2xuP0WwnyC9WRCiOOaE8O87Od5NTpmfIJKK8MeB8V9TWA9zkPLzvydTpt/pus0jV9wlftbgQfVdJnHEkrK7/L5fxPipfsVs5jCnXW9+hkTPI1fpU9C4eFCAcX0uJY5byZyrle+jMv1Qqil2dXSeuecwNp96DH0o5vw+JBDUs6e4ISyVwyyj7TWLNF7xAJaqM4ZezdCuVf2Gc56OinHCWZylEk9TqRPfiolV3mM8T1pUPN7g6UdZ7Q/w6UDRKLM+Vy8aI2l8jQlM9MMzF9qPstydMgL5/KkvUpMyOdei83SZh636fY7flbM7ZkB0WJz9LCWeoZLZHOYtfrwo3aA7q7tW0SOr49+nguMAJmjUs13Sl8zk8paJjAfr+VddEedroXx2nkw8c0mpzMlLpVjihzHsVcx5WMgb5eVJNvWfXQAJ2LJvT0/xnQgvzzs9ffs6k5ISP0K9kJJU0g9xgef/rr4Blv5SzqvCo40AAAAASUVORK5CYII=" alt="Stake" class="h-10"></a></div></nav><div data-v-2edc1df5="" class="router-wrapper fixedMain"><div data-v-92a5d366="" data-v-2edc1df5="" class="h-full"><!----><div data-v-92a5d366="" class="h-96 w-full relative"><div class="h-full bg-no-repeat bg-center bg-cover bg-gray-400" data-src="https://firebasestorage.googleapis.com/v0/b/get-biew.appspot.com/o/users%2FUdpA5JSwIFXHsybXcTuXwWQ74Bf1%2Fimages%2Fbermuda-aerial.jpeg?alt=media&amp;token=86397ec8-ce70-42b8-8599-c6a5823d19ad" lazy="loaded" style="background-image: url(&quot;https://firebasestorage.googleapis.com/v0/b/get-biew.appspot.com/o/users%2FUdpA5JSwIFXHsybXcTuXwWQ74Bf1%2Fimages%2Fbermuda-aerial.jpeg?alt=media&amp;token=86397ec8-ce70-42b8-8599-c6a5823d19ad&quot;);"></div><div class="absolute top-0 left-0 w-full h-full flex justify-center items-center text-white p-4 py-6 lg:py-8"><div class="text-center"><h1 class="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight mb-6" style="color: rgb(255, 255, 255);"> Blue Community Assessment </h1><p class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium" style="color: rgb(255, 255, 255);"> Measuring Tourism Sustainability Worldwide </p></div></div></div><div data-v-92a5d366="" class="container mx-auto px-4 sm:px-0"><!----><div data-v-92a5d366="" class="filters is-hidden-touch mt-4 "><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-gray-900 text-white border-black"> All </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Orlando </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> St. Petersburg </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Anna Maria Island </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> New Smyrna Beach </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> St. Pete Beach </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Key West </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Treasure Island </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Salt Lake County Utah </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Cuba </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> St. John USVI </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Dahab City Egypt </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Bermuda </button><button data-v-92a5d366="" type="button" class="px-4 py-2 | w-auto | transition-shadow duration-200 shadow-sm hover:shadow-md | inline-flex justify-center items-center | rounded-md | border | text-base sm:text-sm | font-medium | focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4 mb-4 bg-white hover:bg-gray-5 text-gray-600 hover:text-gray-700"> Charleston </button></div><div data-v-92a5d366="" class="flex flex-wrap -mx-2 fixeditemsContainer"><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/1" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Orlando" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/orlando-removebg-preview.png" src="./stakeholders_files/orlando-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Orlando</p><p class="text-base text-gray-700">Orange</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/2" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="St. Petersburg" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/stpetersburg-removebg-preview.png" src="./stakeholders_files/stpetersburg-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">St. Petersburg</p><p class="text-base text-gray-700">Silver</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/3" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Anna Maria Island" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/anna-removebg-preview.png" src="./stakeholders_files/anna-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Anna Maria Island</p><p class="text-base text-gray-700">Amber</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/4" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="New Smyrna Beach" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/nsmyrna-removebg-preview.png" src="./stakeholders_files/nsmyrna-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">New Smyrna Beach</p><p class="text-base text-gray-700">Navy</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/5" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="St. Pete Beach" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/stpb-removebg-preview.png" src="./stakeholders_files/stpb-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">St. Pete Beach</p><p class="text-base text-gray-700">Scarlet</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/6" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Key West" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/kw-removebg-preview.png" src="./stakeholders_files/kw-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Key West</p><p class="text-base text-gray-700">Khaki</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/7" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Treasure Island" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/treasure-removebg-preview.png" src="./stakeholders_files/treasure-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Treasure Island</p><p class="text-base text-gray-700">Tan</p></div><div><p class="mt-4 text-gray-600 text-sm"> Florida </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/8" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Salt Lake County Utah" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PXgWhZmozHdFWj4kZSgR/pub/qDRfIsC7EaPsX1YRtpZG.png" src="./stakeholders_files/qDRfIsC7EaPsX1YRtpZG.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Salt Lake County Utah</p><p class="text-base text-gray-700">Sage</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/9" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Cuba" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PXgWhZmozHdFWj4kZSgR/pub/nnLswmKbasJzS8c136Mf.png" src="./stakeholders_files/nnLswmKbasJzS8c136Mf.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Cuba</p><p class="text-base text-gray-700">Charcoal</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/10" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="St. John USVI" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PXgWhZmozHdFWj4kZSgR/pub/pKPe4uoPBa4Spc8HOdym.png" src="./stakeholders_files/pKPe4uoPBa4Spc8HOdym.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">St. John USVI</p><p class="text-base text-gray-700">Scarlet</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/11" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Dahab City Egypt" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/dehab-removebg-preview-removebg-preview.png" src="./stakeholders_files/dehab-removebg-preview-removebg-preview.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Dahab City Egypt</p><p class="text-base text-gray-700">Eggshell</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/12" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Bermuda" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://bluecommunitysustainability.github.io/assessment/destinations/icons/bulk/cuba-bermuda-min.png" src="./stakeholders_files/cuba-bermuda-min.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Bermuda</p><p class="text-base text-gray-700">Burgundy</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/13" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><div><div class="relative w-full pb-full bg-gray-300"><img alt="Charleston" class="object-cover absolute h-full w-full inset-0 transition-all duration-300 ease-in-out opacity-100" data-src="https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/PXgWhZmozHdFWj4kZSgR/pub/4nUzdtJeffuSkoBbXUsr.png" src="./stakeholders_files/4nUzdtJeffuSkoBbXUsr.png" lazy="loaded"><!----></div></div><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl">Charleston</p><p class="text-base text-gray-700">Champagne</p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/14" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><p class="mt-4 text-gray-600 text-sm"> 7. State / Province : </p><ul class="mt-4"><li class="flex justify-between"><span class="font-bold">📇About Section</span><span class="text-right">Destination Community</span></li></ul><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/15" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/16" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/17" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/18" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/19" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/20" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/21" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/22" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/23" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/24" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/25" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/26" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/27" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/28" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/29" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/30" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/31" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/32" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/33" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/34" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/35" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/36" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/37" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/38" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/39" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/40" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div><div data-v-92a5d366="" class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4"><a data-v-92a5d366="" href="https://stakeholders.biew.site/41" class=""><div data-v-92a5d366="" class="overflow-hidden bg-white rounded shadow flex flex-grow flex-col text-gray-800 text-left h-full"><!----><div class="h-full p-6 flex flex-col justify-between"><div class="whitespace-pre-wrap"><p class="font-semibold text-2xl"></p><p class="text-base text-gray-700"></p></div><div><!----><!----><!----></div></div></div></a></div></div><div data-v-92a5d366="" class="" style="display: none;"><div data-v-92a5d366=""> No data to show </div></div></div></div></div><div data-v-2edc1df5=""><footer class="bg-white" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><div class="container mx-auto px-4 py-6 text-center"><div><p>  </p><div class="py-4"><div class="markup-content text-center"><div><p><a href="https://www.bluecommunity.info/" rel="noopener noreferrer" target="_blank">Blue Community Consortium</a> |  Built by Justin Farrow</p></div></div></div><!----></div></div></footer><div class="bg-white"><div class="container mx-auto px-4 py-6 text-center"><p> Made with <strong><a href="https://getbiew.com/">Biew</a></strong></p></div></div></div><div data-v-469991d5="" data-v-2edc1df5=""><a data-v-469991d5="" href="https://getbiew.com/?ref=stakeholders.biew.site" class="biew-badge fixed px-4 py-2 bg-gray-900 text-white font-light shadow-lg"> Made with <span data-v-469991d5="" class="font-bold">Biew</span></a></div><!----><div data-v-d9ffb982="" data-v-2edc1df5=""><!----><div data-v-d9ffb982="" class="z-20 top-3 left-3 fixed"><span data-v-d9ffb982=""></span></div></div><!----></div></div><script src="./stakeholders_files/app.004ca0d8.js"></script><div id="cronycle_content_clipper_chrome_installed" style="height: 0px; visibility: hidden;"></div><div class="ue-sidebar-container"></div><div class="_tc_offscreeneded" id="_tcx-0b3pc348rgvd"></div></body><additor-crx id="additor-crx-base"></additor-crx><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
