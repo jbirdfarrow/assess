@@ -1,0 +1,122 @@
+/* PRESENTATION
+* CSS : cssreference.io
+*/
+
+header	{
+	width: 100vw;
+	height: 100px;
+	border: 1px solid #000066;
+	background:
+	linear-gradient(
+		limegreen,
+		transparent
+	),
+	linear-gradient(
+		90deg,
+		skyblue,
+		transparent
+	),
+	linear-gradient(
+		-90deg,
+		coral,
+		transparent
+	);
+	
+background-blend-mode: screen;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo	{
+	width: 50px!important;
+	margin-left: 20px;
+}
+
+.links	{
+	margin-right: 20px;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.links > a	{
+	
+}
+.icon-area {
+  z-index: 2;
+}
+
+.icon-container {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 3px;
+  z-index: 1;
+  transition: z-index 0s 0.5s;
+}
+
+.icon-container:hover {
+  z-index: 2;
+  transition: z-index 0s 0s;
+}
+
+.icon {
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 25px;
+  z-index: 4;
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.icon:hover {
+  transform: scale(1.5);
+  background-image: radial-gradient( circle 489px at 49.3% 46.6%,  rgba(255,214,126,1) 0%, rgba(253,200,0,1) 100.2% );
+}
+
+.icon-description {
+  background-image: linear-gradient( 108deg,  rgba(242,245,139,1) 17.7%, rgba(148,197,20,0.68) 91.2% );
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  border-radius: 0 25px 25px 0;
+  height: 50px;
+  width: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 13;
+  
+  transition: padding 0.5s 0.25s, max-width 0.5s;
+  padding: 1em 0;
+  max-width: 0px;
+}
+
+.icon:hover + .icon-description {
+  padding: 1em 2em;
+  max-width: 100vw;
+  transition: padding 0.5s, max-width 0.5s;
+}
+.frameContainer{
+    position: fixed; 
+    height: 80%;
+    top:100px;
+    left: 0px;
+    right:0px;
+    bottom:0px;
+    z-index:1;
+}
+
+.main_iframe{
+    height: 100%;
+    width: 100%;
+    border:none;
+    background:transparent;
+}
