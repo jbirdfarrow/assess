@@ -5,23 +5,12 @@
 header	{
 	width: 100vw;
 	height: 100px;
-	border: 1px solid #000066;
-	background:
-	linear-gradient(
-		limegreen,
-		transparent
-	),
-	linear-gradient(
-		90deg,
-		skyblue,
-		transparent
-	),
-	linear-gradient(
-		-90deg,
-		coral,
-		transparent
-	);
-	
+	border: 2px solid #000066;
+	backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(74, 144, 226, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 background-blend-mode: screen;
 	display: flex;
 	justify-content: space-between;
@@ -66,10 +55,10 @@ background-blend-mode: screen;
 .icon {
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
   box-sizing: border-box;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   padding: 3px;
-  border-radius: 25px;
+  border-radius: 15px;
   z-index: 4;
   position: relative;
   transition: transform 0.5s;
@@ -81,7 +70,11 @@ background-blend-mode: screen;
 }
 
 .icon-description {
-  background-image: linear-gradient( 108deg,  rgba(242,245,139,1) 17.7%, rgba(148,197,20,0.68) 91.2% );
+  backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(74, 144, 226, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   display: inline-block;
   position: absolute;
   top: 0;
