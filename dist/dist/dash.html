@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Blue Community Dashboard Expander</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'><link rel="stylesheet" href="./slidedown.css"><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="https://bluecommunitysustainability.github.io/assessment/nav/style.css">
+<link rel="shortcut icon" href="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fglide-prod.appspot.com%2Fo%2Ficon-images%252Fanonymous-5b5e1e96-a356-42a3-a297-e97167644378.png%3Falt%3Dmedia%26token%3D6ae30e7e-8e84-4377-b340-14cbfa8dc329" type="image/x-icon">
+<link rel="icon" href="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fglide-prod.appspot.com%2Fo%2Ficon-images%252Fanonymous-5b5e1e96-a356-42a3-a297-e97167644378.png%3Falt%3Dmedia%26token%3D6ae30e7e-8e84-4377-b340-14cbfa8dc329" type="image/x-icon">
+	<style>
+		:root {
+  --gutter-horizontal: 1vw;
+  --gutter-vertical: 1vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+details + details {
+  margin-top: 1em;
+}
+
+details.modal summary {
+  background: #fff;
+  color:#000066;
+  border: 2px solid black;
+  cursor: pointer;
+  display: inline-block;
+  padding: .25em .5em;
+}
+
+details.modal summary::-webkit-details-marker {
+  display: none;
+}
+
+details.modal summary::before {
+  content: "";
+  display: inline-block;
+  padding-right: .25em;
+}
+
+details[open].modal summary::before {
+  content: "Close";
+}
+
+details[open].modal {
+  overflow: auto;
+  padding: 1em;
+  position: fixed;
+  z-index: 10;
+}
+
+details[open].modal,
+details[open].modal::after {
+  bottom: 10vh;
+  bottom: var(--gutter-vertical);
+  left: 10vw;
+  left: var(--gutter-horizontal);
+  right: 10vw;
+  right: var(--gutter-horizontal);
+  top: 10vh;
+  top: var(--gutter-vertical);
+}
+
+details[open].modal::before,
+details[open].modal::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+}
+  
+details[open].modal::before {
+  background: rgba(0, 0, 0, .75);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+details[open].modal::after {
+  background: #fff;
+}
+
+		body,html {background:url('https://res.cloudinary.com/glide/image/fetch/f_auto,w_525,c_limit/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FLLRRJmsSn1snVHmVMkc4%2Fpub%2FuuAcaN4jwlqORBV7yLI4.gif')no-repeat;
+  background-size:cover;}
+		.gradient-text {
+  background-image: radial-gradient( circle 400px at 6.8% 8.3%,  rgba(255,244,169,1) 0%, rgba(255,244,234,1) 100.2% );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 32px;
+}
+	</style>
+	</head>
+<body>
+  <header>
+	<div class="logo">
+		<img style="width:80px;" src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fglide-prod.appspot.com%2Fo%2Ficon-images%252Fanonymous-5b5e1e96-a356-42a3-a297-e97167644378.png%3Falt%3Dmedia%26token%3D6ae30e7e-8e84-4377-b340-14cbfa8dc329" alt="Blue Community Consortium">
+	  </div>
+    <div class="slide_container">
+       
+        <!--↓メニュー-->
+        <nav id="menu">
+            <ul>
+               <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=📇" target="load">📇</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⚙️" target="load">⚙️</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=😎" target="load">😎</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🧲" target="load">🧲</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💹" target="load">💹</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=️🏖️" target="load">🏖️</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍛" target="load">🍛</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=☀️" target="load">☀️</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💧" target="load">💧</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=♻️" target="load">♻️</a></li>
+<li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌄" target="load">🌄</a></li>
+ <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏗️" target="load">🏗️</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🚇" target="load">🚇</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍼" target="load">🍼</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌿" target="load">🌿</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🦐" target="load">🦐</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏞️" target="load">🏞️</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⛵" target="load">⛵</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏫" target="load">🏫</a></li>
+  <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌎" target="load">🌎</a></li>
+            </ul>
+        </nav>
+        
+        <!--↓クリックボタン-->
+        <div id="btn"><span></span></div>
+    </div>
+    <!--スライドアニメーションする部分ここまで-->
+
+    <div class="container">
+        <header id="header">
+            <h1> ↑ Click</h1>
+	<details class="modal"><summary style="color:#fff;" > ≡ Metric Menu</summary>
+	<div class="links">
+		 <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=📇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png></img>
+  <div class=icon-description>
+     📇 Destination Contact Info
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=⚙️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png></img>
+  <div class=icon-description>
+     ⚙️ Sustainability Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=😎>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FsbFNQ1luOB6YBZa0bvNL.png></img>
+  <div class=icon-description>
+     😎 Tourism Satisfaction
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🧲>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FTzLMCFoWRntFrqGpYOnm.png></img>
+  <div class=icon-description>
+     🧲Tourism Promotion 
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=💹>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FxNsUGVMlkiWGRshRAWO6.png></img>
+  <div class=icon-description>
+     💹 Socio Economic Sustainability
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=📇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FyKvSJj4YxTNKrg9hgi90.png></img>
+  <div class=icon-description>
+     🏖️ Tourism Seasonality
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🍛>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FZTRr9yQJK9Tt7KNUVPQa.png></img>
+  <div class=icon-description>
+     🍛 Cultural Sustainability
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=☀️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Ffnbb4GmLPpGy5CKd6oVF.png></img>
+  <div class=icon-description>
+     ☀️ Energy Management
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=💧>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FkXiszqulBXtxYgjjDtG1.png></img>
+  <div class=icon-description>
+    💧 Water Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=♻️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fm4pUhWm6oDMPcqjpXJQg.png></img>
+  <div class=icon-description>
+     ♻️ Waste Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌄>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FW6UfSXnBecgQ0Bn34xDJ.png></img>
+  <div class=icon-description>
+    🌄 Land Use and Management
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏗️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FbVbSHnz1jfWYjCyRvrLT.png></img>
+  <div class=icon-description>
+     🏗️ Building Design
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🚇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSBVpkVx08L1lyWF8s8fk.png></img>
+  <div class=icon-description>
+     🚇 Transportation
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🍼>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FynN2v2DCjP4okP4H7Mfb.png></img>
+  <div class=icon-description>
+     🍼 Plastic Reduction
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌿>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVfBAltaI2HDbHxeom3A8.png></img>
+  <div class=icon-description>
+     🌿 Organic and Hydroponic Foods
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🦐>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FUrLRkX6UYbjULUdJILM3.png></img>
+  <div class=icon-description>
+    🦐 Sustainable Seafood
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏞️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2F4IcxFa9AgN2GSLvAejWV.png></img>
+  <div class=icon-description>
+     🏞️ Habitat Protections
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=⛵>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FD2LXiMZ2Fr6mzrAuBHP5.png></img>
+  <div class=icon-description>
+     ⛵ Certified Clean Marinas
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏫>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FdcAMqZceFLfJrAIiyaCX.png></img>
+  <div class=icon-description>
+    🏫  Education Programs
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌎>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVHmTmNVCWmpfEilsznNi.png></img>
+  <div class=icon-description>
+     🌎 Planetary Boundaries & Policy
+    </div>
+  </a>
+	</div></details><br><h1 class="gradient-text">Blue Community</h1>
+</header>
+<!-- partial:index.partial.html -->
+<div class="container-fluid has-sidebar sidebar-expanded" id="main-section">
+  <div class="sidebar">
+      <ul class="nav nav-sidebar">
+	       <li><a href="https://forms.gle/VLDX3aCwZHktyk1ZA" target="load"><span class="glyphicon glyphicon-plus"></span> <span class="item-label">Add Destination</span></a></li>
+                 <li><a href="https://bluecommunitysustainability.github.io/assessment/dist/questions.html" target="load"><span class="glyphicon glyphicon-asterisk"></span> <span class="item-label">Assessment Questions</span></a></li>
+        <li><a href="https://website-295.nocode.works/" target="load"><span class="glyphicon glyphicon-education"></span> <span class="item-label">Blue Wiki</span></a></li>
+        <li><a href="https://bluecommunitysustainability.github.io/assessment/blueos/dist/index.html" target="load"><span class="glyphicon glyphicon-stats"></span> <span class="item-label">Blue OS</span></a></li>
+        <li><a href="https://app.bluecommunity.info/full" target="load"><span class="glyphicon glyphicon-screenshot"></span> <span class="item-label">Blue Community App</span></a></li>
+        
+	      <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard" target="load"><span class="glyphicon glyphicon-th"></span> <span class="item-label">Dashboards</span></a></li>
+           <li><a href="https://bluecommunitysustainability.github.io/assessment/dist/chartslist.html" target="load"><span class="glyphicon glyphicon-equalizer"></span> <span class="item-label">Databoards</span></a></li>
+          <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard" id="collapse-nav"><span id="toggle-collapse" class="glyphicon glyphicon-circle-arrow-left"></span> <span class="item-label">Collapse Navigation</span></a></li>
+      </ul>
+   <table style="width: 100%;" >
+<tbody>
+<tr>
+<td><p class="sidemoji" style="font-size:2em;"> <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=📇" target="load">📇</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⚙️" target="load">⚙️</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=😎" target="load">😎</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🧲" target="load">🧲</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💹" target="load">💹</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=️🏖️" target="load">🏖️</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍛" target="load">🍛</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=☀️" target="load">☀️</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💧" target="load">💧</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=♻️" target="load">♻️</a></p></td>
+<td><p class="sidemoji" style="font-size:2em;">  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌄" target="load">🌄</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏗️" target="load">🏗️</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🚇" target="load">🚇</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍼" target="load">🍼</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌿" target="load">🌿</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🦐" target="load">🦐</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏞️" target="load">🏞️</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⛵" target="load">⛵</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏫" target="load">🏫</a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌎" target="load">🌎</a></p></td>
+</tr>
+</tbody>
+</table>
+    <!-- DivTable.com -->
+</div>
+  </div>
+  <div class="frameContainer">
+    <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
+</div>
+
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script>
+  $(function() {
+	var openBtn = $('#btn'),
+		slideMenu = $('#menu'), // ↑ '#btn'にオープン・クローズボタンID、'#menu'にメニュー要素IDを指定
+		layer = $('<div />').addClass('layer');
+	openBtn.on("click", function() {
+		if (slideMenu.is(':hidden')) {
+			layer.appendTo('body');
+			slideMenu.slideDown(300); // ↑かっこ内の数字でアニメーションスピード設定（ミリ秒単位）
+		} else {
+			slideMenu.slideUp(300); // ↑かっこ内の数字でアニメーションスピード設定（ミリ秒単位）
+			layer.remove();
+		}
+	});
+});
+</script>
+</body>
+</html>
