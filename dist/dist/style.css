@@ -20,8 +20,11 @@
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-  background: linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
-  background-repeat: no-repeat;
+  backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(17, 25, 40, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   background-attachment: fixed;
   color: #f4f5f6;
   width: 60px;
@@ -123,7 +126,11 @@ html, body {
   height: 100%;
   width: 100%;
   border: none;
-  background: #3366ff;
+   backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(17, 25, 40, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 #main-section.sidebar-expanded .sidebar {
@@ -189,7 +196,11 @@ html, body {
 .nav > li > a:hover,
 .nav > li > a:focus {
   color: #fff;
-  background-color: #000066;
+  backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(17, 25, 40, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 /* SUBMENU */
