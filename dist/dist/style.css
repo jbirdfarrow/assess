@@ -116,7 +116,7 @@ html, body {
   position: fixed;
   height: 100%;
   top: 0px;
-  left: 100px;
+  left: 200px;
   right: 0px;
   bottom: 0px;
   z-index: 1;
@@ -209,3 +209,4 @@ html, body {
 }
 #toggle-collapse {background-color:#3366ff!important;}
 a.sidemoji:hover {font-size:1.5em;}
+footer {z-index:11;}
