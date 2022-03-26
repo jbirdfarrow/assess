@@ -207,6 +207,6 @@ html, body {
 .nav-sidebar > ul > a {
   color: #fff;
 }
-#toggle-collapse {background-color:#3366ff!important;}
+#toggle-collapse {background-color:#3366ff!important;border-radius:25%;}
 a.sidemoji:hover {font-size:1.5em;}
 footer {z-index:11;}
