@@ -394,6 +394,48 @@ pre {
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script>
+	$(document).ready(function() {
+    
+    var left = $('#left').tabSlideOut({
+      tabLocation: 'left',
+      clickScreenToClose: false,
+      offset: '40px',
+      offsetReverse: true, // offset from bottom, not top
+      // handlers: enable and disable buttons when sliding open or closed
+      onOpen: function(){
+          $('#open').prop('disabled',true);
+          $('#close').prop('disabled',false);
+      },
+      onClose: function(){
+          $('#open').prop('disabled',false);
+          $('#close').prop('disabled',true);
+      }      
+    });
+    
+    $('#right').tabSlideOut({
+      tabLocation: 'right',
+      offsetReverse: true,
+      handleOffsetReverse: true
+    });
+    
+    $('#top').tabSlideOut({
+      tabLocation: 'top',
+      action: 'hover',
+      handleOffsetReverse: true,
+      offsetReverse: true,
+      onLoadSlideOut: true
+    });
+    
+    $('#bottom').tabSlideOut({
+      tabLocation: 'bottom',  
+      action: 'hover',
+      handleOffsetReverse: true,
+			offsetReverse: true,
+      onLoadSlideOut: false
+    });  
+});
 
+</script>
 </body>
 </html>
