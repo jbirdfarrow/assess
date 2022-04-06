@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Blue Community Dashboard Expander</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://rawgit.com/hawk-ip/jquery.tabSlideOut.js/master/jquery.tabSlideOut.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://bluecommunitysustainability.github.io/assessment/nav/style.css">
+<link rel="shortcut icon" href="./bluesdgs-min.png" type="image/x-icon">
+<link rel="icon" href="./bluesdgs-min.png" type="image/x-icon">
+	<style>
+		:root {
+  --gutter-horizontal: 10vw;
+  --gutter-vertical: 10vh;
+}
+		a.handle.ui-slideouttab-handle-rounded.ui-slideouttab-handle.ui-slideouttab-handle-reverse {display: block;
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    background-color: grey;}
+    .pre-body {
+    background-color:black;
+    height: auto;
+    color: white;
+    display: none;
+		}
+
+ul.pre-body-list {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding: 5px 0 0 0;
+    text-align: center;
+    padding-top: 10px;
+}
+
+ul.pre-body-list li{
+    display: inline;
+    list-style-type: none;
+    margin: 20px;
+    width: auto;
+    padding: 0 5px;
+}
+
+.tab-black {
+    background-color: black;
+    border-color: #222222;
+    color: white;
+    position:relative;
+    border-radius: 0px 0px 8px 8px;
+    /**CSS PIE gives rounded corners in IE8 **/
+    behavior: url(/scripts/PIE.htc);
+}
+
+.tab-black:hover,
+.tab-black:focus,
+.tab-black:active,
+.tab-black.active {
+  background-color: #222222;
+  border-color: #222222;
+  color: whiteSmoke;
+}
+
+    
+.vertical-snap {
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1rem;
+  width: calc(80px + 1rem);
+  padding: 1rem;
+  height: 220px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+}
+
+.vertical-snap > a {
+  scroll-snap-align: center;
+}
+
+.vertical-snap img {
+  width: 75px;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+details + details {
+  margin-top: 1em;
+}
+
+details.modal summary {
+  background: #fff;
+  color:#000066;
+  border: 2px solid black;
+  cursor: pointer;
+  display: inline-block;
+  padding: .25em .5em;
+	z-index:10;
+}
+
+details.modal summary::-webkit-details-marker {
+  display: none;
+}
+
+details.modal summary::before {
+  content: "";
+  display: inline-block;
+  padding-right: .25em;
+}
+
+details[open].modal summary::before {
+  content: "Close";
+}
+
+details[open].modal {
+  overflow: auto;
+  padding: 1em;
+  position: fixed;
+  z-index: 10;
+}
+
+details[open].modal,
+details[open].modal::after {
+  bottom: 10vh;
+  bottom: var(--gutter-vertical);
+  left: 10vw;
+  left: var(--gutter-horizontal);
+  right: 10vw;
+  right: var(--gutter-horizontal);
+  top: 10vh;
+  top: var(--gutter-vertical);
+}
+
+details[open].modal::before,
+details[open].modal::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+}
+  
+details[open].modal::before {
+  background: rgba(0, 0, 0, .75);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+details[open].modal::after {
+  background: #fff;
+}
+
+		body,html {background:url('./fishbowl-min.gif')no-repeat;
+  background-size:cover;}
+		
+		#bottom {
+	border-color: #000066;
+}
+#bottom .handle {
+	backdrop-filter: blur(10px) saturate(101%);
+    -webkit-backdrop-filter: blur(10px) saturate(101%);
+    background-color: rgba(17, 25, 40, 0.47);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  background-attachment: fixed;
+}
+
+pre {
+	margin-left: 2em;
+}
+
+		.gradient-text {
+  background-image: radial-gradient( circle 400px at 6.8% 8.3%,  rgba(255,244,169,1) 0%, rgba(255,244,234,1) 100.2% );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 32px;
+}
+		
+		.vert {
+  transform: rotate(270deg);
+  transform-origin: left top 0;
+  position: absolute;
+  font-size: 1.2em;
+  top: 210px;
+}
+	</style>
+	</head>
+<body>
+ 
+<!--before everything else and just after the body tag-->
+<div id="pre-body" class="pre-body peek">
+    <div class="container">
+      <ul class="pre-body-list">
+        <li><a target="load" href="https://bluecommunity.chartmat.app/orlando/?embed=true&section=%F0%9F%93%87&embed=true"><img alt="Destination Contact Info" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%E2%9A%99%EF%B8%8F&embed=true"><img alt="Sustainability Management" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%98%8E&embed=true"><img alt="Tourism Satisfaction" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FsbFNQ1luOB6YBZa0bvNL.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%A7%B2&embed=true"><img alt="Tourism Promotion" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FTzLMCFoWRntFrqGpYOnm.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%92%B9&embed=true"><img alt="Socioeconomic Sustainability" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FxNsUGVMlkiWGRshRAWO6.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%EF%B8%8F%F0%9F%8F%96%EF%B8%8F&embed=true"><img alt="Tourism Seasonality" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FyKvSJj4YxTNKrg9hgi90.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8D%9B&embed=true"><img alt="Cultural Sustainability" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FZTRr9yQJK9Tt7KNUVPQa.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%E2%98%80%EF%B8%8F&embed=true"><img alt="Energy Management" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Ffnbb4GmLPpGy5CKd6oVF.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%92%A7&embed=true"><img alt="Water Management" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FkXiszqulBXtxYgjjDtG1.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%E2%99%BB%EF%B8%8F&embed=true"><img alt="Waste Management" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fm4pUhWm6oDMPcqjpXJQg.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8C%84&embed=true"><img alt="Land Management" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FW6UfSXnBecgQ0Bn34xDJ.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8F%97%EF%B8%8F&embed=true"><img alt="Building Design" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FbVbSHnz1jfWYjCyRvrLT.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%9A%87&embed=true"><img alt="Transportation" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSBVpkVx08L1lyWF8s8fk.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8D%BC&embed=true"><img alt="Plastic Reduction" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FynN2v2DCjP4okP4H7Mfb.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8C%BF&embed=true"><img alt="Organic Foods" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVfBAltaI2HDbHxeom3A8.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%A6%90&embed=true"><img alt="Sustainable Seafood" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FUrLRkX6UYbjULUdJILM3.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8F%9E%EF%B8%8F&embed=true"><img alt="Habitat Protection" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2F4IcxFa9AgN2GSLvAejWV.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%E2%9B%B5&embed=true"><img alt="Clean Marinas" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FD2LXiMZ2Fr6mzrAuBHP5.png'/></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8F%AB&embed=true"><img alt="Education Programs" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FdcAMqZceFLfJrAIiyaCX.png' /></a></li>
+  <li><a target="load" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%8C%8E&embed=true"><img alt="Planetary Boundaries" src='https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVHmTmNVCWmpfEilsznNi.png' /></a></li>
+      </ul>
+    </div>
+</div>
+<div class="container">
+      <div class="row brandhead">
+        <div class="col-md-5">
+          <a target="load" href="#"><img style="width:50px;"src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_300,h_300,c_lfill/https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fglide-prod.appspot.com%2Fo%2Ficon-images%252Fanonymous-5b5e1e96-a356-42a3-a297-e97167644378.png%3Falt%3Dmedia%26token%3D6ae30e7e-8e84-4377-b340-14cbfa8dc329" alt="logo" class="brand-image"></a>
+        </div>
+        <div class="col-md-7 visible-lg">		
+            <a id="tab" href="#" class="btn btn-default tab-black">Blue Community</a>
+        </div>
+      </div>
+</div>
+	 <header><div class="logo">
+		<img style="width:50px;" src="./bluesdgs-min.png" alt="Blue Community Consortium">
+	  </div>
+	<br><center><h1 class="gradient-text">Blue Community</h1></center>
+</header>
+<!-- partial:index.partial.html -->
+<div class="container-fluid has-sidebar sidebar-expanded" id="main-section">
+  <div class="sidebar">
+      <ul class="nav nav-sidebar">
+	       <li><a href="https://forms.gle/VLDX3aCwZHktyk1ZA" target="load"><span class="glyphicon glyphicon-plus"></span> <span class="item-label">Add Destination</span></a></li>
+                 <li><a href="https://bluecommunitysustainability.github.io/assessment/dist/questions.html" target="load"><span class="glyphicon glyphicon-asterisk"></span> <span class="item-label">Assessment❔s</span></a></li>
+        <li><a href="https://website-295.nocode.works/" target="load"><span class="glyphicon glyphicon-education"></span> <span class="item-label">Blue Wiki</span></a></li>
+        <li><a href="https://bluecommunitysustainability.github.io/assessment/blueos/dist/index.html" target="load"><span class="glyphicon glyphicon-stats"></span> <span class="item-label">Blue OS</span></a></li>
+        <li><a href="https://app.bluecommunity.info/full" target="load"><span class="glyphicon glyphicon-screenshot"></span> <span class="item-label">Assessment App</span></a></li>
+	      <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard" target="load"><span class="glyphicon glyphicon-th"></span> <span class="item-label">Dashboards</span></a></li>
+           <li><a href="https://bluecommunitysustainability.github.io/assessment/dist/chartslist.html" target="load"><span class="glyphicon glyphicon-equalizer"></span> <span class="item-label">Databoards</span></a></li>
+          <li><a href="https://bluecommunity.chartmat.app/stakeholder-dashboard" id="collapse-nav"><span id="toggle-collapse" class="glyphicon glyphicon-circle-arrow-left"></span> <span class="item-label">Close Nav</span></a></li>
+      </ul>
+	  <div class="vertical-snap">
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=%F0%9F%93%87&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⚙️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=😎&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FsbFNQ1luOB6YBZa0bvNL.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🧲&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FTzLMCFoWRntFrqGpYOnm.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💹&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FxNsUGVMlkiWGRshRAWO6.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=️🏖️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FyKvSJj4YxTNKrg9hgi90.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍛&embed=true" target="load><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FZTRr9yQJK9Tt7KNUVPQa.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=☀️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Ffnbb4GmLPpGy5CKd6oVF.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💧&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FkXiszqulBXtxYgjjDtG1.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=♻️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fm4pUhWm6oDMPcqjpXJQg.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌄&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FW6UfSXnBecgQ0Bn34xDJ.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏗️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FbVbSHnz1jfWYjCyRvrLT.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🚇&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSBVpkVx08L1lyWF8s8fk.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍼&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FynN2v2DCjP4okP4H7Mfb.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌿&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVfBAltaI2HDbHxeom3A8.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🦐&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FUrLRkX6UYbjULUdJILM3.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏞️&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2F4IcxFa9AgN2GSLvAejWV.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⛵&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FD2LXiMZ2Fr6mzrAuBHP5.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏫&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FdcAMqZceFLfJrAIiyaCX.png"></a>
+  <a href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌎&embed=true" target="load"><img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVHmTmNVCWmpfEilsznNi.png"></a>
+  <a href="https://assessment.bluecommunity.info"><img src="https://storage.ning.com/topology/rest/1.0/file/get/9704993069?profile=RESIZE_180x180"></a>
+  <a href="#"><img src="https://storage.ning.com/topology/rest/1.0/file/get/9704999491?profile=RESIZE_180x180"></a>
+ 
+</div>
+<tbody>
+<tr>
+<td><p class="sidemoji" style="font-size:1.1em;"> <a title="Open Destination Contacts" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=📇&embed=true" target="load">📇</a>
+  <a title="Open Sustainability Managment" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⚙️&embed=true" target="load">⚙️</a>
+  <a title="Open Tourism Satisfaction"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=😎&embed=true" target="load">😎</a>
+  <a title="Open Tourism Promotion"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🧲&embed=true" target="load">🧲</a>
+  <a title="Open Socio Economic Sustainability"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💹&embed=true" target="load">💹</a>
+  <a title="Open Tourism Seasonality"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=️🏖️&embed=true" target="load">🏖️</a>
+  <a title="Open Cultural Sustainability"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍛&embed=true" target="load">🍛</a>
+  <a title="Open Energy Management"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=☀️&embed=true" target="load">☀️</a>
+  <a title="Open Water Management" href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=💧&embed=true" target="load">💧</a>
+  <a title="Open Waste Management"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=♻️&embed=true" target="load">♻️</a></p></td>
+<td><p class="sidemoji" style="font-size:1.2em;">  <a title="Open Land Management"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌄&embed=true" target="load">🌄</a>
+  <a title="Open Building Design"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏗️&embed=true" target="load">🏗️</a>
+  <a title="Open Transportation"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🚇&embed=true" target="load">🚇</a>
+  <a title="Open Plastic Reduction"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🍼&embed=true" target="load">🍼</a>
+  <a title="Open Organic Foods"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌿&embed=true" target="load">🌿</a>
+  <a title="Open Sustainable Seafood"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🦐&embed=true" target="load">🦐</a>
+  <a title="Open Habitat Protection"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏞️&embed=true" target="load">🏞️</a>
+  <a title="Open Certifed Clean Marinas"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=⛵&embed=true" target="load">⛵</a>
+  <a title="Open Education Programs"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🏫&embed=true" target="load">🏫</a>
+  <a title="Open Planetary Boudaries"href="https://bluecommunity.chartmat.app/stakeholder-dashboard?section=🌎&embed=true" target="load">🌎</a></p></td>
+</tr>
+</tbody>
+		</table></details></div>
+    <!-- DivTable.com -->
+</div>
+  </div>
+  <div class="frameContainer">
+    <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
+</div>
+
+
+</div>
+<div id="bottom"><a class="handle ui-slideouttab-handle-rounded">📇⚙️😎🧲💹🏖️🍛☀️💧♻️🌄🏗️🚇🍼🌿🦐🏞️⛵🏫🌎<i class="fa fa-icon fa-stats"></i></a>
+	<p>This is the metrics matrix.   Click to open. </p>
+	<details><summary>Choose your metric group.</summary>
+	<div class="links">
+		 <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=📇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fnmx4p93G68NTpJvtAuga.png></img>
+  <div class=icon-description>
+     📇 Destination Contact Info
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=⚙️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FMrmJVrEI9xUSqYZnvy2v.png></img>
+  <div class=icon-description>
+     ⚙️ Sustainability Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=😎>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FsbFNQ1luOB6YBZa0bvNL.png></img>
+  <div class=icon-description>
+     😎 Tourism Satisfaction
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🧲>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FTzLMCFoWRntFrqGpYOnm.png></img>
+  <div class=icon-description>
+     🧲Tourism Promotion 
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=💹>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FxNsUGVMlkiWGRshRAWO6.png></img>
+  <div class=icon-description>
+     💹 Socio Economic Sustainability
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=📇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FyKvSJj4YxTNKrg9hgi90.png></img>
+  <div class=icon-description>
+     🏖️ Tourism Seasonality
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🍛>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FZTRr9yQJK9Tt7KNUVPQa.png></img>
+  <div class=icon-description>
+     🍛 Cultural Sustainability
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=☀️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Ffnbb4GmLPpGy5CKd6oVF.png></img>
+  <div class=icon-description>
+     ☀️ Energy Management
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=💧>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FkXiszqulBXtxYgjjDtG1.png></img>
+  <div class=icon-description>
+    💧 Water Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=♻️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2Fm4pUhWm6oDMPcqjpXJQg.png></img>
+  <div class=icon-description>
+     ♻️ Waste Management
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌄>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FW6UfSXnBecgQ0Bn34xDJ.png></img>
+  <div class=icon-description>
+    🌄 Land Use and Management
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏗️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FbVbSHnz1jfWYjCyRvrLT.png></img>
+  <div class=icon-description>
+     🏗️ Building Design
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🚇>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FSBVpkVx08L1lyWF8s8fk.png></img>
+  <div class=icon-description>
+     🚇 Transportation
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🍼>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FynN2v2DCjP4okP4H7Mfb.png></img>
+  <div class=icon-description>
+     🍼 Plastic Reduction
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌿>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVfBAltaI2HDbHxeom3A8.png></img>
+  <div class=icon-description>
+     🌿 Organic and Hydroponic Foods
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🦐>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FUrLRkX6UYbjULUdJILM3.png></img>
+  <div class=icon-description>
+    🦐 Sustainable Seafood
+    </div>
+  </a>
+  <a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏞️>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2F4IcxFa9AgN2GSLvAejWV.png></img>
+  <div class=icon-description>
+     🏞️ Habitat Protections
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=⛵>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FD2LXiMZ2Fr6mzrAuBHP5.png></img>
+  <div class=icon-description>
+     ⛵ Certified Clean Marinas
+    </div>
+  </a><a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🏫>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FdcAMqZceFLfJrAIiyaCX.png></img>
+  <div class=icon-description>
+    🏫  Education Programs
+    </div>
+  </a>
+<a target="load" class=icon-container href=https://bluecommunity.chartmat.app/stakeholder-dashboard/?embed=true&section=🌎>
+    <img class=icon src=https://res.cloudinary.com/glide/image/fetch/f_auto,w_150,h_150,c_lfill/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FPXgWhZmozHdFWj4kZSgR%2Fpub%2FVHmTmNVCWmpfEilsznNi.png></img>
+  <div class=icon-description>
+     🌎 Planetary Boundaries & Policy
+    </div>
+  </a>
+	</div></details>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+<script  src="./script.js"></script>
+<script>
+              $("#tab").click(function(){	
+	  $("#pre-body").slideToggle();
+});            
+       <script>                   
+<script>
+	$(document).ready(function() {
+    
+    $('#top').tabSlideOut({
+      tabLocation: 'top',
+      action: 'hover',
+      handleOffsetReverse: true,
+      offsetReverse: true,
+      onLoadSlideOut: true
+    });
+    
+    $('#bottom').tabSlideOut({
+      tabLocation: 'bottom',  
+      action: 'hover',
+      handleOffsetReverse: true,
+			offsetReverse: true,
+      onLoadSlideOut: false
+    });  
+});
+</script>
+</body>
+</html>
