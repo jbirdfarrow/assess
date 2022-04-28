@@ -2,17 +2,31 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - ARIA buttons</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>CodePen - responsive split screen with bootstrap</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<center>
-<a tabindex="0" role="button" id="printa1">Print screen</a>
-</center>
+<body>
+  <section class="intro">
+    <row>
+      <div class="col-lg-6 col-sm-12 left">
+       <div id="chartmat-container" style="overflow:hidden; display:relative; height:400px; width:600px"> <iframe src="https://bluecommunity.chartmat.app/orlando?embed=true&section=😎" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+      </div>
+      <div class="col-lg-6 col-sm-12 right">
+        <div id="chartmat-container" style="overflow:hidden; display:relative; height:400px; width:600px"> <iframe src="https://bluecommunity.chartmat.app/orlando?embed=true&section=🧲" frameborder="0" allowfullscreen style="display:absolute; top:0: left:0; right:0; bottom:0; width:100%; height:100%" > </iframe> </div>
+      </div>
+    </row>
+  </section>
+  <section class="about">
+    <div>
+     
+    </div>
+  </section>
+</body>
 <!-- partial -->
-  <script  src="./script.js"></script>
-
+  <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </body>
 </html>
