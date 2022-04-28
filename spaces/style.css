@@ -1,0 +1,22 @@
+[role="button"] {            
+  display: inline-block;
+  padding: 5px 10px;         
+  border: 2px solid #555;
+  border-radius: 5px;
+  color: #000;               
+  background: #ddd;          
+}
+[role="button"]:hover, 
+[role="button"]:focus {      
+  background-color: #eee; 
+}
+[role="button"]:focus {      
+  outline: 1px dotted #000;  
+}
+[role="button"]:active {     
+  background-color: #bbb;
+}
+[role="button"][aria-pressed="true"] {  /* Style for “toggled on” state */
+    color: #fff;
+    background: #333;
+}
