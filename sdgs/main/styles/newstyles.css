@@ -1,0 +1,202 @@
+.goalslinks {
+    transition: all 0.6s ease 0s;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sdghm{
+    transition: all 0.6s ease 0s;
+}
+.sdghm:hover{
+    transform: scale(1.2);
+}
+.container h2{
+    transition: all 0.6s 0s;
+}
+.history:hover{
+    text-decoration: none;
+}
+.container h2:hover{
+    transform: scale(1.5);
+}
+.unlisttop li{
+    font-size: 1000px;
+}
+.unlisttop{
+    list-style: none;
+    display: flex;
+}
+.imgsdg:hover{
+    transform: scale(1.1);
+}
+.divider:hover{
+    background-color: white;
+}
+.divider{
+    transition: all 1s ease 0s;
+    background-color: rgba(255, 255, 255, 0.589);
+    width: 100%;
+    margin: 0px --100px;
+    height: 50px;
+}
+.imgsdg{
+    transition: all 0.3s ease 0s;
+}
+.imptsupp img:hover{
+    transform: scale(1.1);
+}
+
+.imptsupp img{
+    transition: all 0.3s ease 0s;
+    height: 70vh;
+    border-radius: 30px;
+    width: 100vh;
+    background-size: cover;
+}
+.imptsupp{
+    
+    margin: 20vh;
+    color: white;
+}
+
+h1:hover{
+    cursor: default;
+}
+a:hover{
+    text-decoration: none;
+}
+h2:hover{
+    cursor: default;
+}
+h3:hover{
+    cursor: default;
+}
+h4:hover{
+    cursor: default;
+}
+h5:hover{
+    cursor: default;
+}
+p:hover{
+    cursor: default;
+}
+.body{
+}
+.goalslinks li img:hover{
+    border-radius: 0px;
+    box-shadow: 10px 10px 20px white;
+    transform: scale(1.5);
+}
+.goalslinks li img{
+    border-radius: 30px;
+    transition: all 0.6s ease 0s;
+    margin: 30px;
+    height: 120px;
+    width: 120px;
+}
+
+.hmbtn{
+    transition: all 0.9s ease 0s;
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    
+    background-color: rgba(255, 166, 0, 0.726);
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+
+
+.hmbtn:hover{
+    text-decoration: none;
+    color: white;
+    padding: 20px 60px;
+    background-color: rgba(255, 99, 71, 0.918);
+}
+
+.block-heading{
+    transition: all 0.6s ease 0s;
+    color: white;
+}
+
+h1{
+    transition: all 0.6s ease 0s;
+}
+h1:hover{
+    transform: scale(1.1);
+}
+
+.img-circle{
+    transition: all 0.6s ease 0s;
+}
+.img-circle:hover{
+    transform: scale(1.4);
+}
+
+.textwrapper{
+    border: 2px solid black;
+    margin: 5   0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myimage:hover{
+    transform: scale(1.5);
+}
+
+.myprofile ul{
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+}
+
+.addpsudo{
+    height: 80vh; 
+    width: 100vw;
+}
+
+.linktome{
+
+}
+
+.linktome ul{
+    justify-content: center;
+    list-style: none;
+}
+
+.linktome ul li a img{
+    transition: all 0.2s ease 0s;
+    margin: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.linktome ul li a img:hover{
+    transform: scale(1.5);
+}
+
+.logo a{
+    transition: all 0.6s ease 0s;
+    color: white;
+}
+.logo a:hover{
+    font-size: 20px;
+    color: rgb(184, 184, 184);
+    text-decoration: none;
+}
+
+.treepng{
+    list-style: none;
+}
+.treepng li{
+    display: inline-block;
+    justify-content: center;
+}
+
+.front-content{
+    border-radius: 10%;
+}
