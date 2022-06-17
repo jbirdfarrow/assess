@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,500italic);
+html {
+  height: 100%;
+  background-color: #222024;
+  background: url("https://bluecommunitysustainability.github.io/assessment/dist/dist/fishbowl-min.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  text-align: center;
+  font: normal 100% "Fira Sans", sans-serif;
+}
+
+/* Main element. The page overlay */
+.panel {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  cursor: pointer;
+  /* Theese 3 vars controls the speed and size of the panel */
+  --panel-width: 30vw;
+  --panel-height: 10vw;
+  --panel-transition-speed: 0.3s;
+}
+
+.panel.panel-active {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background var(--panel-transition-speed) linear;
+}
+
+.panel.panel-inactive {
+  width: 0vw;
+  height: 0vh;
+  background: rgba(0, 0, 0, 0);
+  transition: background var(--panel-transition-speed) linear, width 0s linear var(--panel-transition-speed), height 0s linear var(--panel-transition-speed);
+}
+
+/* Panel Container. This is the element that slide in-out */
+.panel-container {
+  display: block;
+  position: absolute;
+  background: #eee;
+  overflow: auto;
+  cursor: default;
+  transition: var(--panel-transition-speed) transform ease-in-out;
+  float: left;
+}
+
+/* Left side panel */
+.panel.panel-left .panel-container {
+  top: 0;
+  left: 0;
+  width: var(--panel-width);
+  height: 100%;
+  transform: translate(calc(var(--panel-width) * -1), 0);
+  box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.panel.panel-left.panel-inactive .panel-container {
+  transform: translate(calc(var(--panel-width) * -1), 0) !important;
+}
+
+/* Right side panel */
+.panel.panel-right .panel-container {
+  top: 0;
+  right: 0;
+  width: var(--panel-width);
+  height: 100%;
+  transform: translate(var(--panel-width), 0);
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.panel.panel-right.panel-inactive .panel-container {
+  transform: translate(var(--panel-width), 0) !important;
+}
+
+/* Top panel */
+.panel.panel-top .panel-container {
+  top: 0;
+  left: 0;
+  height: var(--panel-height);
+  width: 100%;
+  transform: translate(0, calc(var(--panel-height) * -1));
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.panel.panel-top.panel-inactive .panel-container {
+  transform: translate(0, calc(var(--panel-height) * -1)) !important;
+}
+
+/* Bottom panel */
+.panel.panel-bottom .panel-container {
+  bottom: 0;
+  left: 0;
+  height: var(--panel-height);
+  width: 100%;
+  transform: translate(0, var(--panel-height));
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.panel.panel-bottom.panel-inactive .panel-container {
+  transform: translate(0, var(--panel-height)) !important;
+}
+
+/* Expand panel */
+.panel.panel-active .panel-container {
+  transform: translate(0, 0);
+}
+
+/* Panel Close Button */
+.panel-close-button {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  top: 0.5em;
+  right: 0.5em;
+  color: #ddd;
+  background: #444;
+  cursor: pointer;
+  text-align: center;
+  font: normal 1em Arial;
+  line-height: 1em;
+  transition: color 0.4s ease-in-out;
+}
+
+.panel-close-button:hover {
+  color: #00ff00;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
