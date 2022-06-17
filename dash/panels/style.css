@@ -48,7 +48,7 @@ body {
 .panel-container {
   display: block;
   position: absolute;
-  background: #eee;
+  background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
   overflow: auto;
   cursor: default;
   transition: var(--panel-transition-speed) transform ease-in-out;
@@ -127,8 +127,8 @@ body {
   height: 1em;
   top: 0.5em;
   right: 0.5em;
-  color: #ddd;
-  background: #444;
+  color: #cc0000;
+  background: #fff;
   cursor: pointer;
   text-align: center;
   font: normal 1em Arial;
