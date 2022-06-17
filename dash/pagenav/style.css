@@ -1,0 +1,146 @@
+/* Style for our header texts
+	* --------------------------------------- */
+h1 {
+  font-size: 3em;
+  font-family: arial, helvetica;
+  color: #fff;
+  margin: 0;
+}
+
+.intro p {
+  color: #fff;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section {
+  text-align: center;
+}
+
+/* Overwriting styles for control arrows for slides
+* --------------------------------------- */
+.controlArrow.prev {
+  left: 50px;
+}
+
+.controlArrow.next {
+  right: 50px;
+}
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu li a {
+  color: #fff;
+}
+
+body {
+  background-image: radial-gradient(circle 610px at 5.2% 51.6%, #050872 0%, #070335 97.5%);
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+body.loaded {
+  background: goldenrod;
+  opacity: 1;
+}
+
+svg {
+  height: 200px;
+  width: 300px;
+}
+
+svg path,
+svg > polygon {
+  fill: white;
+}
+
+svg .i-dot {
+  fill: white;
+  transition: all 0.5s 1.5s;
+}
+
+svg g[mask] > .i-dot {
+  fill: yellow;
+}
+
+body.loaded .i-dot {
+  transform: translate(-7.5%, 88%);
+}
+
+.section:not(:first-child):not(:last-child) .intro {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: all 0.3s;
+}
+
+.section:not(:first-child):not(:last-child).active .intro {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s 0.3s;
+}
+
+#fullpage {
+  z-index: 1;
+}
+
+#three-d {
+  align-items: center;
+  bottom: 0;
+  color: #000;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+/*#three-d img { transition: all .5s ease;	 }*/
+#three-d canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#fullpage .section {
+  position: relative;
+}
+
+#fullpage > .section:first-child {
+  background: url("https://bluecommunitysustainability.github.io/assessment/dist/dist/fishbowl-min.gif") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#fullpage video.ambient {
+  height: auto;
+  left: 50%;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: -1;
+}
+
+#fp-nav li:not(.active):not(.active-adjacent) {
+  pointer-events: none;
+}
