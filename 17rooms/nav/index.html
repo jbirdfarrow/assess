@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Mobile Meny Menu 17</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="meny">
+	<h2>17 Rooms</h2>
+	<ul>
+		<li><a target="load" href="https://17rooms.glideapp.io">Mobile App</a></li>
+		<li><a target="load" href="https://17rooms.hellobox.co">Community</a></li>
+		<li><a target="load" href="hthttps://bluecommunitysustainability.github.io/assessment/17rooms/rooms.html">Explore</a></li>
+		<li><a target="load" href="http://sustain.glide.page">UN SDGs</a></li>
+		<li><a target="load" href="http://bluecommunities.glide.page">Blue Community</a></li>
+		<li><a href="https://videos.bluecommunity.info/?">Theatre</a></li>
+		<li><a href="https://itunes.apple.com/us/app/sinuous/id543097218">Sinuous for iOS</a></li>
+		<li><a href="http://hakim.se/experiments/css/domtree/">DOM Tree</a></li>
+		<li><a href="http://hakim.se/experiments/css/holobox/">Holobox</a></li>
+		<li><a href="http://hakim.se/experiments/html5/404/netmag.html">404</a></li>
+	</ul>
+</div>
+
+<div class="contents">
+	<button id="menu-button" type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+   		<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+   	</button>
+  <div class="frameContainer">
+    <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
+</div>
+
+
+</div>
+<script>
+  var sidebarState = sessionStorage.getItem('sidebarState');
+
+windowWidth = $(window).width();
+
+$(window).resize(function() {
+  windowWidth = $(window).width();
+
+  if( windowWidth < 992 ){ //992 is the value of $screen-md-min in boostrap variables.scss
+        $('#main-section').removeClass('sidebar-expanded').addClass('sidebar-collapsed');
+        $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+    }
+    else{
+        if(sidebarState){
+            $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+        }
+    }
+});
+function setSidebarState(value){
+    sessionStorage.setItem('sidebarState', value);
+}
+
+function clearSidebarState(){
+    sessionStorage.removeItem('sidebarState');
+}
+
+function collapseSidebar(){
+    $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded');
+    $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+}
+
+function expandSidebar(){
+    $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed');
+    $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+}
+
+$(function(){
+
+    console.log(windowWidth);
+
+    /** check sessionStorage to expand/collapse sidebar onload **/
+
+
+    if (sidebarState == "collapsed"){
+        collapseSidebar();
+    }
+    else{
+
+
+
+        if( windowWidth < 992 ){ //992 is the value of $screen-md-min in boostrap variables.scss
+            $('#main-section').removeClass('sidebar-expanded').addClass('sidebar-collapsed');
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            if(sidebarState){
+            $('#main-section').addClass('sidebar-collapsed').removeClass('sidebar-expanded'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-left').addClass('glyphicon-circle-arrow-right');
+        }
+        else{
+            $('#main-section').addClass('sidebar-expanded').removeClass('sidebar-collapsed'); 
+            $('#toggle-collapse').removeClass('glyphicon-circle-arrow-right').addClass('glyphicon-circle-arrow-left');
+        }
+        }
+        
+    }
+
+    
+
+
+    /** collapse the sidebar navigation **/    
+    $('#collapse-nav').click(function(){
+        if ( !($('#main-section').hasClass('sidebar-collapsed')) ) { // if sidebar is not yet collapsed
+            collapseSidebar();
+            setSidebarState('collapsed');
+        }
+        else{
+            expandSidebar();
+            clearSidebarState();
+        }
+        return false;
+    })
+})
+</script>
+<!-- partial -->
+  <script src='http://lab.hakim.se/meny/js/meny.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

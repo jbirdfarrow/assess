@@ -1,0 +1,151 @@
+* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
+
+html, body {height: 100%;margin:0;overflow: hidden;padding:0;}
+html,body {background:url('https://bluecommunitysustainability.github.io/assessment/dist/dist/fishbowl-min.gif');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;}
+
+body {html,body {background:url('https://bluecommunitysustainability.github.io/assessment/dist/dist/fishbowl-min.gif');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;}
+}
+
+.btn-navbar {color: white;padding: 7px 7px;margin-right: 5px;margin-left: 5px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #0E0E0E;
+	background-repeat: repeat-x;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+	background-image: -webkit-linear-gradient(top, #151515, #040404);
+	background-image: -o-linear-gradient(top, #151515, #040404);
+	background-image: linear-gradient(to bottom, #151515, #040404);
+	background-image: -moz-linear-gradient(top, #151515, #040404);
+	border:1px solid;
+	border-color: #040404 #040404 black;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0);
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
+}
+
+.btn-navbar span {display:block;height: 2px;line-height: 14px;margin-top: 1px;vertical-align: text-top;width: 18px;
+	/*background-image: url("../img/glyphicons-halflings.png");*/
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+	background-color: whiteSmoke;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.meny {
+	display: none;
+	padding: 20px;
+	overflow: auto;
+	background: #000066;
+	color: #eee;
+}
+.meny a {color: #3366ff;} 
+.meny ul {margin-top:10px;}
+.meny ul li {display:inline-block;width:200px;list-style:none;font-size:20px;padding:3px 10px;}
+
+.contents {padding: 20px 40px;width: 100%;height: 100%;overflow-y:auto;}
+.frameContainer{
+    position: fixed; 
+    height: 100%;
+    top:0px;
+    left: 100px;
+    right:0px;
+    bottom:0px;
+    z-index:1;
+}
+
+.main_iframe{
+    height: 100%;
+    width: 100%;
+    border:none; background:url('https://bluecommunitysustainability.github.io/assessment/17rooms/17bg.png');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#main-section.sidebar-expanded{
+  .sidebar{
+    width: 10px;
+
+    .item-label{
+      display: inline;
+    }
+  }
+}
+
+#main-section.sidebar-collapsed{
+  .sidebar{
+    width: 60px;
+
+    .item-label{
+      display: none;
+    }
+  }
+}
+
+@media(min-width: 992px){
+    .main{
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;  
+      margin-left: 16.6666666667%;
+      float:left;
+      width: 83.3333333333%;
+    }
+    #main-section.sidebar-collapsed{
+      .main{
+        widows: 100%;
+        margin-left:0;
+      }
+    }
+    .sidebar{
+        width: 16.6666666667%;
+
+        .item-label{
+          display: inline;
+        }
+    }
+
+    #main-section.sidebar-expanded{
+      .sidebar{
+        width: 16.6666666667%;
+      }
+    }
+}
+
+.nav-sidebar{
+    margin: 0 -20px 20px;
+}
+.nav-sidebar > li:last-child{
+  border-top:1px solid rgba(255, 255, 255, .2); /* for the collapse toggle item */
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus,
+.nav > li > a:hover, 
+.nav > li > a:focus{
+  color: #fff;
+  background-color: #ea045c;
+}
+
+/* SUBMENU */
+.nav-sidebar > ul > a{ 
+  color: #fff;
+}
