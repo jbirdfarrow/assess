@@ -1,0 +1,72 @@
+	<body>
+		<header>
+			<h1>What is my location?</h1>
+			<p>Copy your latitude and longitude</p>			
+		</header>
+		
+		<section>
+			<article>
+				<strong>Click the button to obtain your geolocation</strong>
+				<p id="geolocationtext"></p>
+				<button onclick="javascript:getLocation()">Get My Location</button>
+			</article>
+		</section>
+
+	</body>
+<script>
+    // Reference the <p> element we want to be updating
+var geoElement = document.getElementById("geolocationtext");
+function getLocation()
+{				
+
+    // Feature detection: Does the browser support geolocation?
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onGeoLocationSuccess, onGeoLocationError);
+    } 
+    // Apparently, it didn't
+    else{
+        geoElement.innerHTML = "Your browser does not appear to support geolocation";
+    }				
+}
+			
+function onGeoLocationError(error)
+{
+    switch(error.code)
+    {
+        case error.PERMISSION_DENIED:
+            geoElement.innerHTML = "The user declined the use of Geolocation"
+            break;
+
+        case error.POSITION_UNAVAILABLE: 
+            geoElement.innerHTML = "Unable to get current Geolocation"
+            break;
+
+        case error.TIMEOUT:
+            geoElement.innerHTML = "The Geolocation request timed out"
+            break;
+
+        case error.UNKNOWN_ERROR:
+            geoElement.innerHTML = "Something unexpected happened. We have no clue what it was!"
+            break;
+
+    }
+}
+
+function onGeoLocationSuccess(position)
+{
+    geoElement.innerHTML = "Latitude : " + position.coords.latitude + "<br />" +
+        "Longitude: " + position.coords.longitude + "<br />" +
+        "Altitude : " + position.coords.altitude + "<br /><br />" + 									 
+        "lat/long Accuracy : " + position.coords.accuracy + "<br />" +
+        "Altitude Accuracy : " + position.coords.altitudeAccuracy + "<br />"; 
+}
+</script>
+
+
+
+        
+        
+        
+        
+        
+        
