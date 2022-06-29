@@ -40,10 +40,10 @@ const geolocate = function () {
   };
 
   const error = () => {
-    $status.html('Unable to retrieve your location. This may be due to your browser security settings or a known Chrome issue with embedded iframes, <a href="https://codepen.io/bmarshall511/full/rZMbey" target="_blank"><strong>try it directly on CodePen</strong></a>.').show();
+    $status.html('Unable to retrieve your location. This may be due to your browser security settings or a known Chrome issue with embedded iframes, <a href="https://bluecommunitysustainability.github.io/assessment/geo/index.html" target="_blank"><strong>try it directly here</strong></a>.').show();
     $trigger.html("Try directly on CodePen").click(function (e) {
       e.preventDefault();
-      window.open('https://codepen.io/bmarshall511/full/rZMbey', '_blank');
+      window.open('https://bluecommunitysustainability.github.io/assessment/geo/index.html', '_blank');
     });
   };
 
