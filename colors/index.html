@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - All the 17k color names from the color-name-list API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://unpkg.com/vue-virtual-scroller@0.9.0/dist/vue-virtual-scroller.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <input type="text" placeholder="Filter" v-model="filter" />
+  <virtual-scroller 
+    page-mode
+    :items="filteredColors"
+    content-tag="div"
+    :item-height="96"
+  >
+    <template scope="colors">
+      <div class="color" v-bind:class="{'is-dark': isDark(colors.item.rgb)}" :style="{backgroundColor: colors.item.hex}" :key="colors.item.hex">
+        <strong data-name>{{colors.item.name}}</strong>
+        <span data-hex>{{colors.item.hex}}<i v-if="colors.item.hex == '#f0c'">k</i></span>
+      </div>
+    </template>
+  </virtual-scroller>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+<script src='https://unpkg.com/vue-virtual-scroller@0.9.0/dist/vue-virtual-scroller.js'></script>
+<script src='https://unpkg.com/vue-observe-visibility@0.3.1/dist/vue-observe-visibility.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
