@@ -5,15 +5,165 @@
   <title>Blue Community Ecosystem Resources</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
-
+<style>
+	
+	body {
+		background:			#000066;
+		color:				#fff;
+		font-family:		helvetica, arial, sans-serif;
+		font-size:			62.5%;
+		line-height:		2.1em;
+		margin:				0;
+		padding:			0;	
+	}
+	
+	a {
+		color:				#000066;	
+	}
+	
+	header, article, footer {
+		margin:				0;
+		padding:			0;
+		display:			block;
+		width:				960px;
+		margin:				auto;
+		box-shadow:			0px 0px 10px #000;
+		background:			#000;
+		font-size:			1.2em;
+	}
+	
+	nav {
+		position:			relative;
+		border-bottom:		2px solid #fc0000;
+		background:			#000;
+		color:				#fc0000;	
+		height: 			50px;
+		display: 			block; 
+		box-shadow:			0px 0px 10px #000;
+		z-index: 			1; 
+	}
+	
+	nav ul {
+		position:			relative;
+		margin:				0;
+		padding:			0;
+		text-align:			right;
+		z-index:			100;
+		background:			#000066;
+		padding-right:		100px;
+	}
+	
+	nav ul li {
+		list-style:			none;
+		margin:				0;
+		padding:			5px 10px;
+		display:			inline-block;
+		line-height:		35px;
+		z-index:			100;
+	}
+	
+	nav ul li a {
+		text-decoration:	none;
+		font-size:			1.2em;	
+		color:				#fc0000;
+		z-index:			100;
+	}
+	
+	nav ul li a.active, nav ul li a:hover {
+		color:				#fff;
+	}
+	
+	nav #handle {
+		width:				20px;
+		height:				20px;
+		border-radius:		10px;
+		position:			absolute;
+		top:				40px;
+		left:				50%;
+		margin-left:		-10px;
+		background:			#000;
+		z-index:			1;
+	}
+	
+	nav #handle .downarrow {
+		border:				5px solid transparent;		
+		border-top:			8px solid #3366ff;
+		position:			absolute;
+		left:				5px;
+		bottom:				0px;
+	}
+	
+	#video-header {
+		overflow:			hidden;
+		height:				400px;
+	}
+	
+	.video {
+		margin-top:			20px;
+	}
+	
+	#logo {
+		width:				340px;
+		float:				left;
+		margin-left:		40px;
+		margin-top:			100px;
+		margin-right:		40px;
+	}
+	
+	#logo a.calltoaction {
+		font-size:			0.8em;	
+	}
+	
+	#logo h1 {
+		width:				320px;
+		height:				80px;
+		overflow:			hidden;
+		text-indent:		-10000px;
+		background:			transparent url(logo.png) no-repeat top left;
+	}
+	
+	article {
+		padding-top:		40px;
+		min-height:			500px;
+	}
+	
+	article section {
+		width:				263px;
+		background:			transparent url(image.png) repeat-x top left;
+		min-height:			200px;
+		border-right:		1px solid #1a1a1a;
+		float:				left;
+		margin-left:		10px;
+		padding:			20px;
+	}
+	
+	a.calltoaction {
+		font-weight:		bold;
+		color:				#fc0000;
+		text-align:			right;
+		text-transform:		uppercase;
+		float:				right;
+		display:			block;
+		cursor:				pointer;
+	}
+		
+	.blurb {
+		clear:				both;
+	}
+	
+	footer {
+		padding:			40px;
+		width:				880px;
+		color:				#999;
+	}
+	</style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="meny">
-	<h2>More Tools</h2>
-	<ul>
-		<li><a target="load" href="https://bluecommunitysustainability.github.io/assessment/wiz/index.html">Welcome Wizard</a></li>
-		<li><a href="https://forms.gle/WZrVtgJFAm5UhNZR8">Add a Destination</a></li>
+		<div class="menu">
+			<nav>
+				<div id="handle"><div class="downarrow"></div></div>
+				<ul>
+				<li><a href="https://forms.gle/WZrVtgJFAm5UhNZR8">Add a Destination</a></li>
 				<li><a href="https://www.bluecommunity.info">Blue Community Consortium</a></li>
 				<li><a href="https://bluedocs.glide.page">Blue Community Docs</a></li>
 				<li><a href="https://app.spaceli.io/space/1S2dEuuV2JU-Yp0fZDv0fQq389SxCEdr4/page/1JtvmdYp4BdiWltagak3NYEmgdyLNi3Wq">Best Practices</a></li>
@@ -23,19 +173,44 @@
 				<li><a href="http://https://app.spaceli.io/space/1OnY-lN9WEnzsvAHKA0S02MUjL32FqCwv/page/1f98j2frMgkD4fihh8qGnma_1KAi396H0z0p1F2tN6qc">UN SDG Goals</a></li>
 				<li><a href="http://bluecommunities.glide.page">Stakeholder Dashboard</a></li>
 				<li><a href="https://bluecommunitysustainability.github.io/assessment/colors/index.html">Color Picker</a></li>
-	</ul>
-</div>
-
-<div class="contents">
-	<button id="menu-button" type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-   		<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-   	</button>
+			
+				</ul>
+			</nav>	
+		</div>
+		<div class="container">
+			<header>
+				<section id="video-header">
+					<iframe class="video" src="//player.vimeo.com/video/144354623" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</section>
+			</header>
+			<article>
+				<section class="box1">
+					<h2>LEARNING</h2>
+					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+					<a class="calltoaction" title="Click here to...">SIGN-UP</a>
+				</section>
+				<section class="box2">
+					<h2>TEACHING</h2>
+					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+					<a class="calltoaction" title="Click here to...">SIGN-UP</a>				
+				</section>
+				<section class="box3">
+					<h2>SUPPORT</h2>
+					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+          <a class="calltoaction" title="Click here to...">CONTACT US</a>
+				</section>
+				<p class="blurb">&nbsp;</p>
+			</article>
+			<footer>
+				&copy; 2014 SOME COMPANY. ALL RIGHTS RESERVED.
+			</footer>
+	
   <div class="frameContainer">
     <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
 </div>
 </div>
 <!-- partial -->
-  <script src='http://lab.hakim.se/meny/js/meny.min.js'></script><script  src="./script.js"></script>
+  <script src='http://lab.hakim.se/meny/js/meny.min.js'></script><script  src="https://bluecommunitysustainability.github.io/assessment/wiz/meny.js"></script>
 
 </body>
 </html>
