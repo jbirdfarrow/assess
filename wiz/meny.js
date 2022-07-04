@@ -1,11 +1,26 @@
 /*!
- * meny 1.2
+ * meny 1.4
  * http://lab.hakim.se/meny
  * MIT licensed
  *
  * Created by Hakim El Hattab (http://hakim.se, @hakimel)
  */
+
+(function( root, factory ) {
+    if( typeof define === 'function' && define.amd ) {
+        // AMD module
+        define( factory );
+    } else {
+        // Browser global
+        root.Meny = factory();
+    }
+}(this, function () {
+
+// Date.now polyfill
+if( typeof Date.now !== 'function' ) Date.now = function() { return new Date().getTime(); };
+
 var Meny = {
+
 	// Creates a new instance of Meny
 	create: function( options ) {
 		return (function(){
@@ -32,16 +47,20 @@ var Meny = {
 										'msPerspective' in document.body.style ||
 										'OPerspective' in document.body.style ||
 										'perspective' in document.body.style;
-			
+
 			// Default options, gets extended by passed in arguments
 			var config = {
 				width: 300,
 				height: 300,
 				position: POSITION_L,
 				threshold: 40,
+				angle: 30,
 				overlap: 6,
 				transitionDuration: '0.5s',
-				transitionEasing: 'ease'
+				transitionEasing: 'ease',
+				gradient: 'rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.65) 100%)',
+				mouse: true,
+				touch: true
 			};
 
 			// Cache references to DOM elements
@@ -75,38 +94,51 @@ var Meny = {
 				contentsStyleClosed,
 				contentsStyleOpened;
 
+			var originalStyles = {},
+				addedEventListeners = [];
+
 			// Ongoing animations (for fallback mode)
 			var menuAnimation,
 				contentsAnimation,
 				coverAnimation;
 
-			// Extend the default config object with the passed in 
-			// options
-			Meny.extend( config, options );
-
-			setupPositions();
-			setupWrapper();
-			setupCover();
-			setupMenu();
-			setupContents();
-
-			bindEvents();
+			configure( options );
 
 			/**
-			 * Prepares the transforms for the current positioning 
+			 * Initializes Meny with the specified user options,
+			 * may be called multiple times as configuration changes.
+			 */
+			function configure( o ) {
+				// Extend the default config object with the passed in
+				// options
+				Meny.extend( config, o );
+
+				setupPositions();
+				setupWrapper();
+				setupCover();
+				setupMenu();
+				setupContents();
+
+				bindEvents();
+			}
+
+			/**
+			 * Prepares the transforms for the current positioning
 			 * settings.
 			 */
 			function setupPositions() {
 				menuTransformOpened = '';
 				contentsTransformClosed = '';
+				menuAngle = config.angle;
+				contentsAngle = config.angle / -2;
 
 				switch( config.position ) {
 					case POSITION_T:
 						// Primary transform:
 						menuTransformOrigin = '50% 0%';
-						menuTransformClosed = 'rotateX( 30deg ) translateY( -100% ) translateY( '+ config.overlap +'px )';
+						menuTransformClosed = 'rotateX( ' + menuAngle + 'deg ) translateY( -100% ) translateY( '+ config.overlap +'px )';
 						contentsTransformOrigin = '50% 0';
-						contentsTransformOpened = 'translateY( '+ config.height +'px ) rotateX( -15deg )';
+						contentsTransformOpened = 'translateY( '+ config.height +'px ) rotateX( ' + contentsAngle + 'deg )';
 
 						// Position fallback:
 						menuStyleClosed = { top: '-' + (config.height-config.overlap) + 'px' };
@@ -118,9 +150,9 @@ var Meny = {
 					case POSITION_R:
 						// Primary transform:
 						menuTransformOrigin = '100% 50%';
-						menuTransformClosed = 'rotateY( 30deg ) translateX( 100% ) translateX( -2px ) scale( 1.01 )';
+						menuTransformClosed = 'rotateY( ' + menuAngle + 'deg ) translateX( 100% ) translateX( -2px ) scale( 1.01 )';
 						contentsTransformOrigin = '100% 50%';
-						contentsTransformOpened = 'translateX( -'+ config.width +'px ) rotateY( -15deg )';
+						contentsTransformOpened = 'translateX( -'+ config.width +'px ) rotateY( ' + contentsAngle + 'deg )';
 
 						// Position fallback:
 						menuStyleClosed = { right: '-' + (config.width-config.overlap) + 'px' };
@@ -132,9 +164,9 @@ var Meny = {
 					case POSITION_B:
 						// Primary transform:
 						menuTransformOrigin = '50% 100%';
-						menuTransformClosed = 'rotateX( -30deg ) translateY( 100% ) translateY( -'+ config.overlap +'px )';
+						menuTransformClosed = 'rotateX( ' + -menuAngle + 'deg ) translateY( 100% ) translateY( -'+ config.overlap +'px )';
 						contentsTransformOrigin = '50% 100%';
-						contentsTransformOpened = 'translateY( -'+ config.height +'px ) rotateX( 15deg )';
+						contentsTransformOpened = 'translateY( -'+ config.height +'px ) rotateX( ' + -contentsAngle + 'deg )';
 
 						// Position fallback:
 						menuStyleClosed = { bottom: '-' + (config.height-config.overlap) + 'px' };
@@ -146,9 +178,9 @@ var Meny = {
 					default:
 						// Primary transform:
 						menuTransformOrigin = '100% 50%';
-						menuTransformClosed = 'translateX( -100% ) translateX( '+ config.overlap +'px ) scale( 1.01 ) rotateY( -30deg )';
+						menuTransformClosed = 'translateX( -100% ) translateX( '+ config.overlap +'px ) scale( 1.01 ) rotateY( ' + -menuAngle + 'deg )';
 						contentsTransformOrigin = '0 50%';
-						contentsTransformOpened = 'translateX( '+ config.width +'px ) rotateY( 15deg )';
+						contentsTransformOpened = 'translateX( '+ config.width +'px ) rotateY( ' + -contentsAngle + 'deg )';
 
 						// Position fallback:
 						menuStyleClosed = { left: '-' + (config.width-config.overlap) + 'px' };
@@ -163,19 +195,25 @@ var Meny = {
 			 * The wrapper element holds the menu and contents.
 			 */
 			function setupWrapper() {
-				// Add a class to allow for custom styles based on 
+				// Add a class to allow for custom styles based on
 				// position
 				Meny.addClass( dom.wrapper, 'meny-' + config.position );
+
+				originalStyles.wrapper = dom.wrapper.style.cssText;
 
 				dom.wrapper.style[ Meny.prefix( 'perspective' ) ] = '800px';
 				dom.wrapper.style[ Meny.prefix( 'perspectiveOrigin' ) ] = contentsTransformOrigin;
 			}
 
 			/**
-			 * The cover is used to obfuscate the contents while 
+			 * The cover is used to obfuscate the contents while
 			 * Meny is open.
 			 */
 			function setupCover() {
+				if( dom.cover ) {
+					dom.cover.parentNode.removeChild( dom.cover );
+				}
+
 				dom.cover = document.createElement( 'div' );
 
 				// Disabled until a falback fade in animation is added
@@ -192,12 +230,12 @@ var Meny = {
 				// Silence unimportant errors in IE8
 				try {
 					dom.cover.style.background = 'rgba( 0, 0, 0, 0.4 )';
-					dom.cover.style.background = '-ms-linear-gradient('+ config.position +', rgba(0,0,0,0.20) 0%,rgba(0,0,0,0.65) 100%)';
-					dom.cover.style.background = '-moz-linear-gradient('+ config.position +', rgba(0,0,0,0.20) 0%,rgba(0,0,0,0.65) 100%)';
-					dom.cover.style.background = '-webkit-linear-gradient('+ config.position +', rgba(0,0,0,0.20) 0%,rgba(0,0,0,0.65) 100%)';
+					dom.cover.style.background = '-ms-linear-gradient('+ config.position +','+ config.gradient;
+					dom.cover.style.background = '-moz-linear-gradient('+ config.position +','+ config.gradient;
+					dom.cover.style.background = '-webkit-linear-gradient('+ config.position +','+ config.gradient;
 				}
 				catch( e ) {}
-				
+
 				if( supports3DTransforms ) {
 					dom.cover.style[ Meny.prefix( 'transition' ) ] = 'all ' + config.transitionDuration +' '+ config.transitionEasing;
 				}
@@ -236,6 +274,8 @@ var Meny = {
 						break;
 				}
 
+				originalStyles.menu = style.cssText;
+
 				style.position = 'fixed';
 				style.display = 'block';
 				style.zIndex = 1;
@@ -251,12 +291,14 @@ var Meny = {
 			}
 
 			/**
-			 * The contents element which gets pushed aside while 
+			 * The contents element which gets pushed aside while
 			 * Meny is open.
 			 */
 			function setupContents() {
 				// Shorthand
 				var style = dom.contents.style;
+
+				originalStyles.contents = style.cssText;
 
 				if( supports3DTransforms ) {
 					style[ Meny.prefix( 'transform' ) ] = contentsTransformClosed;
@@ -273,14 +315,27 @@ var Meny = {
 			 * Attaches all input event listeners.
 			 */
 			function bindEvents() {
+
 				if( 'ontouchstart' in window ) {
-					Meny.bindEvent( document, 'touchstart', onTouchStart );
-					Meny.bindEvent( document, 'touchend', onTouchEnd );
+					if( config.touch ) {
+						Meny.bindEvent( document, 'touchstart', onTouchStart );
+						Meny.bindEvent( document, 'touchend', onTouchEnd );
+					}
+					else {
+						Meny.unbindEvent( document, 'touchstart', onTouchStart );
+						Meny.unbindEvent( document, 'touchend', onTouchEnd );
+					}
 				}
-				else {
+
+				if( config.mouse ) {
 					Meny.bindEvent( document, 'mousedown', onMouseDown );
 					Meny.bindEvent( document, 'mouseup', onMouseUp );
 					Meny.bindEvent( document, 'mousemove', onMouseMove );
+				}
+				else {
+					Meny.unbindEvent( document, 'mousedown', onMouseDown );
+					Meny.unbindEvent( document, 'mouseup', onMouseUp );
+					Meny.unbindEvent( document, 'mousemove', onMouseMove );
 				}
 			}
 
@@ -298,6 +353,11 @@ var Meny = {
 
 					// Use transforms and transitions if available...
 					if( supports3DTransforms ) {
+						// 'webkitAnimationEnd oanimationend msAnimationEnd animationend transitionend'
+						Meny.bindEventOnce( dom.wrapper, 'transitionend', function() {
+							Meny.dispatchEvent( dom.menu, 'opened' );
+						} );
+
 						dom.cover.style.opacity = 1;
 
 						dom.contents.style[ Meny.prefix( 'transform' ) ] = contentsTransformOpened;
@@ -328,6 +388,11 @@ var Meny = {
 
 					// Use transforms and transitions if available...
 					if( supports3DTransforms ) {
+						// 'webkitAnimationEnd oanimationend msAnimationEnd animationend transitionend'
+						Meny.bindEventOnce( dom.wrapper, 'transitionend', function() {
+							Meny.dispatchEvent( dom.menu, 'closed' );
+						} );
+
 						dom.cover.style.visibility = 'hidden';
 						dom.cover.style.opacity = 0;
 
@@ -341,11 +406,39 @@ var Meny = {
 						contentsAnimation && contentsAnimation.stop();
 						contentsAnimation = Meny.animate( dom.contents, contentsStyleClosed, 500 );
 						coverAnimation && coverAnimation.stop();
-						coverAnimation = Meny.animate( dom.cover, { opacity: 0 }, 500, function() { dom.cover.style.visibility = 'hidden'; } );
+						coverAnimation = Meny.animate( dom.cover, { opacity: 0 }, 500, function() {
+							dom.cover.style.visibility = 'hidden';
+							Meny.dispatchEvent( dom.menu, 'closed' );
+						} );
 					}
-
 					Meny.dispatchEvent( dom.menu, 'close' );
 				}
+			}
+
+			/**
+			 * Unbinds Meny and resets the DOM to the state it
+			 * was at before Meny was initialized.
+			 */
+			function destroy() {
+				dom.wrapper.style.cssText = originalStyles.wrapper
+				dom.menu.style.cssText = originalStyles.menu;
+				dom.contents.style.cssText = originalStyles.contents;
+
+				if( dom.cover && dom.cover.parentNode ) {
+					dom.cover.parentNode.removeChild( dom.cover );
+				}
+
+				Meny.unbindEvent( document, 'touchstart', onTouchStart );
+				Meny.unbindEvent( document, 'touchend', onTouchEnd );
+				Meny.unbindEvent( document, 'mousedown', onMouseDown );
+				Meny.unbindEvent( document, 'mouseup', onMouseUp );
+				Meny.unbindEvent( document, 'mousemove', onMouseMove );
+
+				for( var i in addedEventListeners ) {
+					this.removeEventListener( addedEventListeners[i][0], addedEventListeners[i][1] );
+				}
+
+				addedEventListeners = [];
 			}
 
 
@@ -356,7 +449,7 @@ var Meny = {
 			}
 
 			function onMouseMove( event ) {
-				// Prevent opening/closing when mouse is down since 
+				// Prevent opening/closing when mouse is down since
 				// the user may be selecting text
 				if( !isMouseDown ) {
 					var x = event.clientX - indentX,
@@ -424,7 +517,7 @@ var Meny = {
 				var swipeMethod = null;
 
 				// Check for swipe gestures in any direction
-				
+
 				if( Math.abs( touchMoveX - touchStartX ) > Math.abs( touchMoveY - touchStartY ) ) {
 					if( touchMoveX < touchStartX - config.threshold ) {
 						swipeMethod = onSwipeRight;
@@ -460,8 +553,8 @@ var Meny = {
 				var isOverContent = ( config.position === POSITION_T && touchStartY > config.height ) ||
 									( config.position === POSITION_R && touchStartX < dom.wrapper.offsetWidth - config.width ) ||
 									( config.position === POSITION_B && touchStartY < dom.wrapper.offsetHeight - config.height ) ||
-									( config.position === POSITION_L && touchStartX < config.width );
-				
+									( config.position === POSITION_L && touchStartX > config.width );
+
 				if( isOverContent ) {
 					close();
 				}
@@ -511,12 +604,15 @@ var Meny = {
 				}
 			}
 
-			
+
 			/// API: ///////////////////////////////////
-			
+
 			return {
-				open: open, 
+				configure: configure,
+
+				open: open,
 				close: close,
+				destroy: destroy,
 
 				isOpen: function() {
 					return isOpen;
@@ -526,6 +622,7 @@ var Meny = {
 				 * Forward event binding to the menu DOM element.
 				 */
 				addEventListener: function( type, listener ) {
+					addedEventListeners.push( [type, listener] );
 					dom.menu && Meny.bindEvent( dom.menu, type, listener );
 				},
 				removeEventListener: function( type, listener ) {
@@ -585,9 +682,9 @@ var Meny = {
 			// Starts the animation
 			step();
 
-			
+
 			/// API: ///////////////////////////////////
-			
+
 			return {
 				stop: stop
 			};
@@ -595,7 +692,7 @@ var Meny = {
 	},
 
 	/**
-	 * Extend object a with the properties of object b. 
+	 * Extend object a with the properties of object b.
 	 * If there's a conflict, object b takes precedence.
 	 */
 	extend: function( a, b ) {
@@ -660,8 +757,17 @@ var Meny = {
 		}
 	},
 
+	bindEventOnce: function ( element, ev, fn ) {
+		var me = this;
+		var listener = function() {
+			me.unbindEvent( element, ev, listener );
+			fn.apply( this, arguments );
+		};
+		this.bindEvent( element, ev, listener );
+	},
+
 	/**
-	 * Dispatches an event of the specified type from the 
+	 * Dispatches an event of the specified type from the
 	 * menu DOM element.
 	 */
 	dispatchEvent: function( element, type, properties ) {
@@ -685,6 +791,9 @@ var Meny = {
 
 		return query;
 	}
+
 };
 
-if( typeof Date.now !== 'function' ) Date.now = function() { return new Date().getTime(); };
+return Meny;
+
+}));
