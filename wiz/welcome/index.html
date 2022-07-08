@@ -137,6 +137,22 @@ img {
 
   
 }
+  .frameContainer{
+    position: fixed; 
+    height: 100%;
+    top:0px;
+    left: 5px;
+    right:0px;
+    bottom:0px;
+    z-index:1;
+}
+
+.main_iframe{
+    height: 100%;
+    width: 100%;
+    border:none;
+    background:#3366ff;
+}
   </style>
 </head>
 <body>
@@ -151,12 +167,23 @@ img {
 <main class="container">
   <section class="content">
     <h2>Welcome to Blue Community</h2>
+    
+<div class="frameContainer">
+    <iframe class="main_iframe" name="load" scrolling="yes"></iframe>
+</div>
+
     <details class="modal">
   <summary>Open Welcome Wizard</summary>
   <p>This is the Blue Community Welcome Wizard</p>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati omnis vero deleniti! Quibusdam officia laborum sed? Eveniet maiores qui minus officiis ex nam ullam magnam recusandae fugit, aperiam ipsam quae?</p>
-  <body allow="geolocation">
+  <p>Do you live in a Blue Community?  Follow this wizard to find out...</p>
+  </div><div class='embed-container'><iframe loading="lazy" src='https://bluecommunitysustainability.github.io/assessment/wiz/index.html' style='border:0'></iframe></div>
+</details>
+  
+  
+  </section>
+  <section>
+    <body allow="geolocation">
   
   <div class="full-view">
     
@@ -170,11 +197,12 @@ img {
         <p><span id="city"></span><span id="country"></span></p>
         </div>
     </div>
-
+      
+      
+      
+      
     </div>
-  </div><div class='embed-container'><iframe loading="lazy" src='https://bluecommunitysustainability.github.io/assessment/wiz/index.html' style='border:0'></iframe></div>
-</details>
-
+  </div>
   </section>
 </main>
 <nav class="hidden_menu">
