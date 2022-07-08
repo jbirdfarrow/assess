@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Blue Community Consortium Navigaator</title>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300'>
+<link rel='stylesheet' href='https://bluecommunitysustainability.github.io/assessment/wiz/details-style.css'><link rel="stylesheet" href="./style.css">
+<style>
+  .full-view {
+  height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.box {
+  position: fixed; /* or absolute */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+
+}
+.img-circel {
+  position: relative;
+}
+
+.weather-value {
+    position: absolute;
+  color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    text-align: center;
+  line-height: 50%;
+  z-index: 9999;
+}
+
+.buttons {
+  padding: 20px 0 0 0;
+  display: block;
+  text-align:center;
+  list-type: none;
+  float: middle;
+}
+
+.buttons li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.button {
+  background-color: #d4d4dc; 
+  color: black;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #f0f0f3; /* Green */
+  color: black;
+}
+.button:focus {outline:0;}
+
+.weather-icon {
+  color: white;
+  width: 60px;
+  height: 60px;
+  font-size: 150%;
+}
+
+#tempunit {
+  cursor: pointer;
+}
+
+/*rotate image continiously..... */
+#image { 
+    transform-origin:50% 50%;
+    animation: 20s rotateRight infinite linear; 
+}
+
+@keyframes rotateRight{
+    100%{ transform:rotate(360deg); }
+}
+/*...............*/
+
+
+
+/* small phones: from 0 to 480px... */
+@media only screen and (max-width: 480px) {
+
+  .box {
+  width: 100%;
+    margin: 0 auto;
+    padding: 20% 3% 0 1%;
+}
+  
+  
+  img {
+    height: 70%;
+    width: auto;
+  }
+  
+  
+  .weather-value {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+   
+  }
+} 
+
+/*..481px to 767px.............small phone to small tablet.... */
+@media only screen and (max-width: 767px) {
+  
+  img { 
+    height: 60px; 
+    width: auto;
+  }
+
+  
+}
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type="checkbox" role="button" title="menu" id="humberger_check" />
+<label for="humberger_check" class="humberger" aria-hidden="true" title="menu">
+  <span></span>
+</label>
+<header class="header_bar">
+  <h1>Blue Community</h1>
+</header>
+<main class="container">
+  <section class="content">
+    <h2>Welcome to Blue Community</h2>
+    <details class="modal">
+  <summary>Open Stakeholder Dashboard</summary>
+  <p>This is the Blue Community Stakeholder Dashboard</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati omnis vero deleniti! Quibusdam officia laborum sed? Eveniet maiores qui minus officiis ex nam ullam magnam recusandae fugit, aperiam ipsam quae?</p>
+  <body allow="geolocation">
+  
+  <div class="full-view">
+    
+    <div class="box">
+    <div class="img-circle">
+      <div ><img id="image" src="https://www.swisstph.ch/fileadmin/user_upload/SwissTPH/Topics/SDGs/SDG_Wheel_Transparent-01.png"></div>
+      <div class="weather-value">
+        <i class="wi weather-icon"></i>
+        <p><span id="temp"></span><span id="tempunit"></span></p>
+        <p id="sky"><span></span></p>
+        <p><span id="city"></span><span id="country"></span></p>
+        </div>
+    </div>
+
+    </div>
+  </div><div class='embed-container'><iframe loading="lazy" src='https://bluecommunities.glide.page' style='border:0'></iframe></div>
+</details>
+
+  </section>
+</main>
+<nav class="hidden_menu">
+  <ul>
+    <li data-bar-color="#2e5090">
+      <a href="#"><i class="icon-compass"></i>WELCOME</a>
+    </li>
+    <li data-bar-color="#21D7A8">
+      <a href="#"><i class="icon-book"></i>BLUE DOCS</a>
+    </li>
+    <li data-bar-color="#1E9ED4">
+      <a href="#"><i class="icon-edit"></i>ASSESSMENT</a>
+    </li>
+    <li data-bar-color="#B0D44A">
+      <a href="#"><i class="icon-globe"></i>METRICS</a>
+    </li>
+    <li data-bar-color="#A865D5">
+      <a href="#"><i class="icon-cog"></i>DASHBOARD</a>
+    </li>
+  </ul>
+  <span class="menu_underline"></span>
+</nav>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+<script>
+  var api = "https://fcc-weather-api.glitch.me/api/current?";
+var currentTempInFahrenheit;
+
+var drizzleImg = "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2017/nasasolvesad.jpg";
+var cloudsImg = "https://images.pexels.com/photos/768/sky-clouds-cloudy-ray-of-sunshine.jpg?w=1200&h=627&fit=crop&auto=compress&cs=tinysrgb";
+var rainImg = "http://www.wallpapers-hd.com/web/wallpapers/rainy-road-through-forest/thumbnail/lg.jpeg";
+var snowImg = "http://images.dailyhive.com/20161218092454/vancouver-street-snow-snowfall.jpg";
+var clearImg = "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/d-Wgo33/aerial-forward-motion-grassland-beautiful-field-green-grass-sunshine-trees-countryside-landscape-meadow-skyline-nature-sunshine-sunny-clear-blue-sky_bdfe3oidx_thumbnail-full06.png";
+var thunderstomImg = "https://www.3xcorp.com/wp-content/uploads/2015/11/ms-access-blog-post-img-opt.jpg";
+
+
+
+
+//Get Weather Forcast..........................
+function getWeatherForcast(lat, lon){
+  var urlString= api + lat + "&" + lon;
+  $.ajax({
+    type: "GET",
+    url: urlString,
+    success: function(result){
+      $("#temp").text(result.main.temp + " " + String.fromCharCode(176));
+      $("#tempunit").text("C");
+      $("#sky").text(result.weather[0].main);
+      $("#city").text(result.name + ", ");
+      $("#country").text(result.sys.country);
+      setWeatherIcon(result.weather[0].main);
+      $(".weather-value").fadeIn(2000);
+    }
+  });
+}
+
+//ToFarhnetheit......................
+function toFahrenheit(){
+  var  celcTemp = parseInt($('#temp').text());
+  var farTemp = Math.round(celcTemp * 9/5 + 32);
+  $("#temp").text(farTemp + " " + String.fromCharCode(176) );
+  $("#tempunit").text( "F");
+}
+
+//ToCelcisus................................
+function toCelcius(){
+  var farTemp = parseInt($('#temp').text());
+  var  celcTemp = Math.round((farTemp - 32) * 0.5556);
+  $("#temp").text(celcTemp + " " + String.fromCharCode(176) );
+  $("#tempunit").text("C");
+}
+
+//setWeatherIcon..................
+function setWeatherIcon(sky){
+  var sky = sky.toLowerCase();
+  switch(sky){
+    case 'drizzle':
+      $(".weather-icon").addClass("wi-rain-mix");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + drizzleImg + ")");
+      break;
+    case 'clouds':
+      $(".weather-icon").addClass("wi-cloudy");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + cloudsImg + ")");
+      break;
+    case 'rain':
+      $(".weather-icon").addClass("wi-rain");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + rainImg + ")");
+      break;
+    case 'snow':
+      $(".weather-icon").addClass("wi-snow");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5),url(" + snowImg + ")");
+      break;
+    case 'clear':
+      $(".weather-icon").addClass("wi-day-sunny");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + clearImg + ")");
+      break;
+    case 'thunderstom':
+      $(".weather-icon").addClass("wi-thunderstorm");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + thunderstomImg + ")");
+      break;
+      case 'haze':
+      $(".weather-icon").addClass("wi-fog");
+     $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + cloudsImg + ")");
+      break;
+    default:
+      $(".weather-icon").addClass("wi-day-sunny");
+      $('body').css("background-image",  "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(" + clearImg + ")");
+  }
+}
+
+
+function revokePermission() {
+  navigator.permissions.revoke({name:'geolocation'});
+}
+
+
+//document ready funtiocn...............
+$(document).ready(function(){
+  
+  
+  //show location on geolocation.......
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var lat = "lat=" + position.coords.latitude;
+      var lon = "lon=" + position.coords.longitude;
+      getWeatherForcast(lat, lon);
+    });
+  }
+  
+  
+  
+  //change temp Unit on click.........
+ $("#tempunit").click(function(){
+   var currentUnit = $("#tempunit").text();
+   if(currentUnit == "C"){
+     toFahrenheit();
+     $("#changeUnit").html(String.fromCharCode(176) + "C");
+   }else{
+     toCelcius();
+     $("#changeUnit").html(String.fromCharCode(176) + "F");
+   }
+ });
+    
+  
+  
+ 
+  
+  
+  
+})
+  </script>
+</body>
+</html>
