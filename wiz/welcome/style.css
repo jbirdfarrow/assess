@@ -1,0 +1,313 @@
+* {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Lato, Arial, "Hiragino Kaku Gothic Pro W3", Meiryo, sans-serif;
+  background-color: #333;
+  color: #efefef;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+body a, body a:visited {
+  color: #efefef;
+  text-decoration: none;
+}
+body a:hover {
+  color: #ccc;
+}
+
+.container {
+  position: relative;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 5% 40px;
+}
+
+.hidden_menu ul, .hidden_menu {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.header_bar::before, .menu_underline, .hidden_menu ul li {
+  transition: all 0.3s ease;
+}
+
+.container, .header_bar, .hidden_menu ul, .hidden_menu, .humberger {
+  transition: all 0.5s ease;
+}
+
+.container::before, .header_bar::before, .hidden_menu ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#humberger_check {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+#humberger_check:checked + .humberger {
+  transform: translateY(160px);
+}
+#humberger_check:checked + .humberger span {
+  background-color: transparent;
+}
+#humberger_check:checked + .humberger span::before {
+  top: 2px;
+  transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.15s, transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+  -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+#humberger_check:checked + .humberger span::after {
+  top: 6px;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+  -webkit-transform: translate3d(0, 6px, 0) rotate(-45deg);
+  transform: translate3d(0, 6px, 0) rotate(-45deg);
+}
+#humberger_check:checked ~ .header_bar,
+#humberger_check:checked ~ .container {
+  transform: translateY(160px);
+}
+#humberger_check:checked ~ .hidden_menu {
+  transform: translateY(0);
+}
+#humberger_check:checked ~ .hidden_menu ul {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.humberger {
+  position: fixed;
+  top: 20px;
+  right: 5vw;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 3;
+}
+.humberger span {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 30px;
+  height: 4px;
+  margin: 0 auto auto -15px;
+  background-color: #fff;
+  transition: background-color 0.1s linear 0.13s;
+}
+.humberger span::before, .humberger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+}
+.humberger span::before {
+  top: 12px;
+  transition: top 0.1s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.humberger span::after {
+  top: 24px;
+  transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hidden_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  -webkit-perspective: 1600px;
+  perspective: 1600px;
+  background-color: #000066;
+  z-index: 3;
+  transform: translateY(-100%);
+}
+.hidden_menu ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+}
+.hidden_menu ul li {
+  position: relative;
+  display: table;
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 13px;
+}
+.hidden_menu ul li::before {
+  opacity: 0;
+  transform: scale(0);
+}
+.hidden_menu ul li:nth-child(1)::before {
+  background-color: #FA3687;
+}
+.hidden_menu ul li:nth-child(2)::before {
+  background-color: #21D7A8;
+}
+.hidden_menu ul li:nth-child(3)::before {
+  background-color: #1E9ED4;
+}
+.hidden_menu ul li:nth-child(4)::before {
+  background-color: #B0D44A;
+}
+.hidden_menu ul li:nth-child(5)::before {
+  background-color: #A865D5;
+}
+.hidden_menu ul li.selected::before {
+  animation: scaling 0.4s linear;
+}
+.hidden_menu ul li:hover {
+  background-color: #2e5090;
+}
+.hidden_menu ul li a {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.hidden_menu ul li i {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.menu_underline {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 20%;
+  background-color: #fff;
+}
+.menu_underline.visible {
+  height: 3px;
+}
+
+.header_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 5vw;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+.header_bar::before {
+  background-color: rgba(0, 0, 0, 0.34);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  opacity: 0;
+}
+.header_bar.show-bg::before {
+  opacity: 1;
+}
+.header_bar h1 {
+  position: relative;
+  margin: 26px 0 0;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url(https://bluecommunitysustainability.github.io/assessment/dist/dist/fishbowl-min.gif);
+}
+.container::before {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  position: relative;
+  margin: 100px auto 4vw;
+  padding: 0 5vw;
+  height: 100vh;
+}
+.content h2 {
+  position: relative;
+  top: 30vh;
+  font-size: 38px;
+}
+
+@keyframes scaling {
+  50% {
+    opacity: 0.28;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+@media (max-width: 680px) {
+  #humberger_check:checked + .humberger,
+#humberger_check:checked ~ .header_bar,
+#humberger_check:checked ~ .container {
+    transform: translateY(300px);
+  }
+
+  .hidden_menu {
+    height: 300px;
+  }
+  .hidden_menu ul li {
+    float: none;
+    width: 100%;
+    height: 60px;
+    font-size: 12px;
+  }
+  .hidden_menu ul li i {
+    display: inline;
+    font-size: 18px;
+    margin-right: 15px;
+  }
+
+  .menu_underline {
+    width: 100%;
+    left: 0;
+    bottom: auto;
+  }
+}
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

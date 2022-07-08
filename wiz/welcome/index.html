@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 3D rotating hidden menu with sliding bar</title>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300'>
+<link rel='stylesheet' href='https://bluecommunitysustainability.github.io/assessment/wiz/details-style.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type="checkbox" role="button" title="menu" id="humberger_check" />
+<label for="humberger_check" class="humberger" aria-hidden="true" title="menu">
+  <span></span>
+</label>
+<header class="header_bar">
+  <h1>Blue Community</h1>
+</header>
+<main class="container">
+  <section class="content">
+    <h2>Welcome to Blue Community</h2>
+    <details class="modal">
+  <summary>Open Welcome Wizard</summary>
+  <p>This is the Blue Community Toolbox</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati omnis vero deleniti! Quibusdam officia laborum sed? Eveniet maiores qui minus officiis ex nam ullam magnam recusandae fugit, aperiam ipsam quae?</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum totam animi repellat velit aut necessitatibus quisquam, in at, ipsam aliquam est ab tempora hic cumque. Nostrum debitis commodi optio enim.</p>
+      <div class='embed-container'><iframe loading="lazy" src='https://bluecommunitysustainability.github.io/assessment/wiz/index.html' style='border:0'></iframe></div>
+</details>
+
+  </section>
+</main>
+<nav class="hidden_menu">
+  <ul>
+    <li data-bar-color="#2e5090">
+      <a href="#"><i class="icon-compass"></i>WELCOME</a>
+    </li>
+    <li data-bar-color="#21D7A8">
+      <a href="#"><i class="icon-book"></i>BLUE DOCS</a>
+    </li>
+    <li data-bar-color="#1E9ED4">
+      <a href="#"><i class="icon-edit"></i>ASSESSMENT</a>
+    </li>
+    <li data-bar-color="#B0D44A">
+      <a href="#"><i class="icon-globe"></i>METRICS</a>
+    </li>
+    <li data-bar-color="#A865D5">
+      <a href="#"><i class="icon-cog"></i>DASHBOARD</a>
+    </li>
+  </ul>
+  <span class="menu_underline"></span>
+</nav>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
