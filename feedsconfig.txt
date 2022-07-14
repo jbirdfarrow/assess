@@ -1,0 +1,145 @@
+https://github.blog/feed:
+  - includes:
+      - div.post-featured__image
+      - div.post__content
+    excludes:
+      - div.post_tags_row
+      - div.post__social-share
+
+https://www.techwalker.com/cnetnews.xml:
+
+https://wasmweekly.news/feed.xml:
+
+https://stackshare.io/featured-posts.atom:
+
+https://julian.digital/feed:
+  - includes:
+      - div.blog-post-text
+
+https://daringfireball.net/feeds/articles:
+  - match: '**/daringfireball.net/**/*'
+    includes:
+      - .article
+    excludes:
+      - .article > h1
+      - div#PreviousNext
+
+https://kwokchain.com/feed:
+  - includes:
+      - article
+    excludes:
+      - header > h1
+      - .entry-meta
+      - noscript
+
+https://inessential.com/xml/rss.xml:
+
+https://stratechery.com/feed:
+  - includes:
+      - article
+    excludes:
+      - div.sharedaddy
+      - div#jp-relatedposts
+
+https://ben-evans.com/benedictevans?format=rss:
+  - includes:
+      - article
+    excludes:
+      - article > h1
+      - img.thumb-image
+      - span.v6-visually-hidden
+      - .BlogItem-meta
+      - .BlogItem-share
+      - .BlogItem-comments
+
+https://dave.cheney.net/feed/atom:
+
+http://feeds.feedburner.com/blogspot/gJZg:
+
+https://vercel.com/atom:
+  - includes:
+      - div.post
+    excludes:
+      - img:not([srcset])
+
+https://draveness.me/feed.xml:
+  - includes:
+      - div.article-content
+
+http://laike9m.com/blog/rss:
+  - includes:
+      - article
+    excludes:
+      - header + ul
+      - header
+      - noscript
+      - a[href="http://disqus.com"]
+
+https://stefano.brilli.me/feed.rss:
+  - includes:
+      - article
+
+https://phiresky.github.io/blog/rss.xml:
+  - includes:
+      - div.content
+    excludes:
+      - h1.lh-title
+
+https://matuzo.at/feed.xml:
+
+https://blog.stackblitz.com/feed/feed.xml:
+
+https://reactjs.org/feed.xml:
+
+https://segment.com/blog/rss.xml:
+  - includes:
+      - div[class*='ArticleContent']
+
+https://chrislaing.net/blog/index.xml:
+  - includes:
+      - article .content
+
+https://developer.chrome.com/feeds/blog.xml:
+
+https://a16z.com/feed:
+  - match: '**/a16z.com/*/*/*/*/'
+    includes:
+      - div.blog-content-area
+    excludes:
+      - aside
+
+https://feeds.feedburner.com/ruanyifeng:
+
+https://michael.stapelberg.ch/feed.xml:
+
+https://blog.xiaoyuzhoufm.com/rss:
+  - includes:
+      - article
+    excludes:
+      - h1.post-title
+      - .post-meta
+      - section.author
+
+https://www.getrevue.co/profile/EICO?format=rss:
+  - includes:
+      - div#issue-frame td > div
+    excludes:
+      - table
+
+https://bloggeek.me/feed/:
+  - includes:
+      - section.tcb-post-content
+    excludes:
+      - div.yoast-table-of-contents
+
+https://blog.discord.com/feed:
+
+https://reactnative.dev/blog/rss.xml:
+  - includes:
+      - article > .markdown
+
+https://www.readthegeneralist.com/briefing/rss.xml:
+  - includes:
+      - div#paid
+    excludes:
+      - figure[style="max-width:3%"]
