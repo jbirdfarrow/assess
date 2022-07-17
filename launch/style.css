@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 80px;
+  background-color: hsl(242, 19%, 13%);
+  background-image: url("https://res.cloudinary.com/glide/image/fetch/f_auto,w_525,c_limit/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FLLRRJmsSn1snVHmVMkc4%2Fpub%2FuuAcaN4jwlqORBV7yLI4.gif"); 
+background-size: cover;
+background-position: center center:
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-list {
+  margin: 50px 10%;
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 60px;
+}
+
+.card {
+  display: block;
+  text-align: center;
+  background-color: #000066;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 #00000050, 0 6px 20px 0 #00000050;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 #00000080, 0 8px 25px 0 #00000080;
+}
+
+.names {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: hsl(213, 18%, 60%);
+}
+
+.logos {
+  width: 80%;
+  margin-top: 20px;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 820px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
